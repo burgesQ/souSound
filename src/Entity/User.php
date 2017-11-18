@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
  * Class User
+ *
  * @package App\Entity
  *
  * @ORM\Entity
@@ -105,10 +106,17 @@ class User extends BaseUser
 
     /**
      * User constructor.
+     *
+     * @param string $fName
+     * @param string $lName
      */
-    public function __construct()
+    public function __construct(string $fName = "", string $lName = "")
     {
         parent::__construct();
+
+        $this->id           = -1;
+        $this->firstName    = $fName;
+        $this->lastName     = $lName;
 
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
@@ -127,14 +135,15 @@ class User extends BaseUser
      * @param ExecutionContextInterface $context
      */
     public function isValidate(ExecutionContextInterface $context)
-    {}
+    {
+    }
 
     /**
      * Get id
      *
      * @return int
      */
-    public function getId() : int
+    public function getId(): int
     {
         return $this->id;
     }
@@ -146,7 +155,7 @@ class User extends BaseUser
      *
      * @return User
      */
-    public function setEmail($email) : User
+    public function setEmail($email): User
     {
         $email = is_null($email) ? '' : $email;
         parent::setEmail($email);
@@ -160,7 +169,7 @@ class User extends BaseUser
      *
      * @return \DateTime
      */
-    public function getCreationDate() : \DateTime
+    public function getCreationDate(): \DateTime
     {
         return $this->creationDate;
     }
@@ -172,7 +181,7 @@ class User extends BaseUser
      *
      * @return User
      */
-    public function setCreationDate(\DateTime $creationDate) : User
+    public function setCreationDate(\DateTime $creationDate): User
     {
         $this->creationDate = $creationDate;
 
@@ -184,7 +193,7 @@ class User extends BaseUser
      *
      * @return \DateTime
      */
-    public function getUpdateDate() : \DateTime
+    public function getUpdateDate(): \DateTime
     {
         return $this->updateDate;
     }
@@ -196,7 +205,7 @@ class User extends BaseUser
      *
      * @return User
      */
-    public function setUpdateDate(\DateTime $updateDate) : User
+    public function setUpdateDate(\DateTime $updateDate): User
     {
         $this->updateDate = $updateDate;
 
@@ -208,7 +217,7 @@ class User extends BaseUser
      *
      * @return string
      */
-    public function getFirstName() : string
+    public function getFirstName(): string
     {
         return $this->firstName;
     }
@@ -220,7 +229,7 @@ class User extends BaseUser
      *
      * @return User
      */
-    public function setFirstName(string $firstName) : User
+    public function setFirstName(string $firstName): User
     {
         $this->firstName = $firstName;
 
@@ -232,7 +241,7 @@ class User extends BaseUser
      *
      * @return string
      */
-    public function getLastName() : string
+    public function getLastName(): string
     {
         return $this->lastName;
     }
@@ -244,7 +253,7 @@ class User extends BaseUser
      *
      * @return User
      */
-    public function setLastName(string $lastName) : User
+    public function setLastName(string $lastName): User
     {
         $this->lastName = $lastName;
 

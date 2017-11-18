@@ -69,9 +69,11 @@ class Artist
      *
      * @param string $artist
      */
-    public function __construct(string $artist)
+    public function __construct(string $artist = "")
     {
+        $this->id           = -1;
         $this->artist       = $artist;
+
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
     }
