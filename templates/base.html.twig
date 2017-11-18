@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        {% if form is defined %}
             {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+        {% endif %}
+    {% endblock %}
+</head>
+<body>
+
+    {% block header %}
+        {% include "headers.html.twig" %}
+    {% endblock %}
+
+    {% block body %}{% endblock %}
+
+    {% block javascripts %}{% endblock %}
+</body>
 </html>

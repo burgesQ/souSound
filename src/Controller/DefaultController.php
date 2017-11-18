@@ -11,7 +11,7 @@ class DefaultController extends Controller
 {
     /**
      * @Route(
-     *     "/hello/{name}",
+     *     "/{name}",
      *     requirements={"name" = "\w"},
      *     defaults={"name" = "caca"}
      * )
@@ -26,14 +26,4 @@ class DefaultController extends Controller
         ]);
     }
 
-    /**
-     * @Route(
-     *     "/"
-     * )
-     * @return Response
-     */
-    public function baseAction()
-    {
-        return new Response("helloWorld");
-    }
 }
