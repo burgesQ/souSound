@@ -252,7 +252,7 @@
         }
     },
     "symfony/templating": {
-        "version": "v3.3.11"
+        "version": "v3.3.13"
     },
     "friendsofsymfony/user-bundle": {
         "version": "v2.0.1"

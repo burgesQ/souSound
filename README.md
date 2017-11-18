@@ -5,14 +5,15 @@ A privat esound sharing project. Nov 2017
 Process to deploy the project :
 
 ```bash
-$ sf doctrine:database:create
-$ sf doctrine:schema:validate
-$ sf doctrine:schema:update --force
+$ ./scrit/IpDocker
+# copy/ast db ip on .env
+$ ./scrit/genDb
 ```
 
 The project is based on the latest sensioLab php framework : Symfony Flex.
 
 Todo :
+ - [x] BackOffice
  - [x] User Entity
  - [] Test User entity
  - [] BackOffice

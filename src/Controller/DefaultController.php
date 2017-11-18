@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
+
 
 class DefaultController extends Controller
 {
@@ -22,5 +24,16 @@ class DefaultController extends Controller
         return $this->render('hello.html.twig', [
             'name' => $name
         ]);
+    }
+
+    /**
+     * @Route(
+     *     "/"
+     * )
+     * @return Response
+     */
+    public function baseAction()
+    {
+        return new Response("helloWorld");
     }
 }

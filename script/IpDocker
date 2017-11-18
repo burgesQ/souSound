@@ -1,0 +1,12 @@
+#! /bin/sh
+
+echo "PHP IP ->"
+docker inspect dockersymfony_php_1|grep "\"IPAddress\""
+echo "Databse IP ->"
+docker inspect dockersymfony_db_1|grep "\"IPAddress\""
+echo "NGINX IP ->"
+docker inspect dockersymfony_nginx_1|grep "\"IPAddress\""
+echo "PMA IP ->"
+docker inspect dockersymfony_phpmyadmin_1|grep "\"IPAddress\""
+echo "ELK IP ->"
+docker inspect dockersymfony_elk_1|grep "\"IPAddress\""
