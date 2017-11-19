@@ -8,15 +8,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
- * Class Artist
+ * Class Track
  *
  * @package App\Entity
  *
  * @ORM\Entity
- * @ORM\Table(name="artist")
+ * @ORM\Table(name="track")
  * @ORM\HasLifecycleCallbacks()
  */
-class Artist
+class Track
 {
     /**
      * @var int
@@ -29,12 +29,12 @@ class Artist
     /**
      * @var string
      * @ORM\Column(
-     *     name="artist",
+     *     name="track_name",
      *     type="string",
      *     nullable=false
      * )
      */
-    private $artist;
+    private $trackName;
 
     /**
      * @var \DateTime
@@ -56,14 +56,13 @@ class Artist
      */
     private $updateDate;
 
-
     /**
      * @var ArrayCollection
      * @ORM\ManyToMany(
-     *     targetEntity="App\Entity\Track"
+     *     targetEntity="App\Entity\Artist"
      * )
      */
-    private $tracks;
+    private $artists;
 
     /**
      * @var ArrayCollection
@@ -75,23 +74,25 @@ class Artist
 
     # $labels
     # $albums
+    # $tracks
+    # $mixes
     # $homeCountry
     # $startDate
     # $events
     # $founder
 
     /**
-     * User constructor.
+     * Track constructor.
      *
-     * @param string $artist
+     * @param string $trackName
      */
-    public function __construct(string $artist = "")
+    public function __construct(string $trackName = "")
     {
         $this->id           = -1;
-        $this->artist       = $artist;
+        $this->trackName    = $trackName;
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
-        $this->tracks       = new ArrayCollection();
+        $this->artists      = new ArrayCollection();
         $this->mixes        = new ArrayCollection();
     }
 
@@ -136,9 +137,9 @@ class Artist
      *
      * @param \DateTime $creationDate
      *
-     * @return Artist
+     * @return Track
      */
-    public function setCreationDate(\DateTime $creationDate): Artist
+    public function setCreationDate(\DateTime $creationDate): Track
     {
         $this->creationDate = $creationDate;
 
@@ -160,9 +161,9 @@ class Artist
      *
      * @param \DateTime $updateDate
      *
-     * @return Artist
+     * @return Track
      */
-    public function setUpdateDate(\DateTime $updateDate): Artist
+    public function setUpdateDate(\DateTime $updateDate): Track
     {
         $this->updateDate = $updateDate;
 
@@ -174,57 +175,57 @@ class Artist
      *
      * @return string
      */
-    public function getArtist(): string
+    public function getTrackName(): string
     {
-        return $this->artist;
+        return $this->trackName;
     }
 
     /**
-     * Set artist
+     * Set the trackName
      *
-     * @param string $artist
+     * @param string $trackName
      *
-     * @return Artist
+     * @return Track
      */
-    public function setArtist(string $artist): Artist
+    public function setTrackName(string $trackName): Track
     {
-        $this->artist = $artist;
+        $this->trackName = $trackName;
 
         return $this;
     }
 
     /**
-     * Add track
+     * Add artist
      *
-     * @param Track $track
+     * @param \App\Entity\Artist $artist
      *
-     * @return Artist
+     * @return Track
      */
-    public function addTrack(Track $track): Artist
+    public function addArtist(Artist $artist): Track
     {
-        $this->tracks[] = $track;
+        $this->artists[] = $artist;
 
         return $this;
     }
 
     /**
-     * Remove track
+     * Remove artist
      *
-     * @param Track $track
+     * @param \App\Entity\Artist $artist
      */
-    public function removeTrack(Track $track)
+    public function removeArtist(Artist $artist)
     {
-        $this->tracks->removeElement($track);
+        $this->artists->removeElement($artist);
     }
 
     /**
-     * Get tracks
+     * Get artists
      *
      * @return ArrayCollection
      */
-    public function getTracks(): ArrayCollection
+    public function getArtists(): ArrayCollection
     {
-        return $this->tracks;
+        return $this->artists;
     }
 
     /**
@@ -232,9 +233,9 @@ class Artist
      *
      * @param \App\Entity\Mix $mix
      *
-     * @return Artist
+     * @return Track
      */
-    public function addMix(Mix $mix): Artist
+    public function addMix(Mix $mix): Track
     {
         $this->mixes[] = $mix;
 
