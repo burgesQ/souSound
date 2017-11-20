@@ -4,3 +4,4 @@ easy_admin:
         - App\Entity\Artist
         - App\Entity\Track
         - App\Entity\Mix
+        - App\Entity\Album

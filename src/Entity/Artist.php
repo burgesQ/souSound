@@ -73,8 +73,15 @@ class Artist
      */
     private $mixes;
 
+    /**
+     * @var ArrayCollection
+     * @ORM\ManyToMany(
+     *     targetEntity="App\Entity\Playlist"
+     * )
+     */
+    private $albums;
+
     # $labels
-    # $albums
     # $homeCountry
     # $startDate
     # $events
@@ -93,6 +100,7 @@ class Artist
         $this->updateDate   = new \Datetime();
         $this->tracks       = new ArrayCollection();
         $this->mixes        = new ArrayCollection();
+        $this->albums       = new ArrayCollection();
     }
 
     /**
@@ -259,5 +267,39 @@ class Artist
     public function getMixes(): ArrayCollection
     {
         return $this->mixes;
+    }
+
+    /**
+     * Add album
+     *
+     * @param \App\Entity\Album $album
+     *
+     * @return Artist
+     */
+    public function addAlbum(Album $album) : Artist
+    {
+        $this->albums[] = $album;
+
+        return $this;
+    }
+
+    /**
+     * Remove album
+     *
+     * @param \App\Entity\Album $album
+     */
+    public function removeAlbum(Album $album)
+    {
+        $this->albums->removeElement($album);
+    }
+
+    /**
+     * Get albums
+     *
+     * @return ArrayCollection
+     */
+    public function getAlbums() : ArrayCollection
+    {
+        return $this->albums;
     }
 }

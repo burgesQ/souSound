@@ -8,15 +8,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
- * Class Track
+ * Class Album
  *
  * @package App\Entity
  *
  * @ORM\Entity
- * @ORM\Table(name="track")
+ * @ORM\Table(name="album")
  * @ORM\HasLifecycleCallbacks()
  */
-class Track
+class Album
 {
     /**
      * @var int
@@ -29,12 +29,12 @@ class Track
     /**
      * @var string
      * @ORM\Column(
-     *     name="track_name",
+     *     name="album",
      *     type="string",
      *     nullable=false
      * )
      */
-    private $trackName;
+    private $album;
 
     /**
      * @var \DateTime
@@ -59,44 +59,36 @@ class Track
     /**
      * @var ArrayCollection
      * @ORM\ManyToMany(
+     *     targetEntity="App\Entity\Track"
+     * )
+     */
+    private $tracks;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\ManyToMany(
      *     targetEntity="App\Entity\Artist"
      * )
      */
-    private $artists;
-
-    /**
-     * @var ArrayCollection
-     * @ORM\ManyToMany(
-     *     targetEntity="App\Entity\Mix"
-     * )
-     */
-    private $mixes;
-
-    /**
-     * @var ArrayCollection
-     * @ORM\ManyToMany(
-     *     targetEntity="App\Entity\Playlist"
-     * )
-     */
-    private $albums;
+    private $artistes;
 
     # $labels
     # $releaseDate
+    # genre
 
     /**
-     * Track constructor.
+     * User constructor.
      *
-     * @param string $trackName
+     * @param string $album
      */
-    public function __construct(string $trackName = "")
+    public function __construct(string $album = "")
     {
         $this->id           = -1;
-        $this->trackName    = $trackName;
+        $this->album        = $album;
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
-        $this->artists      = new ArrayCollection();
-        $this->mixes        = new ArrayCollection();
-        $this->albums       = new ArrayCollection();
+        $this->tracks       = new ArrayCollection();
+        $this->artistes     = new ArrayCollection();
     }
 
     /**
@@ -140,9 +132,9 @@ class Track
      *
      * @param \DateTime $creationDate
      *
-     * @return Track
+     * @return Album
      */
-    public function setCreationDate(\DateTime $creationDate): Track
+    public function setCreationDate(\DateTime $creationDate): Album
     {
         $this->creationDate = $creationDate;
 
@@ -164,9 +156,9 @@ class Track
      *
      * @param \DateTime $updateDate
      *
-     * @return Track
+     * @return Album
      */
-    public function setUpdateDate(\DateTime $updateDate): Track
+    public function setUpdateDate(\DateTime $updateDate): Album
     {
         $this->updateDate = $updateDate;
 
@@ -174,128 +166,94 @@ class Track
     }
 
     /**
-     * Get artist
+     * Get Album
      *
      * @return string
      */
-    public function getTrackName(): string
+    public function getAlbum(): string
     {
-        return $this->trackName;
+        return $this->album;
     }
 
     /**
-     * Set the trackName
+     * Set Album
      *
-     * @param string $trackName
+     * @param string $album
      *
-     * @return Track
+     * @return album
      */
-    public function setTrackName(string $trackName): Track
+    public function setAlbum(string $album): Album
     {
-        $this->trackName = $trackName;
+        $this->album = $album;
 
         return $this;
     }
 
     /**
-     * Add artist
+     * Add track
      *
-     * @param \App\Entity\Artist $artist
+     * @param Track $track
      *
-     * @return Track
+     * @return Album
      */
-    public function addArtist(Artist $artist): Track
+    public function addTrack(Track $track): Album
     {
-        $this->artists[] = $artist;
+        $this->tracks[] = $track;
 
         return $this;
     }
 
     /**
-     * Remove artist
+     * Remove track
      *
-     * @param \App\Entity\Artist $artist
+     * @param Track $track
      */
-    public function removeArtist(Artist $artist)
+    public function removeTrack(Track $track)
     {
-        $this->artists->removeElement($artist);
+        $this->tracks->removeElement($track);
     }
 
     /**
-     * Get artists
+     * Get tracks
      *
      * @return ArrayCollection
      */
-    public function getArtists(): ArrayCollection
+    public function getTracks(): ArrayCollection
     {
-        return $this->artists;
+        return $this->tracks;
     }
 
     /**
-     * Add mix
+     * Add artiste
      *
-     * @param \App\Entity\Mix $mix
+     * @param Artist $artiste
      *
-     * @return Track
+     * @return Album
      */
-    public function addMix(Mix $mix): Track
+    public function addArtiste(Artist $artiste) : Album
     {
-        $this->mixes[] = $mix;
+        $this->artistes[] = $artiste;
 
         return $this;
     }
 
     /**
-     * Remove mix
+     * Remove artiste
      *
-     * @param \App\Entity\Mix $mix
+     * @param Artist $artiste
      */
-    public function removeMix(Mix $mix)
+    public function removeArtiste(Artist $artiste)
     {
-        $this->mixes->removeElement($mix);
+        $this->artistes->removeElement($artiste);
     }
 
     /**
-     * Get mixs
+     * Get artistes
      *
      * @return ArrayCollection
      */
-    public function getMixes(): ArrayCollection
+    public function getArtistes() : ArrayCollection
     {
-        return $this->mixes;
-    }
-
-    /**
-     * Add albume
-     *
-     * @param \App\Entity\Album $album
-     *
-     * @return Track
-     */
-    public function addAlbum(Album $album): Track
-    {
-        $this->albums[] = $album;
-
-        return $this;
-    }
-
-    /**
-     * Remove album
-     *
-     * @param \App\Entity\Album $album
-     */
-    public function removeAlbum(Album $album)
-    {
-        $this->albums->removeElement($album);
-    }
-
-    /**
-     * Get albums
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAlbums(): ArrayCollection
-    {
-        return $this->albums;
+        return $this->artistes;
     }
 }

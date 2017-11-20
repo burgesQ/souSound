@@ -11,18 +11,66 @@ $ ./scrit/IpDocker
 $ ./scrit/genDb
 ```
 
-The project is based on the latest sensioLab php framework : Symfony Flex.
+The project is based on Symfony Flex.
 
 Todo :
- - [x] BackOffice
- - [x] User Entity
- - [] Test User entity
- - [] BackOffice
- - [] CRON manager
- - [] Tracks
- - [] Artiste
- - [] Albume/EP
- - [] Event
- - [] Mix
- - [] Orga
- - [] Label
+
+    Entities :
+     - [x] User Entity
+     - [X] Tracks
+     - [X] Artiste
+     - [X] Mix
+     - [x] Playlist
+       - [] One for like
+       - [] One for bibli
+       - [X] bool Albume/EP
+     - [] Event
+     - [] Orga
+     - [] Label
+     - [] Kind
+
+    BackOffice :
+     - [] User Entity
+     - [] Tracks
+     - [] Artiste
+     - [] Mix
+     - [] Albume/EP
+     - [] Event
+     - [] Orga
+     - [] Label
+     - [] Kind
+
+    Sf command :
+     - [] Helper transformable
+       - [] Open Dir
+       - [] Index / filter files
+       - [] Create Entity from mp3
+       - [] MoveThatShit
+     - [] transform from soundCloud dir
+     - [] transform form youTube dir
+     - [] transform from extra dir
+
+    CRONTab manager :
+     - [] Manager
+
+    Utils :
+     - [] installer/checker for debian
+     - [] gitSubmodule
+     - [] fbLogin
+     - [] historic
+     - [] like
+     - [] playlist
+
+    Search :
+     - [] Artist
+     - [] Name
+     - [] Genre
+     - [] Years
+     - [] Ponderation ?
+
+    UI/UX :
+     - [] Add boostrap 4
+     - [] SearchBar
+     - [] LatBar
+     - [] Player
+
