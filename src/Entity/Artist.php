@@ -68,20 +68,19 @@ class Artist
     /**
      * @var ArrayCollection
      * @ORM\ManyToMany(
-     *     targetEntity="App\Entity\Mix"
-     * )
-     */
-    private $mixes;
-
-    /**
-     * @var ArrayCollection
-     * @ORM\ManyToMany(
-     *     targetEntity="App\Entity\Playlist"
+     *     targetEntity="App\Entity\Album"
      * )
      */
     private $albums;
 
-    # $labels
+    /**
+     * @var ArrayCollection
+     * @ORM\ManyToMany(
+     *     targetEntity="App\Entity\Label"
+     * )
+     */
+    private $signedLabel;
+
     # $homeCountry
     # $startDate
     # $events
@@ -99,8 +98,8 @@ class Artist
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
         $this->tracks       = new ArrayCollection();
-        $this->mixes        = new ArrayCollection();
         $this->albums       = new ArrayCollection();
+        $this->signedLabel  = new ArrayCollection();
     }
 
     /**
@@ -236,47 +235,13 @@ class Artist
     }
 
     /**
-     * Add mix
-     *
-     * @param \App\Entity\Mix $mix
-     *
-     * @return Artist
-     */
-    public function addMix(Mix $mix): Artist
-    {
-        $this->mixes[] = $mix;
-
-        return $this;
-    }
-
-    /**
-     * Remove mix
-     *
-     * @param \App\Entity\Mix $mix
-     */
-    public function removeMix(Mix $mix)
-    {
-        $this->mixes->removeElement($mix);
-    }
-
-    /**
-     * Get mixs
-     *
-     * @return ArrayCollection
-     */
-    public function getMixes(): ArrayCollection
-    {
-        return $this->mixes;
-    }
-
-    /**
      * Add album
      *
      * @param \App\Entity\Album $album
      *
      * @return Artist
      */
-    public function addAlbum(Album $album) : Artist
+    public function addAlbum(Album $album): Artist
     {
         $this->albums[] = $album;
 
@@ -298,8 +263,42 @@ class Artist
      *
      * @return ArrayCollection
      */
-    public function getAlbums() : ArrayCollection
+    public function getAlbums(): ArrayCollection
     {
         return $this->albums;
+    }
+
+    /**
+     * Add signedLabel
+     *
+     * @param \App\Entity\Playlist $signedLabel
+     *
+     * @return Artist
+     */
+    public function addSignedLabel(Playlist $signedLabel): Artist
+    {
+        $this->signedLabel[] = $signedLabel;
+
+        return $this;
+    }
+
+    /**
+     * Remove signedLabel
+     *
+     * @param \App\Entity\Playlist $signedLabel
+     */
+    public function removeSignedLabel(Playlist $signedLabel)
+    {
+        $this->signedLabel->removeElement($signedLabel);
+    }
+
+    /**
+     * Get signedLabel
+     *
+     * @return ArrayCollection
+     */
+    public function getSignedLabel(): ArrayCollection
+    {
+        return $this->signedLabel;
     }
 }

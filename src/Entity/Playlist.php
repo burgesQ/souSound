@@ -72,13 +72,29 @@ class Playlist
      */
     private $artistes;
 
+    /**
+     * @var bool
+     * @ORM\Column(
+     *     name="is_album",
+     *     type="boolean",
+     *     nullable=false
+     * )
+     */
+    private $isAlbum;
+
+    /**
+     * @var \App\Entity\User
+     * @ORM\ManyToOne(
+     *     targetEntity="App\Entity\User",
+     *     inversedBy="playlists"
+     * )
+     */
+    private $owner;
+
     # $labels
     # $releaseDate
     # genre
     # owner
-    # bool album
-    #
-
 
     /**
      * User constructor.
@@ -93,6 +109,8 @@ class Playlist
         $this->updateDate   = new \Datetime();
         $this->tracks       = new ArrayCollection();
         $this->artistes     = new ArrayCollection();
+        $this->isAlbum      = false;
+        $this->owner        = null;
     }
 
     /**
@@ -259,5 +277,53 @@ class Playlist
     public function getArtistes() : ArrayCollection
     {
         return $this->artistes;
+    }
+
+    /**
+     * Set isAlbum
+     *
+     * @param boolean $isAlbum
+     *
+     * @return Playlist
+     */
+    public function setIsAlbum(bool $isAlbum) : Playlist
+    {
+        $this->isAlbum = $isAlbum;
+
+        return $this;
+    }
+
+    /**
+     * Get isAlbum
+     *
+     * @return boolean
+     */
+    public function getIsAlbum() : bool
+    {
+        return $this->isAlbum;
+    }
+
+    /**
+     * Set owner
+     *
+     * @param \App\Entity\User $owner
+     *
+     * @return Playlist
+     */
+    public function setOwner(User $owner = null) : Playlist
+    {
+        $this->owner = $owner;
+
+        return $this;
+    }
+
+    /**
+     * Get owner
+     *
+     * @return \App\Entity\User
+     */
+    public function getOwner() : User
+    {
+        return $this->owner;
     }
 }

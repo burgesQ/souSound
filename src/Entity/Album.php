@@ -72,8 +72,24 @@ class Album
      */
     private $artistes;
 
-    # $labels
-    # $releaseDate
+    /**
+     * @var Label
+     * @ORM\ManyToOne(
+     *     targetEntity="App\Entity\Label",
+     * )
+     */
+    private $label;
+
+    /**
+     * @var \DateTime
+     * @ORM\Column(
+     *     name="release_date",
+     *     type="datetime",
+     *     nullable=true
+     * )
+     */
+    private $releaseDate;
+
     # genre
 
     /**
@@ -89,6 +105,8 @@ class Album
         $this->updateDate   = new \Datetime();
         $this->tracks       = new ArrayCollection();
         $this->artistes     = new ArrayCollection();
+        $this->label        = null;
+        $this->releaseDate  = null;
     }
 
     /**
@@ -255,5 +273,53 @@ class Album
     public function getArtistes() : ArrayCollection
     {
         return $this->artistes;
+    }
+
+    /**
+     * Set releaseDate
+     *
+     * @param \DateTime $releaseDate
+     *
+     * @return Album
+     */
+    public function setReleaseDate($releaseDate)
+    {
+        $this->releaseDate = $releaseDate;
+
+        return $this;
+    }
+
+    /**
+     * Get releaseDate
+     *
+     * @return \DateTime
+     */
+    public function getReleaseDate()
+    {
+        return $this->releaseDate;
+    }
+
+    /**
+     * Set label
+     *
+     * @param \App\Entity\Label $label
+     *
+     * @return Album
+     */
+    public function setLabel(\App\Entity\Label $label = null) : Album
+    {
+        $this->label = $label;
+
+        return $this;
+    }
+
+    /**
+     * Get label
+     *
+     * @return \App\Entity\Label
+     */
+    public function getLabel() : Label
+    {
+        return $this->label;
     }
 }

@@ -8,15 +8,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
- * Class Mix
+ * Class Label
  *
  * @package App\Entity
  *
  * @ORM\Entity
- * @ORM\Table(name="mix")
+ * @ORM\Table(name="label")
  * @ORM\HasLifecycleCallbacks()
  */
-class Mix
+class Label
 {
     /**
      * @var int
@@ -29,12 +29,12 @@ class Mix
     /**
      * @var string
      * @ORM\Column(
-     *     name="track_name",
+     *     name="label",
      *     type="string",
      *     nullable=false
      * )
      */
-    private $mixName;
+    private $label;
 
     /**
      * @var \DateTime
@@ -58,42 +58,57 @@ class Mix
 
     /**
      * @var ArrayCollection
-     * @ORM\ManyToMany(
-     *     targetEntity="App\Entity\Artist"
-     * )
-     */
-    private $artists;
-
-    /**
-     * @var ArrayCollection
-     * @ORM\ManyToMany(
-     *     targetEntity="App\Entity\Track"
+     * @ORM\OneToMany(
+     *     targetEntity="App\Entity\Track",
+     *     mappedBy="label",
+     *     cascade={"persist"}
      * )
      */
     private $tracks;
 
-    # $labels
-    # $albums
-    # $tracks
-    # $mixes
-    # $homeCountry
-    # $startDate
-    # $events
-    # $founder
+    /**
+     * @var ArrayCollection
+     * @ORM\ManyToMany(
+     *     targetEntity="App\Entity\Playlist"
+     * )
+     */
+    private $albums;
 
     /**
-     * Mix constructor.
-     *
-     * @param string $mixName
+     * @var ArrayCollection
+     * @ORM\ManyToMany(
+     *     targetEntity="Artist"
+     * )
      */
-    public function __construct(string $mixName = "")
+    private $artists;
+//
+//    /**
+//     * @var \DateTime
+//     * @ORM\Column(
+//     *     name="release_date",
+//     *     type="datetime",
+//     *     nullable=true
+//     * )
+//     */
+//    private $releaseDate;
+
+    # $startDate
+    # $events
+
+    /**
+     * User constructor.
+     *
+     * @param string $label
+     */
+    public function __construct(string $label = "")
     {
         $this->id           = -1;
-        $this->mixName      = $mixName;
+        $this->label        = $label;
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
-        $this->artists      = new ArrayCollection();
         $this->tracks       = new ArrayCollection();
+        $this->albums       = new ArrayCollection();
+        $this->artists      = new ArrayCollection();
     }
 
     /**
@@ -137,9 +152,9 @@ class Mix
      *
      * @param \DateTime $creationDate
      *
-     * @return Mix
+     * @return Label
      */
-    public function setCreationDate(\DateTime $creationDate): Mix
+    public function setCreationDate(\DateTime $creationDate): Label
     {
         $this->creationDate = $creationDate;
 
@@ -161,9 +176,9 @@ class Mix
      *
      * @param \DateTime $updateDate
      *
-     * @return Mix
+     * @return Label
      */
-    public function setUpdateDate(\DateTime $updateDate): Mix
+    public function setUpdateDate(\DateTime $updateDate): Label
     {
         $this->updateDate = $updateDate;
 
@@ -171,71 +186,37 @@ class Mix
     }
 
     /**
-     * Get mixName
+     * Get Label
      *
      * @return string
      */
-    public function getMixName() : string
+    public function getLabel(): string
     {
-        return $this->mixName;
+        return $this->label;
     }
 
     /**
-     * Set mixName
+     * Set Label
      *
-     * @param string $mixName
+     * @param string $label
      *
-     * @return Mix
+     * @return Label
      */
-    public function setMixName(string $mixName) : Mix
+    public function setLabel(string $label): Label
     {
-        $this->mixName = $mixName;
+        $this->label = $label;
 
         return $this;
-    }
-
-    /**
-     * Add artist
-     *
-     * @param \App\Entity\Artist $artist
-     *
-     * @return Mix
-     */
-    public function addArtist(Artist $artist): Mix
-    {
-        $this->artists[] = $artist;
-
-        return $this;
-    }
-
-    /**
-     * Remove artist
-     *
-     * @param \App\Entity\Artist $artist
-     */
-    public function removeArtist(Artist $artist)
-    {
-        $this->artists->removeElement($artist);
-    }
-
-    /**
-     * Get artists
-     *
-     * @return ArrayCollection
-     */
-    public function getArtists(): ArrayCollection
-    {
-        return $this->artists;
     }
 
     /**
      * Add track
      *
-     * @param \App\Entity\Track $track
+     * @param Track $track
      *
-     * @return Mix
+     * @return Label
      */
-    public function addTrack(Track $track) : Mix
+    public function addTrack(Track $track): Label
     {
         $this->tracks[] = $track;
 
@@ -245,7 +226,7 @@ class Mix
     /**
      * Remove track
      *
-     * @param \App\Entity\Track $track
+     * @param Track $track
      */
     public function removeTrack(Track $track)
     {
@@ -257,8 +238,86 @@ class Mix
      *
      * @return ArrayCollection
      */
-    public function getTracks() : ArrayCollection
+    public function getTracks(): ArrayCollection
     {
         return $this->tracks;
+    }
+
+    /**
+     * Add Artist
+     *
+     * @param \App\Entity\Artist $artist
+     *
+     * @return Label
+     */
+    public function addArtist(Artist $artist): Label
+    {
+        $this->artists[] = $artist;
+
+        return $this;
+    }
+
+    /**
+     * Remove Artist
+     *
+     * @param \App\Entity\Artist $artist
+     */
+    public function removeArtist(Artist $artist)
+    {
+        $this->artists->removeElement($artist);
+    }
+
+    /**
+     * Get Artists
+     *
+     * @return ArrayCollection
+     */
+    public function getArtistes(): ArrayCollection
+    {
+        return $this->artists;
+    }
+
+    /**
+     * Add album
+     *
+     * @param \App\Entity\Album $album
+     *
+     * @return Label
+     */
+    public function addAlbum(Album $album): Label
+    {
+        $this->albums[] = $album;
+
+        return $this;
+    }
+
+    /**
+     * Remove album
+     *
+     * @param \App\Entity\Album $album
+     */
+    public function removeAlbum(Album $album)
+    {
+        $this->albums->removeElement($album);
+    }
+
+    /**
+     * Get albums
+     *
+     * @return ArrayCollection
+     */
+    public function getAlbums(): ArrayCollection
+    {
+        return $this->albums;
+    }
+
+    /**
+     * Get artists
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArtists()
+    {
+        return $this->artists;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -105,6 +106,16 @@ class User extends BaseUser
     private $lastName;
 
     /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(
+     *     targetEntity="App\Entity\Playlist",
+     *     mappedBy="owner",
+     *     cascade={"persist"}
+     * )
+     */
+    private $playlists;
+
+    /**
      * User constructor.
      *
      * @param string $fName
@@ -120,6 +131,9 @@ class User extends BaseUser
 
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
+
+        $this->playlists    = new ArrayCollection();
+        $this->addPlaylist(new Playlist("Like"));
     }
 
     /**
@@ -258,5 +272,40 @@ class User extends BaseUser
         $this->lastName = $lastName;
 
         return $this;
+    }
+
+    /**
+     * Add playlist
+     *
+     * @param \App\Entity\Playlist$playlist
+     *
+     * @return User
+     */
+    public function addPlaylist(Playlist $playlist) : User
+    {
+        $playlist->setOwner($this);
+        $this->playlists[] = $playlist;
+
+        return $this;
+    }
+
+    /**
+     * Remove playlist
+     *
+     * @param \App\Entity\Playlist $playlist
+     */
+    public function removePlaylist(Playlist $playlist)
+    {
+        $this->playlists->removeElement($playlist);
+    }
+
+    /**
+     * Get playlists
+     *
+     * @return ArrayCollection
+     */
+    public function getPlaylists() : ArrayCollection
+    {
+        return $this->playlists;
     }
 }

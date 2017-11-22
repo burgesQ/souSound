@@ -67,21 +67,37 @@ class Track
     /**
      * @var ArrayCollection
      * @ORM\ManyToMany(
-     *     targetEntity="App\Entity\Mix"
-     * )
-     */
-    private $mixes;
-
-    /**
-     * @var ArrayCollection
-     * @ORM\ManyToMany(
      *     targetEntity="App\Entity\Playlist"
      * )
      */
     private $albums;
 
-    # $labels
-    # $releaseDate
+    /**
+     * @var Label
+     * @ORM\ManyToOne(
+     *     targetEntity="App\Entity\Label",
+     *     inversedBy="tracks"
+     * )
+     */
+    private $label;
+
+    /**
+     * @var \DateTime
+     * @ORM\Column(
+     *     name="release_date",
+     *     type="datetime",
+     *     nullable=true
+     * )
+     */
+    private $releaseDate;
+
+//    private $isMix;
+//
+//    private $tracks;
+//
+//    private $event;
+
+    # genre
 
     /**
      * Track constructor.
@@ -95,8 +111,9 @@ class Track
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
         $this->artists      = new ArrayCollection();
-        $this->mixes        = new ArrayCollection();
         $this->albums       = new ArrayCollection();
+        $this->label        = null;
+        $this->releaseDate  = null;
     }
 
     /**
@@ -232,40 +249,6 @@ class Track
     }
 
     /**
-     * Add mix
-     *
-     * @param \App\Entity\Mix $mix
-     *
-     * @return Track
-     */
-    public function addMix(Mix $mix): Track
-    {
-        $this->mixes[] = $mix;
-
-        return $this;
-    }
-
-    /**
-     * Remove mix
-     *
-     * @param \App\Entity\Mix $mix
-     */
-    public function removeMix(Mix $mix)
-    {
-        $this->mixes->removeElement($mix);
-    }
-
-    /**
-     * Get mixs
-     *
-     * @return ArrayCollection
-     */
-    public function getMixes(): ArrayCollection
-    {
-        return $this->mixes;
-    }
-
-    /**
      * Add albume
      *
      * @param \App\Entity\Album $album
@@ -292,10 +275,58 @@ class Track
     /**
      * Get albums
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return ArrayCollection
      */
     public function getAlbums(): ArrayCollection
     {
         return $this->albums;
+    }
+
+    /**
+     * Get label
+     *
+     * @return \App\Entity\Label
+     */
+    public function getLabel(): Label
+    {
+        return $this->label;
+    }
+
+    /**
+     * Set label
+     *
+     * @param \App\Entity\Label $label
+     *
+     * @return Track
+     */
+    public function setLabel(Label $label = null): Track
+    {
+        $this->label = $label;
+
+        return $this;
+    }
+
+    /**
+     * Set releaseDate
+     *
+     * @param \DateTime $releaseDate
+     *
+     * @return Track
+     */
+    public function setReleaseDate(\DateTime $releaseDate) : Track
+    {
+        $this->releaseDate = $releaseDate;
+
+        return $this;
+    }
+
+    /**
+     * Get releaseDate
+     *
+     * @return \DateTime
+     */
+    public function getReleaseDate() : \DateTime
+    {
+        return $this->releaseDate;
     }
 }
