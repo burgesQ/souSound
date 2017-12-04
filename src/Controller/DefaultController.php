@@ -21,8 +21,10 @@ class DefaultController extends Controller
      */
     public function indexAction($name)
     {
+        /** @var \App\Entity\User $user */
+        $user = $this->getUser();
         return $this->render('hello.html.twig', [
-            'name' => $name
+            'name' => $user ? $user->getUsername() : $name
         ]);
     }
 
