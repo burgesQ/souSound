@@ -1,7 +1,7 @@
 
     Entities :
      - [x] User Entity
-       - [x] auto like playlist
+       - [] auto like playlist
      - [X] Tracks
        - [] Mix Meta
        - [] info
@@ -19,6 +19,9 @@
      - [] Kind
      - [] Event
      - [] Orga
+     - [x] DownloadUtils
+       - [x] add youtube-dl config
+       - [x] add scdl config
 
     BackOffice :
      - [] User Entity
@@ -40,6 +43,7 @@
      - [] transform from soundCloud dir
      - [] transform form youTube dir
      - [] transform from extra dir
+     - [x] DownlaodCmd
 
     CRONTab manager :
      - [] Manager
@@ -48,9 +52,7 @@
      - [] installer/checker for debian
      - [] gitSubmodule
      - [] fbLogin
-     - [] historic
-     - [] like
-     - [] playlist
+     - [] historiK
 
     Search :
      - [] Artist
@@ -64,4 +66,3 @@
      - [] SearchBar
      - [] LatBar
      - [] Player
-
