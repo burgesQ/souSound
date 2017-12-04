@@ -4,8 +4,6 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
  * Class Playlist
@@ -83,6 +81,15 @@ class Playlist
     private $isAlbum;
 
     /**
+     * @var \App\Entity\Album
+     * @ORM\OneToOne(
+     *     targetEntity="Album",
+     *     cascade={"persist"}
+     * )
+     */
+    private $album;
+
+    /**
      * @var \App\Entity\User
      * @ORM\ManyToOne(
      *     targetEntity="App\Entity\User",
@@ -91,120 +98,53 @@ class Playlist
      */
     private $owner;
 
-    # $labels
-    # $releaseDate
-    # genre
-    # owner
-
     /**
-     * User constructor.
+     * Playlist constructor.
      *
      * @param string $playlist
      */
     public function __construct(string $playlist = "")
     {
         $this->id           = -1;
-        $this->playlist        = $playlist;
+        $this->playlist     = $playlist;
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
         $this->tracks       = new ArrayCollection();
         $this->artistes     = new ArrayCollection();
-        $this->isAlbum      = false;
-        $this->owner        = null;
+
+        // $this->isAlbum
+        // this->album
+        // $this->owner
     }
 
     /**
-     * @ORM\PreUpdate
-     */
-    public function updateDate()
-    {
-        $this->setUpdateDate(new \Datetime());
-    }
-
-    /**
-     * @Assert\Callback
-     * @param ExecutionContextInterface $context
-     */
-    public function isValidate(ExecutionContextInterface $context)
-    {
-    }
-
-    /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
 
     /**
-     * Get creationDate
-     *
-     * @return \DateTime
-     */
-    public function getCreationDate(): \DateTime
-    {
-        return $this->creationDate;
-    }
-
-    /**
-     * Set creationDate
-     *
-     * @param \DateTime $creationDate
-     *
-     * @return Playlist
-     */
-    public function setCreationDate(\DateTime $creationDate): Playlist
-    {
-        $this->creationDate = $creationDate;
-
-        return $this;
-    }
-
-    /**
-     * Get updateDate
-     *
-     * @return \DateTime
-     */
-    public function getUpdateDate(): \DateTime
-    {
-        return $this->updateDate;
-    }
-
-    /**
-     * Set updateDate
-     *
-     * @param \DateTime $updateDate
-     *
-     * @return Playlist
-     */
-    public function setUpdateDate(\DateTime $updateDate): Playlist
-    {
-        $this->updateDate = $updateDate;
-
-        return $this;
-    }
-
-    /**
-     * Get Playlist
+     * Get playlist.
      *
      * @return string
      */
-    public function getPlaylist(): string
+    public function getPlaylist()
     {
         return $this->playlist;
     }
 
     /**
-     * Set Playlist
+     * Set playlist.
      *
      * @param string $playlist
      *
      * @return Playlist
      */
-    public function setPlaylist(string $playlist): Playlist
+    public function setPlaylist($playlist)
     {
         $this->playlist = $playlist;
 
@@ -212,81 +152,71 @@ class Playlist
     }
 
     /**
-     * Add track
+     * Get creationDate.
      *
-     * @param Track $track
+     * @return \DateTime
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    /**
+     * Set creationDate.
+     *
+     * @param \DateTime $creationDate
      *
      * @return Playlist
      */
-    public function addTrack(Track $track): Playlist
+    public function setCreationDate($creationDate)
     {
-        $this->tracks[] = $track;
+        $this->creationDate = $creationDate;
 
         return $this;
     }
 
     /**
-     * Remove track
+     * Get updateDate.
      *
-     * @param Track $track
+     * @return \DateTime
      */
-    public function removeTrack(Track $track)
+    public function getUpdateDate()
     {
-        $this->tracks->removeElement($track);
+        return $this->updateDate;
     }
 
     /**
-     * Get tracks
+     * Set updateDate.
      *
-     * @return ArrayCollection
-     */
-    public function getTracks(): ArrayCollection
-    {
-        return $this->tracks;
-    }
-
-    /**
-     * Add artiste
-     *
-     * @param Artist $artiste
+     * @param \DateTime $updateDate
      *
      * @return Playlist
      */
-    public function addArtiste(Artist $artiste) : Playlist
+    public function setUpdateDate($updateDate)
     {
-        $this->artistes[] = $artiste;
+        $this->updateDate = $updateDate;
 
         return $this;
     }
 
     /**
-     * Remove artiste
+     * Get isAlbum.
      *
-     * @param Artist $artiste
+     * @return bool
      */
-    public function removeArtiste(Artist $artiste)
+    public function getIsAlbum()
     {
-        $this->artistes->removeElement($artiste);
+        return $this->isAlbum;
     }
 
     /**
-     * Get artistes
+     * Set isAlbum.
      *
-     * @return ArrayCollection
-     */
-    public function getArtistes() : ArrayCollection
-    {
-        return $this->artistes;
-    }
-
-    /**
-     * Set isAlbum
-     *
-     * @param boolean $isAlbum
+     * @param bool $isAlbum
      *
      * @return Playlist
      */
-    public function setIsAlbum(bool $isAlbum) : Playlist
+    public function setIsAlbum($isAlbum)
     {
         $this->isAlbum = $isAlbum;
 
@@ -294,36 +224,122 @@ class Playlist
     }
 
     /**
-     * Get isAlbum
+     * Add track.
      *
-     * @return boolean
-     */
-    public function getIsAlbum() : bool
-    {
-        return $this->isAlbum;
-    }
-
-    /**
-     * Set owner
-     *
-     * @param \App\Entity\User $owner
+     * @param \App\Entity\Track $track
      *
      * @return Playlist
      */
-    public function setOwner(User $owner = null) : Playlist
+    public function addTrack(\App\Entity\Track $track)
     {
-        $this->owner = $owner;
+        $this->tracks[] = $track;
 
         return $this;
     }
 
     /**
-     * Get owner
+     * Remove track.
      *
-     * @return \App\Entity\User
+     * @param \App\Entity\Track $track
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function getOwner() : User
+    public function removeTrack(\App\Entity\Track $track)
+    {
+        return $this->tracks->removeElement($track);
+    }
+
+    /**
+     * Get tracks.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTracks()
+    {
+        return $this->tracks;
+    }
+
+    /**
+     * Add artiste.
+     *
+     * @param \App\Entity\Artist $artiste
+     *
+     * @return Playlist
+     */
+    public function addArtiste(\App\Entity\Artist $artiste)
+    {
+        $this->artistes[] = $artiste;
+
+        return $this;
+    }
+
+    /**
+     * Remove artiste.
+     *
+     * @param \App\Entity\Artist $artiste
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeArtiste(\App\Entity\Artist $artiste)
+    {
+        return $this->artistes->removeElement($artiste);
+    }
+
+    /**
+     * Get artistes.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArtistes()
+    {
+        return $this->artistes;
+    }
+
+    /**
+     * Get album.
+     *
+     * @return \App\Entity\Album|null
+     */
+    public function getAlbum()
+    {
+        return $this->album;
+    }
+
+    /**
+     * Set album.
+     *
+     * @param \App\Entity\Album|null $album
+     *
+     * @return Playlist
+     */
+    public function setAlbum(\App\Entity\Album $album = null)
+    {
+        $this->album = $album;
+
+        return $this;
+    }
+
+    /**
+     * Get owner.
+     *
+     * @return \App\Entity\User|null
+     */
+    public function getOwner()
     {
         return $this->owner;
+    }
+
+    /**
+     * Set owner.
+     *
+     * @param \App\Entity\User|null $owner
+     *
+     * @return Playlist
+     */
+    public function setOwner(\App\Entity\User $owner = null)
+    {
+        $this->owner = $owner;
+
+        return $this;
     }
 }

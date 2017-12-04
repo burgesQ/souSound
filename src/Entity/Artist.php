@@ -68,7 +68,7 @@ class Artist
     /**
      * @var ArrayCollection
      * @ORM\ManyToMany(
-     *     targetEntity="App\Entity\Album"
+     *     targetEntity="App\Entity\Playlist"
      * )
      */
     private $albums;
@@ -119,81 +119,23 @@ class Artist
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
 
     /**
-     * Get creationDate
-     *
-     * @return \DateTime
-     */
-    public function getCreationDate(): \DateTime
-    {
-        return $this->creationDate;
-    }
-
-    /**
-     * Set creationDate
-     *
-     * @param \DateTime $creationDate
-     *
-     * @return Artist
-     */
-    public function setCreationDate(\DateTime $creationDate): Artist
-    {
-        $this->creationDate = $creationDate;
-
-        return $this;
-    }
-
-    /**
-     * Get updateDate
-     *
-     * @return \DateTime
-     */
-    public function getUpdateDate(): \DateTime
-    {
-        return $this->updateDate;
-    }
-
-    /**
-     * Set updateDate
-     *
-     * @param \DateTime $updateDate
-     *
-     * @return Artist
-     */
-    public function setUpdateDate(\DateTime $updateDate): Artist
-    {
-        $this->updateDate = $updateDate;
-
-        return $this;
-    }
-
-    /**
-     * Get artist
-     *
-     * @return string
-     */
-    public function getArtist(): string
-    {
-        return $this->artist;
-    }
-
-    /**
-     * Set artist
+     * Set artist.
      *
      * @param string $artist
      *
      * @return Artist
      */
-    public function setArtist(string $artist): Artist
+    public function setArtist($artist)
     {
         $this->artist = $artist;
 
@@ -201,13 +143,71 @@ class Artist
     }
 
     /**
-     * Add track
+     * Get artist.
      *
-     * @param Track $track
+     * @return string
+     */
+    public function getArtist()
+    {
+        return $this->artist;
+    }
+
+    /**
+     * Set creationDate.
+     *
+     * @param \DateTime $creationDate
      *
      * @return Artist
      */
-    public function addTrack(Track $track): Artist
+    public function setCreationDate($creationDate)
+    {
+        $this->creationDate = $creationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get creationDate.
+     *
+     * @return \DateTime
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    /**
+     * Set updateDate.
+     *
+     * @param \DateTime $updateDate
+     *
+     * @return Artist
+     */
+    public function setUpdateDate($updateDate)
+    {
+        $this->updateDate = $updateDate;
+
+        return $this;
+    }
+
+    /**
+     * Get updateDate.
+     *
+     * @return \DateTime
+     */
+    public function getUpdateDate()
+    {
+        return $this->updateDate;
+    }
+
+    /**
+     * Add track.
+     *
+     * @param \App\Entity\Track $track
+     *
+     * @return Artist
+     */
+    public function addTrack(\App\Entity\Track $track)
     {
         $this->tracks[] = $track;
 
@@ -215,33 +215,35 @@ class Artist
     }
 
     /**
-     * Remove track
+     * Remove track.
      *
-     * @param Track $track
+     * @param \App\Entity\Track $track
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeTrack(Track $track)
+    public function removeTrack(\App\Entity\Track $track)
     {
-        $this->tracks->removeElement($track);
+        return $this->tracks->removeElement($track);
     }
 
     /**
-     * Get tracks
+     * Get tracks.
      *
-     * @return ArrayCollection
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getTracks(): ArrayCollection
+    public function getTracks()
     {
         return $this->tracks;
     }
 
     /**
-     * Add album
+     * Add album.
      *
-     * @param \App\Entity\Album $album
+     * @param \App\Entity\Playlist $album
      *
      * @return Artist
      */
-    public function addAlbum(Album $album): Artist
+    public function addAlbum(\App\Entity\Playlist $album)
     {
         $this->albums[] = $album;
 
@@ -249,33 +251,35 @@ class Artist
     }
 
     /**
-     * Remove album
+     * Remove album.
      *
-     * @param \App\Entity\Album $album
+     * @param \App\Entity\Playlist $album
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeAlbum(Album $album)
+    public function removeAlbum(\App\Entity\Playlist $album)
     {
-        $this->albums->removeElement($album);
+        return $this->albums->removeElement($album);
     }
 
     /**
-     * Get albums
+     * Get albums.
      *
-     * @return ArrayCollection
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getAlbums(): ArrayCollection
+    public function getAlbums()
     {
         return $this->albums;
     }
 
     /**
-     * Add signedLabel
+     * Add signedLabel.
      *
-     * @param \App\Entity\Playlist $signedLabel
+     * @param \App\Entity\Label $signedLabel
      *
      * @return Artist
      */
-    public function addSignedLabel(Playlist $signedLabel): Artist
+    public function addSignedLabel(\App\Entity\Label $signedLabel)
     {
         $this->signedLabel[] = $signedLabel;
 
@@ -283,21 +287,23 @@ class Artist
     }
 
     /**
-     * Remove signedLabel
+     * Remove signedLabel.
      *
-     * @param \App\Entity\Playlist $signedLabel
+     * @param \App\Entity\Label $signedLabel
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeSignedLabel(Playlist $signedLabel)
+    public function removeSignedLabel(\App\Entity\Label $signedLabel)
     {
-        $this->signedLabel->removeElement($signedLabel);
+        return $this->signedLabel->removeElement($signedLabel);
     }
 
     /**
-     * Get signedLabel
+     * Get signedLabel.
      *
-     * @return ArrayCollection
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getSignedLabel(): ArrayCollection
+    public function getSignedLabel()
     {
         return $this->signedLabel;
     }

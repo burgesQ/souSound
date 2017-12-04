@@ -116,6 +116,15 @@ class User extends BaseUser
     private $playlists;
 
     /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(
+     *     targetEntity="App\Entity\DownloadUtil",
+     *     mappedBy="user"
+     * )
+     */
+    private $downloadUtils;
+
+    /**
      * User constructor.
      *
      * @param string $fName
@@ -125,15 +134,13 @@ class User extends BaseUser
     {
         parent::__construct();
 
-        $this->id           = -1;
-        $this->firstName    = $fName;
-        $this->lastName     = $lName;
-
-        $this->creationDate = new \Datetime();
-        $this->updateDate   = new \Datetime();
-
-        $this->playlists    = new ArrayCollection();
-        $this->addPlaylist(new Playlist("Like"));
+        $this->id            = -1;
+        $this->firstName     = $fName;
+        $this->lastName      = $lName;
+        $this->creationDate  = new \Datetime();
+        $this->updateDate    = new \Datetime();
+        $this->playlists     = new ArrayCollection();
+        $this->downloadUtils = new ArrayCollection();
     }
 
     /**
@@ -153,7 +160,7 @@ class User extends BaseUser
     }
 
     /**
-     * Get id
+     * get Id
      *
      * @return int
      */
@@ -179,31 +186,7 @@ class User extends BaseUser
     }
 
     /**
-     * Get creationDate
-     *
-     * @return \DateTime
-     */
-    public function getCreationDate(): \DateTime
-    {
-        return $this->creationDate;
-    }
-
-    /**
-     * Set creationDate
-     *
-     * @param \DateTime $creationDate
-     *
-     * @return User
-     */
-    public function setCreationDate(\DateTime $creationDate): User
-    {
-        $this->creationDate = $creationDate;
-
-        return $this;
-    }
-
-    /**
-     * Get updateDate
+     * Get UpdateDate
      *
      * @return \DateTime
      */
@@ -213,7 +196,7 @@ class User extends BaseUser
     }
 
     /**
-     * Set updateDate
+     * SEt UpdateDate
      *
      * @param \DateTime $updateDate
      *
@@ -227,7 +210,7 @@ class User extends BaseUser
     }
 
     /**
-     * Get firstName
+     * get FirstName
      *
      * @return string
      */
@@ -237,7 +220,7 @@ class User extends BaseUser
     }
 
     /**
-     * Set firstName
+     * Set FirstName
      *
      * @param string $firstName
      *
@@ -251,7 +234,7 @@ class User extends BaseUser
     }
 
     /**
-     * Get lastName
+     * get LastName
      *
      * @return string
      */
@@ -261,7 +244,7 @@ class User extends BaseUser
     }
 
     /**
-     * Set lastName
+     * Set LastName
      *
      * @param string $lastName
      *
@@ -275,37 +258,98 @@ class User extends BaseUser
     }
 
     /**
-     * Add playlist
+     * Get creationDate.
      *
-     * @param \App\Entity\Playlist$playlist
+     * @return \DateTime
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    /**
+     * Set creationDate.
+     *
+     * @param \DateTime $creationDate
      *
      * @return User
      */
-    public function addPlaylist(Playlist $playlist) : User
+    public function setCreationDate($creationDate)
     {
-        $playlist->setOwner($this);
+        $this->creationDate = $creationDate;
+
+        return $this;
+    }
+
+    /**
+     * Add playlist.
+     *
+     * @param \App\Entity\Playlist $playlist
+     *
+     * @return User
+     */
+    public function addPlaylist(\App\Entity\Playlist $playlist)
+    {
         $this->playlists[] = $playlist;
 
         return $this;
     }
 
     /**
-     * Remove playlist
+     * Remove playlist.
      *
      * @param \App\Entity\Playlist $playlist
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removePlaylist(Playlist $playlist)
+    public function removePlaylist(\App\Entity\Playlist $playlist)
     {
-        $this->playlists->removeElement($playlist);
+        return $this->playlists->removeElement($playlist);
     }
 
     /**
-     * Get playlists
+     * Get playlists.
      *
-     * @return ArrayCollection
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getPlaylists() : ArrayCollection
+    public function getPlaylists()
     {
         return $this->playlists;
+    }
+
+    /**
+     * Add downloadUtil
+     *
+     * @param \App\Entity\DownloadUtil $downloadUtil
+     *
+     * @return User
+     */
+    public function addDownloadUtil(\App\Entity\DownloadUtil $downloadUtil)
+    {
+        $this->downloadUtils[] = $downloadUtil;
+        $downloadUtil->setUser($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove downloadUtil
+     *
+     * @param \App\Entity\DownloadUtil $downloadUtil
+     */
+    public function removeDownloadUtil(\App\Entity\DownloadUtil $downloadUtil)
+    {
+        $this->downloadUtils->removeElement($downloadUtil);
+        $downloadUtil->setUser(null);
+    }
+
+    /**
+     * Get downloadUtils
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDownloadUtils()
+    {
+        return $this->downloadUtils;
     }
 }

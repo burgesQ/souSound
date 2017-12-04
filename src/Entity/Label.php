@@ -57,7 +57,17 @@ class Label
     private $updateDate;
 
     /**
-     * @var ArrayCollection
+     * @var \DateTime
+     * @ORM\Column(
+     *     name="start_date",
+     *     type="datetime",
+     *     nullable=true
+     * )
+     */
+    private $startDate;
+
+    /**
+     * @var \App\Entity\Playlist
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\Track",
      *     mappedBy="label",
@@ -68,8 +78,10 @@ class Label
 
     /**
      * @var ArrayCollection
-     * @ORM\ManyToMany(
-     *     targetEntity="App\Entity\Playlist"
+     * @ORM\OneToMany(
+     *     targetEntity="App\Entity\Album",
+     *     mappedBy="label",
+     *     cascade={"persist"}
      * )
      */
     private $albums;
@@ -81,22 +93,17 @@ class Label
      * )
      */
     private $artists;
-//
-//    /**
-//     * @var \DateTime
-//     * @ORM\Column(
-//     *     name="release_date",
-//     *     type="datetime",
-//     *     nullable=true
-//     * )
-//     */
-//    private $releaseDate;
-
-    # $startDate
-    # $events
 
     /**
-     * User constructor.
+     * @var Artist
+     * @ORM\OneToOne(
+     *     targetEntity="Artist"
+     * )
+     */
+    private $producer;
+
+    /**
+     * Label constructor.
      *
      * @param string $label
      */
@@ -106,9 +113,12 @@ class Label
         $this->label        = $label;
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
-        $this->tracks       = new ArrayCollection();
-        $this->albums       = new ArrayCollection();
-        $this->artists      = new ArrayCollection();
+
+        // $this->startDate
+        // $this->tracks
+        // $this->albums
+        // $this->artists
+        // this->producer
     }
 
     /**
@@ -128,81 +138,23 @@ class Label
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
 
     /**
-     * Get creationDate
-     *
-     * @return \DateTime
-     */
-    public function getCreationDate(): \DateTime
-    {
-        return $this->creationDate;
-    }
-
-    /**
-     * Set creationDate
-     *
-     * @param \DateTime $creationDate
-     *
-     * @return Label
-     */
-    public function setCreationDate(\DateTime $creationDate): Label
-    {
-        $this->creationDate = $creationDate;
-
-        return $this;
-    }
-
-    /**
-     * Get updateDate
-     *
-     * @return \DateTime
-     */
-    public function getUpdateDate(): \DateTime
-    {
-        return $this->updateDate;
-    }
-
-    /**
-     * Set updateDate
-     *
-     * @param \DateTime $updateDate
-     *
-     * @return Label
-     */
-    public function setUpdateDate(\DateTime $updateDate): Label
-    {
-        $this->updateDate = $updateDate;
-
-        return $this;
-    }
-
-    /**
-     * Get Label
-     *
-     * @return string
-     */
-    public function getLabel(): string
-    {
-        return $this->label;
-    }
-
-    /**
-     * Set Label
+     * Set label.
      *
      * @param string $label
      *
      * @return Label
      */
-    public function setLabel(string $label): Label
+    public function setLabel($label)
     {
         $this->label = $label;
 
@@ -210,13 +162,95 @@ class Label
     }
 
     /**
-     * Add track
+     * Get label.
      *
-     * @param Track $track
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
+     * Set creationDate.
+     *
+     * @param \DateTime $creationDate
      *
      * @return Label
      */
-    public function addTrack(Track $track): Label
+    public function setCreationDate($creationDate)
+    {
+        $this->creationDate = $creationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get creationDate.
+     *
+     * @return \DateTime
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    /**
+     * Set updateDate.
+     *
+     * @param \DateTime $updateDate
+     *
+     * @return Label
+     */
+    public function setUpdateDate($updateDate)
+    {
+        $this->updateDate = $updateDate;
+
+        return $this;
+    }
+
+    /**
+     * Get updateDate.
+     *
+     * @return \DateTime
+     */
+    public function getUpdateDate()
+    {
+        return $this->updateDate;
+    }
+
+    /**
+     * Set startDate.
+     *
+     * @param \DateTime|null $startDate
+     *
+     * @return Label
+     */
+    public function setStartDate($startDate = null)
+    {
+        $this->startDate = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * Get startDate.
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDate()
+    {
+        return $this->startDate;
+    }
+
+    /**
+     * Add track.
+     *
+     * @param \App\Entity\Track $track
+     *
+     * @return Label
+     */
+    public function addTrack(\App\Entity\Track $track)
     {
         $this->tracks[] = $track;
 
@@ -224,67 +258,35 @@ class Label
     }
 
     /**
-     * Remove track
+     * Remove track.
      *
-     * @param Track $track
+     * @param \App\Entity\Track $track
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeTrack(Track $track)
+    public function removeTrack(\App\Entity\Track $track)
     {
-        $this->tracks->removeElement($track);
+        return $this->tracks->removeElement($track);
     }
 
     /**
-     * Get tracks
+     * Get tracks.
      *
-     * @return ArrayCollection
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getTracks(): ArrayCollection
+    public function getTracks()
     {
         return $this->tracks;
     }
 
     /**
-     * Add Artist
-     *
-     * @param \App\Entity\Artist $artist
-     *
-     * @return Label
-     */
-    public function addArtist(Artist $artist): Label
-    {
-        $this->artists[] = $artist;
-
-        return $this;
-    }
-
-    /**
-     * Remove Artist
-     *
-     * @param \App\Entity\Artist $artist
-     */
-    public function removeArtist(Artist $artist)
-    {
-        $this->artists->removeElement($artist);
-    }
-
-    /**
-     * Get Artists
-     *
-     * @return ArrayCollection
-     */
-    public function getArtistes(): ArrayCollection
-    {
-        return $this->artists;
-    }
-
-    /**
-     * Add album
+     * Add album.
      *
      * @param \App\Entity\Album $album
      *
      * @return Label
      */
-    public function addAlbum(Album $album): Label
+    public function addAlbum(\App\Entity\Album $album)
     {
         $this->albums[] = $album;
 
@@ -292,32 +294,84 @@ class Label
     }
 
     /**
-     * Remove album
+     * Remove album.
      *
      * @param \App\Entity\Album $album
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeAlbum(Album $album)
+    public function removeAlbum(\App\Entity\Album $album)
     {
-        $this->albums->removeElement($album);
+        return $this->albums->removeElement($album);
     }
 
     /**
-     * Get albums
+     * Get albums.
      *
-     * @return ArrayCollection
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getAlbums(): ArrayCollection
+    public function getAlbums()
     {
         return $this->albums;
     }
 
     /**
-     * Get artists
+     * Add artist.
+     *
+     * @param \App\Entity\Artist $artist
+     *
+     * @return Label
+     */
+    public function addArtist(\App\Entity\Artist $artist)
+    {
+        $this->artists[] = $artist;
+
+        return $this;
+    }
+
+    /**
+     * Remove artist.
+     *
+     * @param \App\Entity\Artist $artist
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeArtist(\App\Entity\Artist $artist)
+    {
+        return $this->artists->removeElement($artist);
+    }
+
+    /**
+     * Get artists.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getArtists()
     {
         return $this->artists;
+    }
+
+    /**
+     * Set producer.
+     *
+     * @param \App\Entity\Artist|null $producer
+     *
+     * @return Label
+     */
+    public function setProducer(\App\Entity\Artist $producer = null)
+    {
+        $this->producer = $producer;
+
+        return $this;
+    }
+
+    /**
+     * Get producer.
+     *
+     * @return \App\Entity\Artist|null
+     */
+    public function getProducer()
+    {
+        return $this->producer;
     }
 }

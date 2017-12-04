@@ -2,13 +2,12 @@
 
 namespace App\DataFixtures\ORM;
 
-use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use App\Entity\User;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\Persistence\ObjectManager;
 
-class LoadUserFixtures extends Fixture
+class LoadUserFixtures extends AbstractFixture
 {
-
     /**
      * Array of the different users.
      *
@@ -16,11 +15,16 @@ class LoadUserFixtures extends Fixture
      */
     private $userArray = [
         [
-            "fName"    => "turlu",
-            "lName"    => "tutu",
-            "email"    => "turlu@tutu.com",
+            "fName"    => "Kyu",
+            "lName"    => "Bee",
+            "email"    => "kyu@be.com",
             "password" => "password",
-            "roles"    => ["ROLE_ADMIN", "ROLE_USER"]
+            "roles"    => ["ROLE_ADMIN", "ROLE_USER"],
+            "dl_utils" => [
+                1 => "youtube_like",
+                2 => "soundcloud_like",
+                3 => "soundcloud_playlist"
+            ]
         ]
     ];
 
@@ -39,10 +43,27 @@ class LoadUserFixtures extends Fixture
                 ->setPlainPassword($oneUser['password'])
                 ->setEmail($oneUser['email'])
                 ->setEnabled(true)
-                ->setRoles($oneUser['roles'])
-            ;
+                ->setRoles($oneUser['roles']);
+
+            /** @var string $oneDlTools */
+            foreach ($oneUser['dl_utils'] as $oneDlTools) {
+                $user->addDownloadUtil($this->getReference($oneDlTools));
+            }
+
+            dump($user->getDownloadUtils()->count());
             $em->persist($user);
         }
+
         $em->flush();
+    }
+
+    /**
+     * Loading order of the fixture.
+     *
+     * @return int
+     */
+    function getOrder()
+    {
+        return 2;
     }
 }
