@@ -2,6 +2,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    dl_base_path: '%env(DOWNLOAD_BASE_PATH)%'
 
 services:
     # default configuration for services in *this* file
@@ -21,6 +22,9 @@ services:
         # you can exclude directories or files
         # but if a service is unused, it's removed anyway
         exclude: '../src/{Entity,Migrations,Tests}'
+
+    App\Command\AppGetSoundCommand:
+        arguments: ['%dl_base_path%']
 
     # controllers are imported separately to make sure they
     # have the tag that allows actions to type-hint services
