@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf33b7e7-4edf-4906-8196-3ea0a5cc9bd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/translations/validators.en.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/packages/easy_admin/album.yaml" afterPath="$PROJECT_DIR$/config/packages/easy_admin/album.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/packages/easy_admin/ui.yaml" afterPath="$PROJECT_DIR$/config/packages/easy_admin/ui.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/packages/easy_admin/user.yaml" afterPath="$PROJECT_DIR$/config/packages/easy_admin/user.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/packages/security.yaml" afterPath="$PROJECT_DIR$/config/packages/security.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.yaml" afterPath="$PROJECT_DIR$/config/routes.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/genDb" afterPath="$PROJECT_DIR$/script/genDb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Command/AppSouSoundScrapCommand.php" afterPath="$PROJECT_DIR$/src/Command/AppSouSoundScrapCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Album.php" afterPath="$PROJECT_DIR$/src/Entity/Album.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Artist.php" afterPath="$PROJECT_DIR$/src/Entity/Artist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/DownloadUtil.php" afterPath="$PROJECT_DIR$/src/Entity/DownloadUtil.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Label.php" afterPath="$PROJECT_DIR$/src/Entity/Label.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Playlist.php" afterPath="$PROJECT_DIR$/src/Entity/Playlist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Track.php" afterPath="$PROJECT_DIR$/src/Entity/Track.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/User.php" afterPath="$PROJECT_DIR$/src/Entity/User.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,7 +47,7 @@
             <entry file="file://$PROJECT_DIR$/src/Entity/Album.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="340">
-                  <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+                  <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -75,11 +60,9 @@
           <file leaf-file-name="ui.yaml" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config/packages/easy_admin/ui.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="55" lean-forward="false" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
-                  <folding>
-                    <marker date="1512503274700" expanded="true" signature="0:1114" ph="easy_admin: &lt;3 keys&gt;" />
-                  </folding>
+                <state relative-caret-position="408">
+                  <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -186,7 +169,6 @@
         <option value="$PROJECT_DIR$/config/translations/validators.en.yaml" />
         <option value="$PROJECT_DIR$/src/Command/AppSouSoundScrapCommand.php" />
         <option value="$PROJECT_DIR$/config/packages/easy_admin/user.yaml" />
-        <option value="$PROJECT_DIR$/config/packages/easy_admin/ui.yaml" />
         <option value="$PROJECT_DIR$/src/Entity/DownloadUtil.php" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/Entity/Playlist.php" />
@@ -194,6 +176,7 @@
         <option value="$PROJECT_DIR$/src/Entity/Label.php" />
         <option value="$PROJECT_DIR$/src/Entity/Artist.php" />
         <option value="$PROJECT_DIR$/src/Entity/Album.php" />
+        <option value="$PROJECT_DIR$/config/packages/easy_admin/ui.yaml" />
       </list>
     </option>
   </component>
@@ -450,12 +433,12 @@
       <workItem from="1512381338659" duration="4219000" />
       <workItem from="1512402163282" duration="13000" />
       <workItem from="1512405577438" duration="7432000" />
-      <workItem from="1512477733626" duration="25523000" />
+      <workItem from="1512477733626" duration="25948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80494000" />
+    <option name="totallyTimeSpent" value="80919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1920" height="1026" extended-state="6" />
@@ -1171,16 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/easy_admin/ui.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="55" lean-forward="false" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
-          <folding>
-            <marker date="1512503274700" expanded="true" signature="0:1114" ph="easy_admin: &lt;3 keys&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/easy_admin/user.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1608,7 +1581,15 @@
     <entry file="file://$PROJECT_DIR$/src/Entity/Album.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/easy_admin/ui.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
           <folding />
         </state>
       </provider>
