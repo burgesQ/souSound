@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lan="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
+
         {% if form is defined %}
-            {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+            {% form_theme form 'bootstrap_4_layout.html.twig' %}
         {% endif %}
+
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
     {% endblock %}
 </head>
 <body>
-
-    {% block header %}
-        {% include "headers.html.twig" %}
-    {% endblock %}
-
-    {% block body %}{% endblock %}
-
-    {% block javascripts %}{% endblock %}
+{% block header %}
+    {% include "headers.html.twig" %}
+{% endblock %}
+{% block body %}{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('build/app.js') }}"></script>
+{% endblock %}
 </body>
 </html>

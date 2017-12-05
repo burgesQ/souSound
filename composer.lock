@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e42920300d71ff978bf742dad2fd8070",
+    "content-hash": "1cf5d6d859572abcb541a250a6e41ad8",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -3911,6 +3911,28 @@
             "description": "Symfony WebServerBundle",
             "homepage": "https://symfony.com",
             "time": "2017-11-19T21:22:53+00:00"
+        },
+        {
+            "name": "symfony/webpack-encore-pack",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/webpack-encore-pack.git",
+                "reference": "4c3874189d3f4a76b039833efa104940c01f0bae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/webpack-encore-pack/zipball/4c3874189d3f4a76b039833efa104940c01f0bae",
+                "reference": "4c3874189d3f4a76b039833efa104940c01f0bae",
+                "shasum": ""
+            },
+            "type": "metapackage",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A pack for Symfony Encore",
+            "time": "2017-09-11T13:27:25+00:00"
         },
         {
             "name": "symfony/yaml",

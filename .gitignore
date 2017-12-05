@@ -11,3 +11,7 @@
 ###> sou/sound ###
 /sounds
 ###< sou/sound ###
+
+###> symfony/webpack-encore-pack ###
+/node_modules/
+###< symfony/webpack-encore-pack ###

@@ -1,9 +1,2 @@
-easy_admin:
-    entities:
-        - App\Entity\Album
-        - App\Entity\Artist
-        - App\Entity\DownloadUtil
-        - App\Entity\Label
-        - App\Entity\Playlist
-        - App\Entity\Track
-        - App\Entity\User
+imports:
+    - { resource: easy_admin/ }

@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    {% set user = app.user %}
+
+    <div class="container">
+        <h2>
+            Hello {{ user.firstName }} {{ user.lastName }}
+        </h2>
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Your playlist
+                </div>
+                <div class="panel-body">
+                    <div class=" list-group">
+                        {% for playlist in user.playlists %}
+                            <a href="#" class="list-group-item">
+                                {{ playlist.playlist }}
+                                <span class="badge">
+                                    nb Tracks
+                                </span>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
