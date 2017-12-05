@@ -95,7 +95,6 @@ class Album
      */
     public function __construct(string $album = "")
     {
-        $this->id           = -1;
         $this->album        = $album;
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();

@@ -142,6 +142,16 @@ class DownloadUtil
     }
 
     /**
+     * To string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    /**
      * Return the cmd to run
      *
      * @return string
@@ -347,9 +357,9 @@ class DownloadUtil
     /**
      * Get output
      *
-     * @return string
+     * @return string|null
      */
-    public function getOutput() : string
+    public function getOutput()
     {
         return $this->output;
     }

@@ -1,0 +1,25 @@
+easy_admin:
+    site_name: 'SouSound'
+    formats:
+        date: 'm/d/Y'
+        datetime: 'm/d/Y H:i:s'
+    design:
+        color_scheme: 'dark'
+        brand_color: '#8b0000'
+    list:
+        actions:
+            - { name: 'show', icon: 'search', label: '' }
+            - { name: 'edit', icon: 'pencil', label: '' }
+            - { name: '-delete' }
+
+#        menu:
+#            - { entity: 'Certification', label: 'Certifications', icon: square }
+#            - { entity: 'Preregister', label: 'Preregisters', icon: square }
+#            - { entity: 'Company', label: 'Companies', icon: square }
+#            - { entity: 'Inspector', label: 'Inspectors', icon: square }
+#            - { entity: 'Mission', label: 'Missions', icon: square }
+#            - { entity: 'Contractor', label: 'Contractors', icon: square }
+#            - { entity: 'Advisor', label: 'Advisors', icon: square }
+#            - { entity: 'WorkExp', label: 'Work Experience', icon: square }
+#            - { entity: 'UserMission', label: 'User Mission', icon: square }
+#            - { entity: 'Contact', label: 'Contact', icon: square }

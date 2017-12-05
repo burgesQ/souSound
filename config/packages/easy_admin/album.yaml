@@ -1,3 +1,18 @@
 easy_admin:
     entities:
-        - App\Entity\Album
+        Album:
+            class: 'App\Entity\Album'
+            label: 'Albums'
+            list:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'firstName' }
+                    - { property: 'lastName' }
+                    - { property: 'email' }
+                    - { property: 'lastLogin' }
+            form:
+                fields:
+                    - { property: 'firstName' }
+                    - { property: 'lastName' }
+                    - { property: 'email' }
+                    - { property: 'plainPassword' }

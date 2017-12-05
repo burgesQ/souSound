@@ -109,7 +109,6 @@ class Label
      */
     public function __construct(string $label = "")
     {
-        $this->id           = -1;
         $this->label        = $label;
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();

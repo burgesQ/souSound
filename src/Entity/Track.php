@@ -105,7 +105,6 @@ class Track
      */
     public function __construct(string $trackName = "")
     {
-        $this->id           = -1;
         $this->trackName    = $trackName;
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();

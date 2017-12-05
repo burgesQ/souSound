@@ -114,7 +114,6 @@ class Playlist
      */
     public function __construct(string $playlist = "")
     {
-        $this->id           = -1;
         $this->playlist     = $playlist;
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
@@ -125,6 +124,16 @@ class Playlist
         // $this->isAlbum
         // this->album
         // $this->owner
+    }
+
+    /**
+     * To string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->playlist;
     }
 
     /**

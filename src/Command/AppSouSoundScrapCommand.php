@@ -73,7 +73,7 @@ class AppSouSoundScrapCommand extends Command
 
                 if ($util->getPlaylist() === null) {
                     $io->comment('Creation playlist for util ' . $util->getName());
-                    $playlist = new Playlist($util->getName() . $user->getId());
+                    $playlist = new Playlist($util->getName() . '_user_' . $user->getId());
                     $this->em->persist($playlist);
                     $this->em->flush($playlist);
 

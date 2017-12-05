@@ -1,0 +1,13 @@
+password:
+    lowercase: 'A lowercase is required.'
+    uppercase: 'A uppercase is required.'
+    number: 'A number is required.'
+    exotic: 'A exotic char is required.'
+
+first_name:
+    number_in_name: 'The first name cannot contain a number.'
+    exotic: 'The first name cannot contain special char.'
+
+last_name:
+    number_in_name: 'The last name cannot contain a number.'
+    exotic: 'The last name cannot contain special char.'

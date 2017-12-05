@@ -38,69 +38,82 @@ class User extends BaseUser
      * @var string
      *
      * @Assert\Regex(
-     *  pattern="/^(?=.*[a-z])/",
-     *  message="please a lowercase"
+     *     pattern="/^(?=.*[a-z])/",
+     *     message="password.lowercase"
      * )
      * @Assert\Regex(
-     *  pattern="/^(?=.*[A-Z])/",
-     *  message="Please a uppercase"
+     *     pattern="/^(?=.*[A-Z])/",
+     *     message="password.uppercase"
      * )
      * @Assert\Regex(
-     *  pattern="/^(?=.*\d)/",
-     *  message="Please a number"
+     *     pattern="/^(?=.*\d)/",
+     *     message="password.number"
      * )
      * @Assert\Regex(
-     *  pattern="/^(?=.*\W)/",
-     *  message="Please a special char"
+     *     pattern="/^(?=.*\W)/",
+     *     message="password.exotic"
      * )
-     * @Assert\NotBlank(
-     *  message="Not Blank",
-     * )
-     * @Assert\Length(
-     *  min=8,
-     *  minMessage="Password to short",
-     * )
+     * @Assert\NotBlank()
+     * @Assert\Length(min=8)
      */
     protected $plainPassword;
 
     /**
      * @var \DateTime
-     * @ORM\Column(name="creation_date", type="datetime", nullable=false)
+     * @ORM\Column(
+     *     name="creation_date",
+     *     type="datetime",
+     *     nullable=false
+     * )
      */
     private $creationDate;
 
     /**
      * @var \DateTime
-     * @ORM\Column(name="update_date", type="datetime", nullable=false)
+     * @ORM\Column(
+     *     name="update_date",
+     *     type="datetime",
+     *     nullable=false
+     * )
      */
     private $updateDate;
 
     /**
      * @var string
-     * @ORM\Column(name="first_name", type="string", nullable=false)
+     * @ORM\Column(
+     *     name="first_name",
+     *     type="string",
+     *     nullable=false
+     * )
      * @Assert\Regex(
      *     pattern="/\d/",
      *     match=false,
-     *     message="security.format.number_in_name"
+     *     message="first_name.number_in_name"
      * )
      * @Assert\Regex(
-     *  pattern="/^(?=.*\W)/",
-     *  message="security.format.exotic"
+     *     pattern="/\W/",
+     *     match=false,
+     *     message="first_name.exotic"
      * )
      */
     private $firstName;
 
     /**
      * @var string
-     * @ORM\Column(name="last_name", type="string", nullable=false)
+     * @ORM\Column(
+     *     name="last_name",
+     *     type="string",
+     *     nullable=false
+     * )
      * @Assert\Regex(
      *     pattern="/\d/",
      *     match=false,
-     *     message="security.format.number_in_name"
+     *     message="last_name.number_in_name"
      * )
      * @Assert\Regex(
-     *  pattern="/^(?=.*\W)/",
-     *  message="security.format.exotic"
+     *     pattern="/\W/",
+     *     match=false,
+     *     message="last_name.exotic"
      * )
      */
     private $lastName;
@@ -134,7 +147,6 @@ class User extends BaseUser
     {
         parent::__construct();
 
-        $this->id            = -1;
         $this->firstName     = $fName;
         $this->lastName      = $lName;
         $this->creationDate  = new \Datetime();
