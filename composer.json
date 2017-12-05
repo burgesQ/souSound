@@ -10,6 +10,7 @@
         "symfony/console": "^3.3",
         "symfony/framework-bundle": "^3.3",
         "symfony/maker-bundle": "^1.0@dev",
+        "symfony/profiler-pack": "^1.0",
         "symfony/var-dumper": "^3.3",
         "symfony/web-server-bundle": "^3.3",
         "symfony/yaml": "^3.3"
