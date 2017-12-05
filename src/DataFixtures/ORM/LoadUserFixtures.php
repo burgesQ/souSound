@@ -50,7 +50,6 @@ class LoadUserFixtures extends AbstractFixture
                 $user->addDownloadUtil($this->getReference($oneDlTools));
             }
 
-            dump($user->getDownloadUtils()->count());
             $em->persist($user);
         }
 

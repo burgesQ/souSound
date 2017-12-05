@@ -1,7 +1,6 @@
 
     Entities :
      - [x] User Entity
-       - [] auto like playlist
      - [X] Tracks
        - [] Mix Meta
        - [] info
@@ -35,14 +34,8 @@
      - [] Kind
 
     Sf command :
-     - [] Helper transformable
-       - [] Open Dir
-       - [] Index / filter files
-       - [] Create Entity from mp3
-       - [] MoveThatShit
-     - [] transform from soundCloud dir
-     - [] transform form youTube dir
-     - [] transform from extra dir
+     - [] Options
+     - [] ScrapCmd
      - [x] DownlaodCmd
 
     CRONTab manager :

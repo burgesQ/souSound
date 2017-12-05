@@ -113,6 +113,25 @@ class DownloadUtil
     private $password;
 
     /**
+     * @var string
+     * @ORM\Column(
+     *     name="output",
+     *     type="text",
+     *     nullable=true
+     * )
+     */
+    private $output;
+
+    /**
+     * @var \App\Entity\Playlist
+     * @ORM\OneToOne(
+     *     targetEntity="App\Entity\Playlist",
+     *     cascade={"persist"}
+     * )
+     */
+    private $playlist;
+
+    /**
      * DownloadUtil constructor.
      *
      * @param string $name
@@ -309,5 +328,54 @@ class DownloadUtil
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set output
+     *
+     * @param string $output
+     *
+     * @return DownloadUtil
+     */
+    public function setOutput($output)
+    {
+        $this->output = $output;
+
+        return $this;
+    }
+
+    /**
+     * Get output
+     *
+     * @return string
+     */
+    public function getOutput() : string
+    {
+        return $this->output;
+    }
+
+    /**
+     * Set playlist
+     *
+     * @param \App\Entity\Playlist $playlist
+     *
+     * @return DownloadUtil
+     */
+    public function setPlaylist(\App\Entity\Playlist $playlist = null)
+    {
+        $playlist->setDownloadUtil($this);
+        $this->playlist = $playlist;
+
+        return $this;
+    }
+
+    /**
+     * Get playlist
+     *
+     * @return \App\Entity\Playlist
+     */
+    public function getPlaylist()
+    {
+        return $this->playlist;
     }
 }

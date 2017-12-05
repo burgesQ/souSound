@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf33b7e7-4edf-4906-8196-3ea0a5cc9bd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/test/web_profiler.yaml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/routes/dev/web_profiler.yaml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Command/AppGetSoundCommand.php" afterPath="$PROJECT_DIR$/src/Command/AppSouSoundGetCommand.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Command/AppScrapDirCommand.php" afterPath="$PROJECT_DIR$/src/Command/AppSouSoundScrapCommand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/master.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/master.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.md" afterPath="$PROJECT_DIR$/TODO.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.yaml" afterPath="$PROJECT_DIR$/config/services.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Command/AppGetSoundCommand.php" afterPath="$PROJECT_DIR$/src/Command/AppGetSoundCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DataFixtures/ORM/LoadDownloadUtils.php" afterPath="$PROJECT_DIR$/src/DataFixtures/ORM/LoadDownloadUtils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DataFixtures/ORM/LoadUserFixtures.php" afterPath="$PROJECT_DIR$/src/DataFixtures/ORM/LoadUserFixtures.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/DownloadUtil.php" afterPath="$PROJECT_DIR$/src/Entity/DownloadUtil.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Playlist.php" afterPath="$PROJECT_DIR$/src/Entity/Playlist.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/User.php" afterPath="$PROJECT_DIR$/src/Entity/User.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,14 +50,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AppGetSoundCommand.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Command/AppGetSoundCommand.php">
+      <file leaf-file-name="AppSouSoundScrapCommand.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Command/AppSouSoundScrapCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="803">
-              <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+            <state relative-caret-position="128">
+              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
               <folding>
-                <element signature="e#31#71#0#PHP" expanded="true" />
-                <element signature="e#1848#1858#1#PHP" expanded="true" />
+                <element signature="e#1778#1788#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,6 +93,11 @@
       <find>parseToken</find>
       <find>staticReflection</find>
       <find>Utils</find>
+      <find>getout</find>
+      <find>play</find>
+      <find>OneTo</find>
+      <find>addPla</find>
+      <find>setPLa</find>
     </findStrings>
     <replaceStrings>
       <replace>dockersymfony</replace>
@@ -136,24 +141,26 @@
         <option value="$PROJECT_DIR$/src/Entity/Track.php" />
         <option value="$PROJECT_DIR$/src/Entity/Label.php" />
         <option value="$PROJECT_DIR$/src/Command/AppAppGetSoundCommand.php" />
-        <option value="$PROJECT_DIR$/src/Command/AppScrapDirCommand.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Playlist.php" />
         <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle/Mapping/DisconnectedMetadataFactory.php" />
         <option value="$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Tools/EntityGenerator.php" />
         <option value="$PROJECT_DIR$/src/Entity/DownloadUtils.php" />
         <option value="$PROJECT_DIR$/script/genDb" />
-        <option value="$PROJECT_DIR$/src/DataFixtures/ORM/LoadUserFixtures.php" />
-        <option value="$PROJECT_DIR$/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/TODO.md" />
         <option value="$PROJECT_DIR$/config/packages/easy_admin.yaml" />
-        <option value="$PROJECT_DIR$/src/Entity/DownloadUtil.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/ORM/LoadDownloadUtils.php" />
-        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/TODO.md" />
         <option value="$PROJECT_DIR$/src/Command/AppGetSoundCommand.php" />
+        <option value="$PROJECT_DIR$/src/Command/AppScrapDirCommand.php" />
+        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/src/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/Command/AppSouSoundGetCommand.php" />
+        <option value="$PROJECT_DIR$/src/Entity/DownloadUtil.php" />
+        <option value="$PROJECT_DIR$/src/DataFixtures/ORM/LoadUserFixtures.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Playlist.php" />
+        <option value="$PROJECT_DIR$/src/Command/AppSouSoundScrapCommand.php" />
       </list>
     </option>
   </component>
@@ -340,9 +347,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Command" />
       <recent name="$PROJECT_DIR$/src/DataFixtures/ORM" />
       <recent name="$PROJECT_DIR$/src/Entity" />
-      <recent name="$PROJECT_DIR$/src/Command" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -397,18 +404,17 @@
       <workItem from="1512381338659" duration="4219000" />
       <workItem from="1512402163282" duration="13000" />
       <workItem from="1512405577438" duration="7432000" />
-      <workItem from="1512477733626" duration="3581000" />
+      <workItem from="1512477733626" duration="6115000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58552000" />
+    <option name="totallyTimeSpent" value="61086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1920" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13927428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13927428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -441,20 +447,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DataFixtures/ORM/LoadUser.php" />
     <entry file="file://$PROJECT_DIR$/vendor/javiereguiluz/easyadmin-bundle/src/Controller/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -630,21 +622,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Use.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Command/AppAppGetSoundCommand.php" />
-    <entry file="file://$PROJECT_DIR$/src/Entity/Playlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3863">
-          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/doctrine/doctrine-bundle/Command/GenerateEntitiesDoctrineCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -681,83 +659,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="327" column="5" lean-forward="true" selection-start-line="327" selection-start-column="5" selection-end-line="327" selection-end-column="5" />
-          <folding>
-            <marker date="1512409433982" expanded="true" signature="34:276" ph="..." />
-            <marker date="1512409433982" expanded="true" signature="281:400" ph=" Class User ..." />
-            <marker date="1512409433982" expanded="true" signature="430:7134" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="440:567" ph=" @var int ..." />
-            <marker date="1512409433982" expanded="true" signature="597:655" ph=" @var string ..." />
-            <marker date="1512409433982" expanded="true" signature="688:1272" ph=" @var string ..." />
-            <marker date="1512409433982" expanded="true" signature="1313:1415" ph=" @var \DateTime ..." />
-            <marker date="1512409433982" expanded="true" signature="1453:1553" ph=" @var \DateTime ..." />
-            <marker date="1512409433982" expanded="true" signature="1589:1920" ph=" @var string ..." />
-            <marker date="1512409433982" expanded="true" signature="1955:2285" ph=" @var string ..." />
-            <marker date="1512409433982" expanded="true" signature="2319:2492" ph=" @var ArrayCollection ..." />
-            <marker date="1512409433982" expanded="true" signature="2527:2671" ph=" @var ArrayCollection ..." />
-            <marker date="1512409433982" expanded="true" signature="2710:2804" ph=" User constructor. ..." />
-            <marker date="1512409433982" expanded="true" signature="2878:3239" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="3248:3276" ph=" @ORM\PreUpdate ..." />
-            <marker date="1512409433982" expanded="true" signature="3311:3370" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="3379:3458" ph=" @Assert\Callback ..." />
-            <marker date="1512409433982" expanded="true" signature="3527:3539" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="3548:3594" ph=" get Id ..." />
-            <marker date="1512409433982" expanded="true" signature="3629:3667" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="3676:3761" ph=" Set email ..." />
-            <marker date="1512409433982" expanded="true" signature="3806:3959" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="3968:4028" ph=" Get UpdateDate ..." />
-            <marker date="1512409433982" expanded="true" signature="4077:4123" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="4132:4230" ph=" SEt UpdateDate ..." />
-            <marker date="1512409433982" expanded="true" signature="4295:4371" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="4380:4436" ph=" get FirstName ..." />
-            <marker date="1512409433982" expanded="true" signature="4481:4526" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="4535:4628" ph=" Set FirstName ..." />
-            <marker date="1512409433982" expanded="true" signature="4688:4762" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="4771:4826" ph=" get LastName ..." />
-            <marker date="1512409433982" expanded="true" signature="4870:4914" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="4923:5014" ph=" Set LastName ..." />
-            <marker date="1512409433982" expanded="true" signature="5072:5144" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="5153:5216" ph=" Get creationDate. ..." />
-            <marker date="1512409433982" expanded="true" signature="5256:5304" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="5313:5416" ph=" Set creationDate. ..." />
-            <marker date="1512409433982" expanded="true" signature="5469:5549" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="5558:5664" ph=" Add playlist. ..." />
-            <marker date="1512409433982" expanded="true" signature="5730:5805" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="5814:6000" ph=" Remove playlist. ..." />
-            <marker date="1512409433982" expanded="true" signature="6069:6140" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="6149:6239" ph=" Get playlists. ..." />
-            <marker date="1512409433982" expanded="true" signature="6276:6321" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="6330:6447" ph=" Add downloadUtil ..." />
-            <marker date="1512409433982" expanded="true" signature="6525:6647" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="6656:6749" ph=" Remove downloadUtil ..." />
-            <marker date="1512409433982" expanded="true" signature="6830:6940" ph="{...}" />
-            <marker date="1512409433982" expanded="true" signature="6949:7042" ph=" Get downloadUtils ..." />
-            <marker date="1512409433982" expanded="true" signature="7083:7132" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="270">
             <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-            <folding />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="15">
-            <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor>
@@ -780,31 +686,6 @@
             <marker date="1512413052491" expanded="true" signature="152:171" ph="App\Entity\Playlist" />
             <marker date="1512413052491" expanded="true" signature="182:198" ph="App\Entity\Track" />
             <marker date="1512413052491" expanded="true" signature="209:224" ph="App\Entity\User" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/ORM/LoadUserFixtures.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="49" column="60" lean-forward="false" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
-          <folding>
-            <marker date="1512409148160" expanded="true" signature="44:157" ph="..." />
-            <marker date="1512409148160" expanded="true" signature="205:1691" ph="{...}" />
-            <marker date="1512409148160" expanded="true" signature="215:283" ph=" Array of the different users. ..." />
-            <marker date="1512409148160" expanded="true" signature="312:698" ph="..." />
-            <marker date="1512409148160" expanded="true" signature="322:692" ph="..." />
-            <marker date="1512409148160" expanded="true" signature="549:682" ph="..." />
-            <marker date="1512409148160" expanded="true" signature="709:828" ph=" Load user according to the userArray. ..." />
-            <marker date="1512409148160" expanded="true" signature="874:1555" ph="{...}" />
-            <marker date="1512409148160" expanded="true" signature="929:1525" ph="..." />
-            <marker date="1512409148160" expanded="true" signature="1087:1107" ph="..." />
-            <marker date="1512409148160" expanded="true" signature="1136:1153" ph="..." />
-            <marker date="1512409148160" expanded="true" signature="1184:1188" ph="..." />
-            <marker date="1512409148160" expanded="true" signature="1217:1234" ph="..." />
-            <marker date="1512409148160" expanded="true" signature="1340:1427" ph="..." />
-            <marker date="1512409148160" expanded="true" signature="1564:1633" ph=" Loading order of the fixture. ..." />
-            <marker date="1512409148160" expanded="true" signature="1659:1689" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -860,126 +741,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command/AppScrapDirCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding>
-            <marker date="1511911243705" expanded="false" signature="35:295" ph="..." />
-            <marker date="1511911243705" expanded="true" signature="337:1771" ph="{...}" />
-            <marker date="1511911243705" expanded="true" signature="401:456" ph=" @var \Doctrine\ORM\EntityManagerInterface ..." />
-            <marker date="1511911243705" expanded="true" signature="484:648" ph=" AppScrapDirCommand constructor. ..." />
-            <marker date="1511911243705" expanded="true" signature="717:796" ph="{...}" />
-            <marker date="1511911243705" expanded="true" signature="832:1012" ph="{...}" />
-            <marker date="1511911243705" expanded="true" signature="882:926" ph="..." />
-            <marker date="1511911243705" expanded="true" signature="1092:1769" ph="{...}" />
-            <marker date="1511911243705" expanded="false" signature="1226:1234" ph="User" />
-            <marker date="1511911243705" expanded="true" signature="1262:1762" ph="..." />
-            <marker date="1511911243705" expanded="true" signature="1289:1455" ph="..." />
-            <marker date="1511911243705" expanded="true" signature="1471:1752" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/var/cache/dev/Container85ozQ5H/getAppGetSoundCommandService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/DownloadUtil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="131" column="103" lean-forward="false" selection-start-line="131" selection-start-column="103" selection-end-line="131" selection-end-column="103" />
-          <folding>
-            <marker date="1512479791176" expanded="true" signature="67:203" ph=" Class DownloadUtil ..." />
-            <marker date="1512479791176" expanded="true" signature="224:5090" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="405:824" ph="..." />
-            <marker date="1512479791176" expanded="true" signature="435:669" ph="..." />
-            <marker date="1512479791176" expanded="true" signature="701:818" ph="..." />
-            <marker date="1512479791176" expanded="true" signature="835:918" ph=" @ORM\Id ..." />
-            <marker date="1512479791176" expanded="true" signature="946:1076" ph=" @var string ..." />
-            <marker date="1512479791176" expanded="true" signature="1106:1234" ph=" @var int ..." />
-            <marker date="1512479791176" expanded="true" signature="1264:1392" ph=" @var int ..." />
-            <marker date="1512479791176" expanded="true" signature="1422:1570" ph=" @var \App\Entity\User ..." />
-            <marker date="1512479791176" expanded="true" signature="1600:1730" ph=" @var string ..." />
-            <marker date="1512479791176" expanded="true" signature="1759:1890" ph=" @@var string ..." />
-            <marker date="1512479791176" expanded="true" signature="1921:2055" ph=" @@var string ..." />
-            <marker date="1512479791176" expanded="true" signature="2089:2162" ph=" DownloadUtil constructor. ..." />
-            <marker date="1512479791176" expanded="true" signature="2215:2256" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="2265:2329" ph=" Return the cmd to run ..." />
-            <marker date="1512479791176" expanded="true" signature="2360:2546" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="2555:2605" ph=" Get id ..." />
-            <marker date="1512479791176" expanded="true" signature="2635:2673" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="2682:2773" ph=" Set name ..." />
-            <marker date="1512479791176" expanded="true" signature="2810:2874" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="2883:2934" ph=" Get name ..." />
-            <marker date="1512479791176" expanded="true" signature="2966:3006" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="3015:3107" ph=" Set type ..." />
-            <marker date="1512479791176" expanded="true" signature="3144:3208" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="3217:3269" ph=" Get type ..." />
-            <marker date="1512479791176" expanded="true" signature="3301:3341" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="3350:3442" ph=" Set mode ..." />
-            <marker date="1512479791176" expanded="true" signature="3479:3543" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="3552:3604" ph=" Get mode ..." />
-            <marker date="1512479791176" expanded="true" signature="3636:3676" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="3685:3774" ph=" Set url ..." />
-            <marker date="1512479791176" expanded="true" signature="3809:3871" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="3880:3930" ph=" Get url ..." />
-            <marker date="1512479791176" expanded="true" signature="3961:4000" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="4009:4102" ph=" Set email ..." />
-            <marker date="1512479791176" expanded="true" signature="4141:4207" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="4216:4268" ph=" Get email ..." />
-            <marker date="1512479791176" expanded="true" signature="4301:4342" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="4351:4450" ph=" Set password ..." />
-            <marker date="1512479791176" expanded="true" signature="4495:4567" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="4576:4631" ph=" Get password ..." />
-            <marker date="1512479791176" expanded="true" signature="4667:4711" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="4720:4821" ph=" Set user ..." />
-            <marker date="1512479791176" expanded="true" signature="4882:4946" ph="{...}" />
-            <marker date="1512479791176" expanded="true" signature="4955:5016" ph=" Get user ..." />
-            <marker date="1512479791176" expanded="true" signature="5048:5088" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/ORM/LoadDownloadUtils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="39" lean-forward="false" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-          <folding>
-            <marker date="1512480079967" expanded="true" signature="192:266" ph="parameters: &lt;2 keys&gt;" />
-            <marker date="1512480079967" expanded="true" signature="216:220" ph="en" />
-            <marker date="1512480079967" expanded="true" signature="239:266" ph="%env(DOWN…ASE_PATH)%" />
-            <marker date="1512480079967" expanded="true" signature="268:1416" ph="services: &lt;4 keys&gt;" />
-            <marker date="1512480079967" expanded="true" signature="338:752" ph="_defaults: &lt;3 keys&gt;" />
-            <marker date="1512480079967" expanded="true" signature="429:433" ph="true" />
-            <marker date="1512480079967" expanded="true" signature="542:546" ph="true" />
-            <marker date="1512480079967" expanded="true" signature="747:752" ph="false" />
-            <marker date="1512480079967" expanded="true" signature="901:1092" ph="App\: &lt;2 keys&gt;" />
-            <marker date="1512480079967" expanded="true" signature="925:935" ph="../src/*" />
-            <marker date="1512480079967" expanded="true" signature="1058:1092" ph="../src/{E…ons,Tests}" />
-            <marker date="1512480079967" expanded="true" signature="1098:1188" ph="App\Comma…undCommand: &lt;1 key&gt;" />
-            <marker date="1512480079967" expanded="true" signature="1138:1188" ph="arguments: [2 items]" />
-            <marker date="1512480079967" expanded="true" signature="1150:1166" ph="%dl_base_path%" />
-            <marker date="1512480079967" expanded="true" signature="1168:1187" ph="%kernel.root_dir%" />
-            <marker date="1512480079967" expanded="true" signature="1315:1416" ph="App\Controller\: &lt;2 keys&gt;" />
-            <marker date="1512480079967" expanded="true" signature="1350:1369" ph="../src/Controller" />
-            <marker date="1512480079967" expanded="true" signature="1378:1416" ph="tags: [1 item]" />
-            <marker date="1512480079967" expanded="true" signature="1385:1415" ph="controlle…_arguments" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -991,13 +757,342 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TODO.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="465">
+            <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Command/AppGetSoundCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="803">
-          <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+        <state relative-caret-position="69">
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Command/AppScrapDirCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <element signature="e#31#71#0#PHP" expanded="true" />
-            <element signature="e#1848#1858#1#PHP" expanded="true" />
+            <marker date="1512482874337" expanded="true" signature="192:266" ph="parameters: &lt;2 keys&gt;" />
+            <marker date="1512482874337" expanded="true" signature="216:220" ph="en" />
+            <marker date="1512482874337" expanded="true" signature="239:266" ph="%env(DOWN…ASE_PATH)%" />
+            <marker date="1512482874337" expanded="true" signature="268:1520" ph="services: &lt;5 keys&gt;" />
+            <marker date="1512482874337" expanded="true" signature="338:752" ph="_defaults: &lt;3 keys&gt;" />
+            <marker date="1512482874337" expanded="true" signature="429:433" ph="true" />
+            <marker date="1512482874337" expanded="true" signature="542:546" ph="true" />
+            <marker date="1512482874337" expanded="true" signature="747:752" ph="false" />
+            <marker date="1512482874337" expanded="true" signature="901:1092" ph="App\: &lt;2 keys&gt;" />
+            <marker date="1512482874337" expanded="true" signature="925:935" ph="../src/*" />
+            <marker date="1512482874337" expanded="true" signature="1058:1092" ph="../src/{E…ons,Tests}" />
+            <marker date="1512482874337" expanded="true" signature="1098:1191" ph="App\Comma…GetCommand: &lt;1 key&gt;" />
+            <marker date="1512482874337" expanded="true" signature="1141:1191" ph="arguments: [2 items]" />
+            <marker date="1512482874337" expanded="true" signature="1153:1169" ph="%dl_base_path%" />
+            <marker date="1512482874337" expanded="true" signature="1171:1190" ph="%kernel.root_dir%" />
+            <marker date="1512482874337" expanded="true" signature="1197:1292" ph="App\Comma…rapCommand: &lt;1 key&gt;" />
+            <marker date="1512482874337" expanded="true" signature="1242:1292" ph="arguments: [2 items]" />
+            <marker date="1512482874337" expanded="true" signature="1254:1270" ph="%dl_base_path%" />
+            <marker date="1512482874337" expanded="true" signature="1272:1291" ph="%kernel.root_dir%" />
+            <marker date="1512482874337" expanded="true" signature="1419:1520" ph="App\Controller\: &lt;2 keys&gt;" />
+            <marker date="1512482874337" expanded="true" signature="1454:1473" ph="../src/Controller" />
+            <marker date="1512482874337" expanded="true" signature="1482:1520" ph="tags: [1 item]" />
+            <marker date="1512482874337" expanded="true" signature="1489:1519" ph="controlle…_arguments" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Use.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1506535831000" expanded="false" signature="9:198" ph="..." />
+            <marker date="1506535831000" expanded="true" signature="205:524" ph=" Imports blocks defined in another template into the current template. ..." />
+            <marker date="1506535831000" expanded="true" signature="584:1865" ph="{...}" />
+            <marker date="1506535831000" expanded="true" signature="631:1799" ph="{...}" />
+            <marker date="1506535831000" expanded="true" signature="828:1007" ph="..." />
+            <marker date="1506535831000" expanded="true" signature="1076:1586" ph="..." />
+            <marker date="1506535831000" expanded="true" signature="1093:1562" ph="..." />
+            <marker date="1506535831000" expanded="true" signature="1247:1345" ph="..." />
+            <marker date="1506535831000" expanded="true" signature="1504:1548" ph="..." />
+            <marker date="1506535831000" expanded="true" signature="1829:1863" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Command/AppSouSoundGetCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="96" column="9" lean-forward="true" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+          <folding>
+            <element signature="e#1854#1864#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="292" column="35" lean-forward="false" selection-start-line="292" selection-start-column="35" selection-end-line="292" selection-end-column="35" />
+          <folding>
+            <marker date="1512483540894" expanded="true" signature="34:276" ph="..." />
+            <marker date="1512483540894" expanded="true" signature="281:400" ph=" Class User ..." />
+            <marker date="1512483540894" expanded="true" signature="430:7170" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="440:567" ph=" @var int ..." />
+            <marker date="1512483540894" expanded="true" signature="597:655" ph=" @var string ..." />
+            <marker date="1512483540894" expanded="true" signature="688:1272" ph=" @var string ..." />
+            <marker date="1512483540894" expanded="true" signature="1313:1415" ph=" @var \DateTime ..." />
+            <marker date="1512483540894" expanded="true" signature="1453:1553" ph=" @var \DateTime ..." />
+            <marker date="1512483540894" expanded="true" signature="1589:1920" ph=" @var string ..." />
+            <marker date="1512483540894" expanded="true" signature="1955:2285" ph=" @var string ..." />
+            <marker date="1512483540894" expanded="true" signature="2319:2492" ph=" @var ArrayCollection ..." />
+            <marker date="1512483540894" expanded="true" signature="2527:2671" ph=" @var ArrayCollection ..." />
+            <marker date="1512483540894" expanded="true" signature="2710:2804" ph=" User constructor. ..." />
+            <marker date="1512483540894" expanded="true" signature="2878:3239" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="3248:3276" ph=" @ORM\PreUpdate ..." />
+            <marker date="1512483540894" expanded="true" signature="3311:3370" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="3379:3458" ph=" @Assert\Callback ..." />
+            <marker date="1512483540894" expanded="true" signature="3527:3539" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="3548:3594" ph=" get Id ..." />
+            <marker date="1512483540894" expanded="true" signature="3629:3667" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="3676:3761" ph=" Set email ..." />
+            <marker date="1512483540894" expanded="true" signature="3806:3959" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="3968:4028" ph=" Get UpdateDate ..." />
+            <marker date="1512483540894" expanded="true" signature="4077:4123" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="4132:4230" ph=" SEt UpdateDate ..." />
+            <marker date="1512483540894" expanded="true" signature="4295:4371" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="4380:4436" ph=" get FirstName ..." />
+            <marker date="1512483540894" expanded="true" signature="4481:4526" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="4535:4628" ph=" Set FirstName ..." />
+            <marker date="1512483540894" expanded="true" signature="4688:4762" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="4771:4826" ph=" get LastName ..." />
+            <marker date="1512483540894" expanded="true" signature="4870:4914" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="4923:5014" ph=" Set LastName ..." />
+            <marker date="1512483540894" expanded="true" signature="5072:5144" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="5153:5216" ph=" Get creationDate. ..." />
+            <marker date="1512483540894" expanded="true" signature="5256:5304" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="5313:5416" ph=" Set creationDate. ..." />
+            <marker date="1512483540894" expanded="true" signature="5469:5549" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="5558:5664" ph=" Add playlist. ..." />
+            <marker date="1512483540894" expanded="true" signature="5730:5841" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="5850:6036" ph=" Remove playlist. ..." />
+            <marker date="1512483540894" expanded="true" signature="6105:6176" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="6185:6275" ph=" Get playlists. ..." />
+            <marker date="1512483540894" expanded="true" signature="6312:6357" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="6366:6483" ph=" Add downloadUtil ..." />
+            <marker date="1512483540894" expanded="true" signature="6561:6683" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="6692:6785" ph=" Remove downloadUtil ..." />
+            <marker date="1512483540894" expanded="true" signature="6866:6976" ph="{...}" />
+            <marker date="1512483540894" expanded="true" signature="6985:7078" ph=" Get downloadUtils ..." />
+            <marker date="1512483540894" expanded="true" signature="7119:7168" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/ORM/LoadUserFixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <marker date="1512483822452" expanded="true" signature="44:157" ph="..." />
+            <marker date="1512483822452" expanded="true" signature="205:1637" ph="{...}" />
+            <marker date="1512483822452" expanded="true" signature="215:283" ph=" Array of the different users. ..." />
+            <marker date="1512483822452" expanded="true" signature="312:698" ph="..." />
+            <marker date="1512483822452" expanded="true" signature="322:692" ph="..." />
+            <marker date="1512483822452" expanded="true" signature="549:682" ph="..." />
+            <marker date="1512483822452" expanded="true" signature="709:828" ph=" Load user according to the userArray. ..." />
+            <marker date="1512483822452" expanded="true" signature="874:1501" ph="{...}" />
+            <marker date="1512483822452" expanded="true" signature="929:1471" ph="..." />
+            <marker date="1512483822452" expanded="true" signature="1087:1107" ph="..." />
+            <marker date="1512483822452" expanded="true" signature="1136:1153" ph="..." />
+            <marker date="1512483822452" expanded="true" signature="1184:1188" ph="..." />
+            <marker date="1512483822452" expanded="true" signature="1217:1234" ph="..." />
+            <marker date="1512483822452" expanded="true" signature="1340:1427" ph="..." />
+            <marker date="1512483822452" expanded="true" signature="1510:1579" ph=" Loading order of the fixture. ..." />
+            <marker date="1512483822452" expanded="true" signature="1605:1635" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/DownloadUtil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="365" column="42" lean-forward="false" selection-start-line="365" selection-start-column="42" selection-end-line="365" selection-end-column="42" />
+          <folding>
+            <marker date="1512483634733" expanded="true" signature="67:203" ph=" Class DownloadUtil ..." />
+            <marker date="1512483634733" expanded="true" signature="224:6261" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="405:824" ph="..." />
+            <marker date="1512483634733" expanded="true" signature="435:669" ph="..." />
+            <marker date="1512483634733" expanded="true" signature="701:818" ph="..." />
+            <marker date="1512483634733" expanded="true" signature="835:918" ph=" @ORM\Id ..." />
+            <marker date="1512483634733" expanded="true" signature="946:1076" ph=" @var string ..." />
+            <marker date="1512483634733" expanded="true" signature="1106:1234" ph=" @var int ..." />
+            <marker date="1512483634733" expanded="true" signature="1264:1392" ph=" @var int ..." />
+            <marker date="1512483634733" expanded="true" signature="1422:1570" ph=" @var \App\Entity\User ..." />
+            <marker date="1512483634733" expanded="true" signature="1600:1730" ph=" @var string ..." />
+            <marker date="1512483634733" expanded="true" signature="1759:1890" ph=" @@var string ..." />
+            <marker date="1512483634733" expanded="true" signature="1921:2055" ph=" @@var string ..." />
+            <marker date="1512483634733" expanded="true" signature="2089:2218" ph=" @var string ..." />
+            <marker date="1512483634733" expanded="true" signature="2250:2398" ph=" @var \App\Entity\Playlist ..." />
+            <marker date="1512483634733" expanded="true" signature="2432:2505" ph=" DownloadUtil constructor. ..." />
+            <marker date="1512483634733" expanded="true" signature="2558:2599" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="2608:2672" ph=" Return the cmd to run ..." />
+            <marker date="1512483634733" expanded="true" signature="2703:2889" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="2898:2948" ph=" Get id ..." />
+            <marker date="1512483634733" expanded="true" signature="2978:3016" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="3025:3116" ph=" Set name ..." />
+            <marker date="1512483634733" expanded="true" signature="3153:3217" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="3226:3277" ph=" Get name ..." />
+            <marker date="1512483634733" expanded="true" signature="3309:3349" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="3358:3450" ph=" Set type ..." />
+            <marker date="1512483634733" expanded="true" signature="3487:3551" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="3560:3612" ph=" Get type ..." />
+            <marker date="1512483634733" expanded="true" signature="3644:3684" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="3693:3785" ph=" Set mode ..." />
+            <marker date="1512483634733" expanded="true" signature="3822:3886" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="3895:3947" ph=" Get mode ..." />
+            <marker date="1512483634733" expanded="true" signature="3979:4019" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="4028:4117" ph=" Set url ..." />
+            <marker date="1512483634733" expanded="true" signature="4152:4214" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="4223:4273" ph=" Get url ..." />
+            <marker date="1512483634733" expanded="true" signature="4304:4343" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="4352:4445" ph=" Set email ..." />
+            <marker date="1512483634733" expanded="true" signature="4484:4550" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="4559:4611" ph=" Get email ..." />
+            <marker date="1512483634733" expanded="true" signature="4644:4685" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="4694:4793" ph=" Set password ..." />
+            <marker date="1512483634733" expanded="true" signature="4838:4910" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="4919:4974" ph=" Get password ..." />
+            <marker date="1512483634733" expanded="true" signature="5010:5054" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="5063:5164" ph=" Set user ..." />
+            <marker date="1512483634733" expanded="true" signature="5225:5289" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="5298:5359" ph=" Get user ..." />
+            <marker date="1512483634733" expanded="true" signature="5391:5431" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="5440:5535" ph=" Set output ..." />
+            <marker date="1512483634733" expanded="true" signature="5576:5644" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="5653:5706" ph=" Get output ..." />
+            <marker date="1512483634733" expanded="true" signature="5749:5791" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="5800:5913" ph=" Set playlist ..." />
+            <marker date="1512483634733" expanded="true" signature="5986:6101" ph="{...}" />
+            <marker date="1512483634733" expanded="true" signature="6110:6179" ph=" Get playlist ..." />
+            <marker date="1512483634733" expanded="true" signature="6215:6259" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Playlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="122" column="36" lean-forward="true" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="36" />
+          <folding>
+            <marker date="1512483846945" expanded="false" signature="34:111" ph="..." />
+            <marker date="1512483846945" expanded="true" signature="116:243" ph=" Class Playlist ..." />
+            <marker date="1512483846945" expanded="true" signature="260:6844" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="270:397" ph=" @var int ..." />
+            <marker date="1512483846945" expanded="true" signature="425:559" ph=" @var string ..." />
+            <marker date="1512483846945" expanded="true" signature="593:737" ph=" @var \DateTime ..." />
+            <marker date="1512483846945" expanded="true" signature="775:917" ph=" @var \DateTime ..." />
+            <marker date="1512483846945" expanded="true" signature="953:1063" ph=" @var ArrayCollection ..." />
+            <marker date="1512483846945" expanded="true" signature="1095:1206" ph=" @var ArrayCollection ..." />
+            <marker date="1512483846945" expanded="true" signature="1240:1373" ph=" @var bool ..." />
+            <marker date="1512483846945" expanded="true" signature="1406:1537" ph=" @var \App\Entity\Album ..." />
+            <marker date="1512483846945" expanded="true" signature="1568:1712" ph=" @var \App\Entity\User ..." />
+            <marker date="1512483846945" expanded="true" signature="1743:1899" ph=" @var \App\Entity\DownloadUtil ..." />
+            <marker date="1512483846945" expanded="true" signature="1937:2010" ph=" Playlist constructor. ..." />
+            <marker date="1512483846945" expanded="true" signature="2067:2465" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="2474:2521" ph=" Get id. ..." />
+            <marker date="1512483846945" expanded="true" signature="2551:2589" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="2598:2654" ph=" Get playlist. ..." />
+            <marker date="1512483846945" expanded="true" signature="2690:2734" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="2743:2839" ph=" Set playlist. ..." />
+            <marker date="1512483846945" expanded="true" signature="2884:2956" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="2965:3028" ph=" Get creationDate. ..." />
+            <marker date="1512483846945" expanded="true" signature="3068:3116" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="3125:3232" ph=" Set creationDate. ..." />
+            <marker date="1512483846945" expanded="true" signature="3285:3365" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="3374:3435" ph=" Get updateDate. ..." />
+            <marker date="1512483846945" expanded="true" signature="3473:3519" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="3528:3631" ph=" Set updateDate. ..." />
+            <marker date="1512483846945" expanded="true" signature="3680:3756" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="3765:3818" ph=" Get isAlbum. ..." />
+            <marker date="1512483846945" expanded="true" signature="3853:3896" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="3905:3997" ph=" Set isAlbum. ..." />
+            <marker date="1512483846945" expanded="true" signature="4040:4110" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="4119:4220" ph=" Add track. ..." />
+            <marker date="1512483846945" expanded="true" signature="4277:4346" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="4355:4532" ph=" Remove track. ..." />
+            <marker date="1512483846945" expanded="true" signature="4592:4657" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="4666:4753" ph=" Get tracks. ..." />
+            <marker date="1512483846945" expanded="true" signature="4787:4829" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="4838:4944" ph=" Add artiste. ..." />
+            <marker date="1512483846945" expanded="true" signature="5006:5079" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="5088:5270" ph=" Remove artiste. ..." />
+            <marker date="1512483846945" expanded="true" signature="5335:5404" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="5413:5502" ph=" Get artistes. ..." />
+            <marker date="1512483846945" expanded="true" signature="5538:5582" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="5591:5660" ph=" Get album. ..." />
+            <marker date="1512483846945" expanded="true" signature="5693:5734" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="5743:5849" ph=" Set album. ..." />
+            <marker date="1512483846945" expanded="true" signature="5913:5979" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="5988:6056" ph=" Get owner. ..." />
+            <marker date="1512483846945" expanded="true" signature="6089:6130" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="6139:6244" ph=" Set owner. ..." />
+            <marker date="1512483846945" expanded="true" signature="6307:6373" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="6382:6503" ph=" Set downloadUtil ..." />
+            <marker date="1512483846945" expanded="true" signature="6588:6668" ph="{...}" />
+            <marker date="1512483846945" expanded="true" signature="6677:6754" ph=" Get downloadUtil ..." />
+            <marker date="1512483846945" expanded="true" signature="6794:6842" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/ORM/LoadDownloadUtils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <marker date="1512479824993" expanded="true" signature="44:165" ph="..." />
+            <marker date="1512479824993" expanded="true" signature="214:2034" ph="{...}" />
+            <marker date="1512479824993" expanded="true" signature="224:292" ph=" Array of the different utils. ..." />
+            <marker date="1512479824993" expanded="true" signature="322:1269" ph="..." />
+            <marker date="1512479824993" expanded="true" signature="337:641" ph="..." />
+            <marker date="1512479824993" expanded="true" signature="658:948" ph="..." />
+            <marker date="1512479824993" expanded="true" signature="965:1263" ph="..." />
+            <marker date="1512479824993" expanded="true" signature="1280:1399" ph=" Load user according to the userArray. ..." />
+            <marker date="1512479824993" expanded="true" signature="1445:1898" ph="{...}" />
+            <marker date="1512479824993" expanded="true" signature="1504:1869" ph="..." />
+            <marker date="1512479824993" expanded="true" signature="1652:1671" ph="..." />
+            <marker date="1512479824993" expanded="true" signature="1698:1716" ph="..." />
+            <marker date="1512479824993" expanded="true" signature="1744:1763" ph="..." />
+            <marker date="1512479824993" expanded="true" signature="1907:1976" ph=" Loading order of the fixture. ..." />
+            <marker date="1512479824993" expanded="true" signature="2002:2032" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Command/AppSouSoundScrapCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <element signature="e#1778#1788#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

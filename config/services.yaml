@@ -23,7 +23,10 @@ services:
         # but if a service is unused, it's removed anyway
         exclude: '../src/{Entity,Migrations,Tests}'
 
-    App\Command\AppGetSoundCommand:
+    App\Command\AppSouSoundGetCommand:
+        arguments: ['%dl_base_path%', '%kernel.root_dir%']
+
+    App\Command\AppSouSoundScrapCommand:
         arguments: ['%dl_base_path%', '%kernel.root_dir%']
 
     # controllers are imported separately to make sure they

@@ -99,6 +99,15 @@ class Playlist
     private $owner;
 
     /**
+     * @var \App\Entity\DownloadUtil
+     * @ORM\OneToOne(
+     *     targetEntity="App\Entity\DownloadUtil",
+     *     cascade={"persist"}
+     * )
+     */
+    private $downloadUtil;
+
+    /**
      * Playlist constructor.
      *
      * @param string $playlist
@@ -111,6 +120,7 @@ class Playlist
         $this->updateDate   = new \Datetime();
         $this->tracks       = new ArrayCollection();
         $this->artistes     = new ArrayCollection();
+        $this->isAlbum      = false;
 
         // $this->isAlbum
         // this->album
@@ -341,5 +351,29 @@ class Playlist
         $this->owner = $owner;
 
         return $this;
+    }
+
+    /**
+     * Set downloadUtil
+     *
+     * @param \App\Entity\DownloadUtil $downloadUtil
+     *
+     * @return Playlist
+     */
+    public function setDownloadUtil(\App\Entity\DownloadUtil $downloadUtil = null)
+    {
+        $this->downloadUtil = $downloadUtil;
+
+        return $this;
+    }
+
+    /**
+     * Get downloadUtil
+     *
+     * @return \App\Entity\DownloadUtil
+     */
+    public function getDownloadUtil()
+    {
+        return $this->downloadUtil;
     }
 }

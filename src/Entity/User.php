@@ -290,6 +290,7 @@ class User extends BaseUser
      */
     public function addPlaylist(\App\Entity\Playlist $playlist)
     {
+        $playlist->setOwner($this);
         $this->playlists[] = $playlist;
 
         return $this;
