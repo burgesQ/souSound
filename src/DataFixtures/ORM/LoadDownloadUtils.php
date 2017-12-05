@@ -48,9 +48,6 @@ class LoadDownloadUtils extends AbstractFixture
     public function load(ObjectManager $em)
     {
         foreach ($this->utilsArray as $oneDlTools) {
-//
-//            dump($oneDlTools);
-//            dump($oneDlTools['url']);
 
             /** @var DownloadUtil $util */
             $util = new DownloadUtil($oneDlTools['name']);

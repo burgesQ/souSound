@@ -24,7 +24,7 @@ services:
         exclude: '../src/{Entity,Migrations,Tests}'
 
     App\Command\AppGetSoundCommand:
-        arguments: ['%dl_base_path%']
+        arguments: ['%dl_base_path%', '%kernel.root_dir%']
 
     # controllers are imported separately to make sure they
     # have the tag that allows actions to type-hint services

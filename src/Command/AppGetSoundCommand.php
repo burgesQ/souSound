@@ -7,6 +7,8 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 
 class AppGetSoundCommand extends Command
 {
@@ -16,8 +18,8 @@ class AppGetSoundCommand extends Command
      * @var array
      */
     private $arrayDir = [
-        1 => "./YouTube/",
-        2 => "./SoundCloud/"
+        1 => "/YouTube/",
+        2 => "/SoundCloud/"
     ];
 
     /**
@@ -25,20 +27,30 @@ class AppGetSoundCommand extends Command
      */
     private $em;
 
+    /**
+     * @var string $basePath
+     */
     private $basePath;
+
+    /**
+     * @var string $rootDir
+     */
+    private $rootDir;
 
     /**
      * AppGetSoundCommand constructor.
      *
-     * @param null|string                          $dl_base_path
+     * @param string                               $dl_base_path
+     * @param                                      $kernel_root_dir
      * @param null                                 $name
      * @param \Doctrine\ORM\EntityManagerInterface $em
      */
-    function __construct($dl_base_path, $name = null, EntityManagerInterface $em)
+    function __construct($dl_base_path, $kernel_root_dir, $name = null, EntityManagerInterface $em)
     {
         parent::__construct($name);
         $this->em       = $em;
         $this->basePath = $dl_base_path;
+        $this->rootDir  = $kernel_root_dir;
     }
 
     protected function configure()
@@ -48,7 +60,6 @@ class AppGetSoundCommand extends Command
             // specific dlInterface Tags
             // specific users
             // specific base directory
-            // specific
         ;
     }
 
@@ -56,16 +67,36 @@ class AppGetSoundCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        /** @var \App\Entity\DownloadUtil $util */
-        foreach ($this->em->getRepository("App:DownloadUtil")->findAll() as $util) {
+        /** @var \App\Entity\User $user */
+        foreach ($this->em->getRepository("App:User")->findAll() as $user) {
+            /** @var \App\Entity\DownloadUtil $util */
+            foreach ($user->getDownloadUtils() as $util) {
 
-            $io->comment(
-                'Downloading file for ' . $util->getUser()->getFirstName() . ' ' . $util->getUser()->getLastName() . '
-Base path is : ' .
-                $this->basePath . $this->arrayDir[$util->getType()] . $util->getUser()->getId() . '
-Running cmd : ' . $util->getCmd()
-            );
+                $path = $this->rootDir . '/../' . $this->basePath . $util->getUser()->getId() .
+                    $this->arrayDir[$util->getType()];
 
+                $mkdir  = 'mkdir -p ' . $path;
+                $cd     = 'cd ' . $path;
+                $cdRoot = 'cd ' . $this->rootDir . '/../';
+                $ls     = 'ls -lna';
+
+                $cmd = $mkdir . ' ; ' . $cd . ' ; ' . $util->getCmd() . ' ; ' . $cdRoot;
+
+                $io->comment('Downloading file for ' . $user->getFirstName() . ' ' . $user->getLastName());
+                $io->comment('Download path is : ' . $path);
+
+                dump($cmd);
+
+                $process = new Process($mkdir . ' ; ' . $cd . ' ; ' . $ls . ' ; ' . $cdRoot . ' ; ' . $ls);
+                $process->run();
+
+                if (!$process->isSuccessful()) {
+                    throw new ProcessFailedException($process);
+                }
+
+//            echo $process->getOutput();
+
+            }
         }
     }
 }

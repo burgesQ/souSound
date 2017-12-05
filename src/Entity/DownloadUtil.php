@@ -129,8 +129,8 @@ class DownloadUtil
      */
     public function getCmd()
     {
-        return $this->arrayCmd[$this->type][$this->mode] . (($this->email && $this->password) ?
-                ' -u ' . $this->email . ' -p ' . $this->password : '') . $this->url;
+        // (($this->email && $this->password) ? ' -u ' . $this->email . ' -p ' . $this->password : '')
+        return $this->arrayCmd[$this->type][$this->mode] . $this->url;
     }
 
     /**

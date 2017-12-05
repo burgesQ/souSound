@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf33b7e7-4edf-4906-8196-3ea0a5cc9bd0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/test/web_profiler.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/routes/dev/web_profiler.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/master.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/master.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/bundles.php" afterPath="$PROJECT_DIR$/config/bundles.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony.lock" afterPath="$PROJECT_DIR$/symfony.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.yaml" afterPath="$PROJECT_DIR$/config/services.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Command/AppGetSoundCommand.php" afterPath="$PROJECT_DIR$/src/Command/AppGetSoundCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DataFixtures/ORM/LoadDownloadUtils.php" afterPath="$PROJECT_DIR$/src/DataFixtures/ORM/LoadDownloadUtils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/DownloadUtil.php" afterPath="$PROJECT_DIR$/src/Entity/DownloadUtil.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,12 +49,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="web_profiler.yaml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/packages/dev/web_profiler.yaml">
+      <file leaf-file-name="AppGetSoundCommand.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Command/AppGetSoundCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="803">
+              <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+              <folding>
+                <element signature="e#31#71#0#PHP" expanded="true" />
+                <element signature="e#1848#1858#1#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,16 +144,16 @@
         <option value="$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/Tools/EntityGenerator.php" />
         <option value="$PROJECT_DIR$/src/Entity/DownloadUtils.php" />
         <option value="$PROJECT_DIR$/script/genDb" />
-        <option value="$PROJECT_DIR$/src/DataFixtures/ORM/LoadDownloadUtils.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/ORM/LoadUserFixtures.php" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
-        <option value="$PROJECT_DIR$/config/services.yaml" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/src/Entity/DownloadUtil.php" />
-        <option value="$PROJECT_DIR$/src/Command/AppGetSoundCommand.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/TODO.md" />
         <option value="$PROJECT_DIR$/config/packages/easy_admin.yaml" />
+        <option value="$PROJECT_DIR$/src/Entity/DownloadUtil.php" />
+        <option value="$PROJECT_DIR$/src/DataFixtures/ORM/LoadDownloadUtils.php" />
+        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/src/Command/AppGetSoundCommand.php" />
       </list>
     </option>
   </component>
@@ -163,10 +170,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpDebugGeneral" xdebug_debug_port="9001" listening_started="true" xdebug_force_break_when_no_path_mapping="false" />
+  <component name="PhpDebugGeneral" xdebug_debug_port="9001" listening_started="true" />
   <component name="PhpServers">
     <servers />
   </component>
+  <component name="PhpWebServerValidation" path_to_validation_script="$PROJECT_DIR$" selected_validation_type="LOCAL" web_path_to_validation_script="http://symfony.dev" />
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="PhpXdebugProxy" ide_key="PHPSTORM" />
   <component name="ProjectFrameBounds" extendedState="6">
@@ -300,6 +308,23 @@
               <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="souSound" type="b2602c69:ProjectViewProjectNode" />
+              <item name="souSound" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="souSound" type="b2602c69:ProjectViewProjectNode" />
+              <item name="souSound" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Command" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="souSound" type="b2602c69:ProjectViewProjectNode" />
+              <item name="souSound" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -307,7 +332,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -331,6 +356,14 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.DefaultController.php">
+    <configuration name="DefaultController.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:9002/souSound/src/Controller/DefaultController.php" />
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.DefaultController.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -364,12 +397,12 @@
       <workItem from="1512381338659" duration="4219000" />
       <workItem from="1512402163282" duration="13000" />
       <workItem from="1512405577438" duration="7432000" />
-      <workItem from="1512477733626" duration="403000" />
+      <workItem from="1512477733626" duration="3581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55374000" />
+    <option name="totallyTimeSpent" value="58552000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1920" height="1026" extended-state="6" />
@@ -380,19 +413,19 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843652" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,17 +435,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/routes/easy_admin.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -624,20 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/doctrine/doctrine-bundle/Mapping/DisconnectedMetadataFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="757">
@@ -664,27 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command/AppScrapDirCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="45" column="11" lean-forward="false" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-          <folding>
-            <marker date="1511911243705" expanded="false" signature="35:295" ph="..." />
-            <marker date="1511911243705" expanded="true" signature="337:1771" ph="{...}" />
-            <marker date="1511911243705" expanded="true" signature="401:456" ph=" @var \Doctrine\ORM\EntityManagerInterface ..." />
-            <marker date="1511911243705" expanded="true" signature="484:648" ph=" AppScrapDirCommand constructor. ..." />
-            <marker date="1511911243705" expanded="true" signature="717:796" ph="{...}" />
-            <marker date="1511911243705" expanded="true" signature="832:1012" ph="{...}" />
-            <marker date="1511911243705" expanded="true" signature="882:926" ph="..." />
-            <marker date="1511911243705" expanded="true" signature="1092:1769" ph="{...}" />
-            <marker date="1511911243705" expanded="false" signature="1226:1234" ph="User" />
-            <marker date="1511911243705" expanded="true" signature="1262:1762" ph="..." />
-            <marker date="1511911243705" expanded="true" signature="1289:1455" ph="..." />
-            <marker date="1511911243705" expanded="true" signature="1471:1752" ph="//..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -743,86 +736,6 @@
             <marker date="1512409433982" expanded="true" signature="6830:6940" ph="{...}" />
             <marker date="1512409433982" expanded="true" signature="6949:7042" ph=" Get downloadUtils ..." />
             <marker date="1512409433982" expanded="true" signature="7083:7132" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-          <folding>
-            <marker date="1512411290116" expanded="true" signature="192:266" ph="parameters: &lt;2 keys&gt;" />
-            <marker date="1512411290116" expanded="true" signature="216:220" ph="en" />
-            <marker date="1512411290116" expanded="true" signature="239:266" ph="%env(DOWN…ASE_PATH)%" />
-            <marker date="1512411290116" expanded="true" signature="268:1395" ph="services: &lt;4 keys&gt;" />
-            <marker date="1512411290116" expanded="true" signature="338:752" ph="_defaults: &lt;3 keys&gt;" />
-            <marker date="1512411290116" expanded="true" signature="429:433" ph="true" />
-            <marker date="1512411290116" expanded="true" signature="542:546" ph="true" />
-            <marker date="1512411290116" expanded="true" signature="747:752" ph="false" />
-            <marker date="1512411290116" expanded="true" signature="901:1092" ph="App\: &lt;2 keys&gt;" />
-            <marker date="1512411290116" expanded="true" signature="925:935" ph="../src/*" />
-            <marker date="1512411290116" expanded="true" signature="1058:1092" ph="../src/{E…ons,Tests}" />
-            <marker date="1512411290116" expanded="true" signature="1098:1167" ph="App\Comma…undCommand: &lt;1 key&gt;" />
-            <marker date="1512411290116" expanded="true" signature="1138:1167" ph="arguments: [1 item]" />
-            <marker date="1512411290116" expanded="true" signature="1150:1166" ph="%dl_base_path%" />
-            <marker date="1512411290116" expanded="true" signature="1294:1395" ph="App\Controller\: &lt;2 keys&gt;" />
-            <marker date="1512411290116" expanded="true" signature="1329:1348" ph="../src/Controller" />
-            <marker date="1512411290116" expanded="true" signature="1357:1395" ph="tags: [1 item]" />
-            <marker date="1512411290116" expanded="true" signature="1364:1394" ph="controlle…_arguments" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/DownloadUtil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="128" column="7" lean-forward="true" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/ORM/LoadDownloadUtils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="59" column="17" lean-forward="true" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
-          <folding>
-            <marker date="1512409155804" expanded="true" signature="44:165" ph="..." />
-            <marker date="1512409155804" expanded="true" signature="224:292" ph=" Array of the different utils. ..." />
-            <marker date="1512409155804" expanded="true" signature="322:1269" ph="..." />
-            <marker date="1512409155804" expanded="true" signature="337:641" ph="..." />
-            <marker date="1512409155804" expanded="true" signature="658:948" ph="..." />
-            <marker date="1512409155804" expanded="true" signature="965:1263" ph="..." />
-            <marker date="1512409155804" expanded="true" signature="1280:1399" ph=" Load user according to the userArray. ..." />
-            <marker date="1512409155804" expanded="true" signature="1445:1974" ph="{...}" />
-            <marker date="1512409155804" expanded="true" signature="1504:1945" ph="..." />
-            <marker date="1512409155804" expanded="true" signature="1728:1747" ph="..." />
-            <marker date="1512409155804" expanded="true" signature="1774:1792" ph="..." />
-            <marker date="1512409155804" expanded="true" signature="1820:1839" ph="..." />
-            <marker date="1512409155804" expanded="true" signature="1983:2052" ph=" Loading order of the fixture. ..." />
-            <marker date="1512409155804" expanded="true" signature="2078:2108" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command/AppGetSoundCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding>
-            <marker date="1512412716771" expanded="true" signature="35:274" ph="..." />
-            <marker date="1512412716771" expanded="true" signature="316:1912" ph="{...}" />
-            <marker date="1512412716771" expanded="true" signature="380:404" ph=" @var array ..." />
-            <marker date="1512412716771" expanded="true" signature="432:493" ph="..." />
-            <marker date="1512412716771" expanded="true" signature="504:559" ph=" @var \Doctrine\ORM\EntityManagerInterface ..." />
-            <marker date="1512412716771" expanded="true" signature="611:840" ph=" AppGetSoundCommand constructor. ..." />
-            <marker date="1512412716771" expanded="true" signature="924:1044" ph="{...}" />
-            <marker date="1512412716771" expanded="true" signature="1080:1307" ph="{...}" />
-            <marker date="1512412716771" expanded="true" signature="1130:1156" ph="..." />
-            <marker date="1512412716771" expanded="true" signature="1170:1291" ph="//..." />
-            <marker date="1512412716771" expanded="true" signature="1387:1910" ph="{...}" />
-            <marker date="1512412716771" expanded="true" signature="1538:1554" ph="DownloadUtil" />
-            <marker date="1512412716771" expanded="true" signature="1579:1903" ph="..." />
-            <marker date="1512412716771" expanded="true" signature="1606:1891" ph="..." />
           </folding>
         </state>
       </provider>
@@ -896,14 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="43" lean-forward="false" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/dev/routing.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -919,8 +824,181 @@
     <entry file="file://$PROJECT_DIR$/config/packages/dev/web_profiler.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding>
+            <marker date="1512478115186" expanded="true" signature="0:62" ph="web_profiler: &lt;2 keys&gt;" />
+            <marker date="1512478115186" expanded="true" signature="27:31" ph="true" />
+            <marker date="1512478115186" expanded="true" signature="57:62" ph="false" />
+            <marker date="1512478115186" expanded="true" signature="64:115" ph="framework: &lt;1 key&gt;" />
+            <marker date="1512478115186" expanded="true" signature="79:115" ph="profiler: {1 key}" />
+            <marker date="1512478115186" expanded="true" signature="108:113" ph="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+          <folding>
+            <marker date="1512413104365" expanded="false" signature="38:198" ph="..." />
+            <marker date="1512413104365" expanded="true" signature="243:723" ph="{...}" />
+            <marker date="1512413104365" expanded="true" signature="253:469" ph=" @Route( ..." />
+            <marker date="1512413104365" expanded="true" signature="510:720" ph="{...}" />
+            <marker date="1512413104365" expanded="true" signature="623:712" ph="..." />
+            <marker date="1512413104365" expanded="false" signature="624:639" ph="hello" />
+            <marker date="1512413104365" expanded="true" signature="643:711" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Command/AppScrapDirCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding>
+            <marker date="1511911243705" expanded="false" signature="35:295" ph="..." />
+            <marker date="1511911243705" expanded="true" signature="337:1771" ph="{...}" />
+            <marker date="1511911243705" expanded="true" signature="401:456" ph=" @var \Doctrine\ORM\EntityManagerInterface ..." />
+            <marker date="1511911243705" expanded="true" signature="484:648" ph=" AppScrapDirCommand constructor. ..." />
+            <marker date="1511911243705" expanded="true" signature="717:796" ph="{...}" />
+            <marker date="1511911243705" expanded="true" signature="832:1012" ph="{...}" />
+            <marker date="1511911243705" expanded="true" signature="882:926" ph="..." />
+            <marker date="1511911243705" expanded="true" signature="1092:1769" ph="{...}" />
+            <marker date="1511911243705" expanded="false" signature="1226:1234" ph="User" />
+            <marker date="1511911243705" expanded="true" signature="1262:1762" ph="..." />
+            <marker date="1511911243705" expanded="true" signature="1289:1455" ph="..." />
+            <marker date="1511911243705" expanded="true" signature="1471:1752" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/var/cache/dev/Container85ozQ5H/getAppGetSoundCommandService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/DownloadUtil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="131" column="103" lean-forward="false" selection-start-line="131" selection-start-column="103" selection-end-line="131" selection-end-column="103" />
+          <folding>
+            <marker date="1512479791176" expanded="true" signature="67:203" ph=" Class DownloadUtil ..." />
+            <marker date="1512479791176" expanded="true" signature="224:5090" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="405:824" ph="..." />
+            <marker date="1512479791176" expanded="true" signature="435:669" ph="..." />
+            <marker date="1512479791176" expanded="true" signature="701:818" ph="..." />
+            <marker date="1512479791176" expanded="true" signature="835:918" ph=" @ORM\Id ..." />
+            <marker date="1512479791176" expanded="true" signature="946:1076" ph=" @var string ..." />
+            <marker date="1512479791176" expanded="true" signature="1106:1234" ph=" @var int ..." />
+            <marker date="1512479791176" expanded="true" signature="1264:1392" ph=" @var int ..." />
+            <marker date="1512479791176" expanded="true" signature="1422:1570" ph=" @var \App\Entity\User ..." />
+            <marker date="1512479791176" expanded="true" signature="1600:1730" ph=" @var string ..." />
+            <marker date="1512479791176" expanded="true" signature="1759:1890" ph=" @@var string ..." />
+            <marker date="1512479791176" expanded="true" signature="1921:2055" ph=" @@var string ..." />
+            <marker date="1512479791176" expanded="true" signature="2089:2162" ph=" DownloadUtil constructor. ..." />
+            <marker date="1512479791176" expanded="true" signature="2215:2256" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="2265:2329" ph=" Return the cmd to run ..." />
+            <marker date="1512479791176" expanded="true" signature="2360:2546" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="2555:2605" ph=" Get id ..." />
+            <marker date="1512479791176" expanded="true" signature="2635:2673" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="2682:2773" ph=" Set name ..." />
+            <marker date="1512479791176" expanded="true" signature="2810:2874" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="2883:2934" ph=" Get name ..." />
+            <marker date="1512479791176" expanded="true" signature="2966:3006" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="3015:3107" ph=" Set type ..." />
+            <marker date="1512479791176" expanded="true" signature="3144:3208" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="3217:3269" ph=" Get type ..." />
+            <marker date="1512479791176" expanded="true" signature="3301:3341" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="3350:3442" ph=" Set mode ..." />
+            <marker date="1512479791176" expanded="true" signature="3479:3543" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="3552:3604" ph=" Get mode ..." />
+            <marker date="1512479791176" expanded="true" signature="3636:3676" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="3685:3774" ph=" Set url ..." />
+            <marker date="1512479791176" expanded="true" signature="3809:3871" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="3880:3930" ph=" Get url ..." />
+            <marker date="1512479791176" expanded="true" signature="3961:4000" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="4009:4102" ph=" Set email ..." />
+            <marker date="1512479791176" expanded="true" signature="4141:4207" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="4216:4268" ph=" Get email ..." />
+            <marker date="1512479791176" expanded="true" signature="4301:4342" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="4351:4450" ph=" Set password ..." />
+            <marker date="1512479791176" expanded="true" signature="4495:4567" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="4576:4631" ph=" Get password ..." />
+            <marker date="1512479791176" expanded="true" signature="4667:4711" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="4720:4821" ph=" Set user ..." />
+            <marker date="1512479791176" expanded="true" signature="4882:4946" ph="{...}" />
+            <marker date="1512479791176" expanded="true" signature="4955:5016" ph=" Get user ..." />
+            <marker date="1512479791176" expanded="true" signature="5048:5088" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/ORM/LoadDownloadUtils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="39" lean-forward="false" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+          <folding>
+            <marker date="1512480079967" expanded="true" signature="192:266" ph="parameters: &lt;2 keys&gt;" />
+            <marker date="1512480079967" expanded="true" signature="216:220" ph="en" />
+            <marker date="1512480079967" expanded="true" signature="239:266" ph="%env(DOWN…ASE_PATH)%" />
+            <marker date="1512480079967" expanded="true" signature="268:1416" ph="services: &lt;4 keys&gt;" />
+            <marker date="1512480079967" expanded="true" signature="338:752" ph="_defaults: &lt;3 keys&gt;" />
+            <marker date="1512480079967" expanded="true" signature="429:433" ph="true" />
+            <marker date="1512480079967" expanded="true" signature="542:546" ph="true" />
+            <marker date="1512480079967" expanded="true" signature="747:752" ph="false" />
+            <marker date="1512480079967" expanded="true" signature="901:1092" ph="App\: &lt;2 keys&gt;" />
+            <marker date="1512480079967" expanded="true" signature="925:935" ph="../src/*" />
+            <marker date="1512480079967" expanded="true" signature="1058:1092" ph="../src/{E…ons,Tests}" />
+            <marker date="1512480079967" expanded="true" signature="1098:1188" ph="App\Comma…undCommand: &lt;1 key&gt;" />
+            <marker date="1512480079967" expanded="true" signature="1138:1188" ph="arguments: [2 items]" />
+            <marker date="1512480079967" expanded="true" signature="1150:1166" ph="%dl_base_path%" />
+            <marker date="1512480079967" expanded="true" signature="1168:1187" ph="%kernel.root_dir%" />
+            <marker date="1512480079967" expanded="true" signature="1315:1416" ph="App\Controller\: &lt;2 keys&gt;" />
+            <marker date="1512480079967" expanded="true" signature="1350:1369" ph="../src/Controller" />
+            <marker date="1512480079967" expanded="true" signature="1378:1416" ph="tags: [1 item]" />
+            <marker date="1512480079967" expanded="true" signature="1385:1415" ph="controlle…_arguments" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Command/AppGetSoundCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="803">
+          <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+          <folding>
+            <element signature="e#31#71#0#PHP" expanded="true" />
+            <element signature="e#1848#1858#1#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -7,3 +7,7 @@
 ###> symfony/web-server-bundle ###
 .web-server-pid
 ###< symfony/web-server-bundle ###
+
+###> sou/sound ###
+/sounds
+###< sou/sound ###
