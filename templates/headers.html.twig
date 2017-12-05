@@ -1,46 +1,54 @@
 {% block header %}
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
+    <header>
 
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">SouSound</a>
-            </div>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
 
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-
-                <ul class="nav navbar-nav">
-                    <li {% if home is defined %}class="active"{% endif %}>
-                        <a href="{{ path('app_home_home') }}">Home</a>
-                    </li>
-                    <li><a href="#">Futur Cron manager</a></li>
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#">
-                            <span class="glyphicon glyphicon-user"></span>
-                            {{ app.user.username }}
-                        </a>
-                    </li>
-                    <a type="button" class="btn btn-danger navbar-btn" href="{{ path('fos_user_security_logout') }}">
-                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                    </a>
-                </ul>
-            {% endif %}
-
-        </div>
-    </nav>
-
-    {% if app.request.hasPreviousSession %}
-        {% for type, messages in app.session.flashbag.all() %}
-            {% for message in messages %}
-                <div class="alert alert-danger flash-{{ type }} alert-dismissable fade in">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    {{ message }}
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">SouSound</a>
                 </div>
+
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+                    <ul class="nav navbar-nav">
+                        <li {% if home is defined %}class="active"{% endif %}>
+                            <a href="{{ path('app_home_home') }}">Home</a>
+                        </li>
+
+                        <li><a href="#">Futur Cron manager</a></li>
+
+                        <li><a href="{{ path('easyadmin') }}">SouSoundManager</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">
+                                <span class="glyphicon glyphicon-user"></span>
+                                {{ app.user.username }}
+                            </a>
+                        </li>
+                        <a type="button" class="btn btn-danger navbar-btn"
+                           href="{{ path('fos_user_security_logout') }}">
+                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    </ul>
+                {% endif %}
+
+            </div>
+        </nav>
+
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="alert alert-danger flash-{{ type }} alert-dismissable fade in">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        {{ message }}
+                    </div>
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
-    {% endif %}
+        {% endif %}
+
+    </header>
 
 {% endblock %}

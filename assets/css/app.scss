@@ -8,3 +8,7 @@ $fa-font-path: "~font-awesome/fonts";
 
 // import bootstrap
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.navbar {
+  border-radius: 0;
+}
