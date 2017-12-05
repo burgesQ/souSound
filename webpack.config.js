@@ -5,9 +5,9 @@ var Encore = require('@symfony/webpack-encore');
 Encore
 
     // fix delay caused by boostrap
-    // .enableSassLoader(function(sassOptions) {}, {
-    //     resolveUrlLoader: false
-    // })
+    .enableSassLoader(function(sassOptions) {}, {
+        resolveUrlLoader: false
+    })
 
      // the project directory where all compiled assets will be stored
     .setOutputPath('public/build/')
@@ -36,7 +36,7 @@ Encore
     // .enableVersioning()
 
     // add jquery
-    // .autoProvidejQuery()
+    .autoProvidejQuery()
 ;
 
 // export the final configuration

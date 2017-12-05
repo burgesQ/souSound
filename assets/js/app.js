@@ -2,4 +2,5 @@
 
 require('../css/app.scss');
 
-require('./materialize.min.js');
+var $ = require('jquery');
+require('bootstrap-sass');

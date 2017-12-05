@@ -1,4 +1,14 @@
 // asset/scss/app.scss
 
-// import materialize
-@import 'materialize.min.css';
+// boostrap icon
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+// set if you're also including font-awesome
+$fa-font-path: "~font-awesome/fonts";
+
+// import bootstrap
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.navbar {
+  border-radius: 0;
+}

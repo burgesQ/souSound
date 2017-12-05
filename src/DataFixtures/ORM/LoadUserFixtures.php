@@ -15,27 +15,15 @@ class LoadUserFixtures extends AbstractFixture
      */
     private $userArray = [
         [
-            "fName"    => "Turlu",
-            "lName"    => "Tutu",
-            "email"    => "turlu@tutu.com",
+            "fName"    => "Kyu",
+            "lName"    => "Bee",
+            "email"    => "kyu@be.com",
             "password" => "password",
-            "roles"    => [ "ROLE_ADMIN", "ROLE_USER" ],
+            "roles"    => ["ROLE_ADMIN", "ROLE_USER"],
             "dl_utils" => [
                 1 => "youtube_like",
                 2 => "soundcloud_like",
                 3 => "soundcloud_playlist"
-            ]
-        ],
-        [
-            "fName"    => "Ton",
-            "lName"    => "Tonton",
-            "email"    => "ton@tonton.com",
-            "password" => "password",
-            "roles"    => [ "ROLE_USER" ],
-            "dl_utils" => [
-                1 => "youtube_like_2",
-                2 => "soundcloud_like_2",
-                3 => "soundcloud_playlist_2"
             ]
         ]
     ];

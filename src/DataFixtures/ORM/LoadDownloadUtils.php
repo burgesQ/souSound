@@ -37,30 +37,6 @@ class LoadDownloadUtils extends AbstractFixture
             "username" => "",
             "password" => "",
             "mode"     => DownloadUtil::SOUNDCLOUD_PLAYLIST
-        ],
-        4 => [
-            "name"     => "youtube_like_2",
-            "type"     => DownloadUtil::YOUTUBE,
-            "url"      => "https://www.youtube.com/channel/UC744F6lEVXqb1_-FeqCIdfg/videos?view=15&sort=dd&shelf_id=0",
-            "username" => "",
-            "password" => "",
-            "mode"     => DownloadUtil::YOUTUBE_URL
-        ],
-        5 => [
-            "name"     => "soundcloud_like_2",
-            "type"     => DownloadUtil::SOUNDCLOUD,
-            "url"      => "https://www.soundcloud.com/nicolasbtn",
-            "username" => "",
-            "password" => "",
-            "mode"     => DownloadUtil::SOUNDCLOUD_LIKE
-        ],
-        6 => [
-            "name"     => "soundcloud_playlist_2",
-            "type"     => DownloadUtil::SOUNDCLOUD,
-            "url"      => "https://www.soundcloud.com/nicolasbtn",
-            "username" => "",
-            "password" => "",
-            "mode"     => DownloadUtil::SOUNDCLOUD_PLAYLIST
         ]
     ];
 
