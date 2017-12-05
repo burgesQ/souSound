@@ -3,6 +3,8 @@
 // boostrap icon
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 
+//$brand-primary: #8b0000;
+
 // set if you're also including font-awesome
 $fa-font-path: "~font-awesome/fonts";
 
@@ -12,3 +14,20 @@ $fa-font-path: "~font-awesome/fonts";
 .navbar {
   border-radius: 0;
 }
+
+.navbar-btn--logout {
+  margin-right: 8px;
+}
+
+//.navbar-inverse .navbar-nav > li > a {
+//  color: #ffffff;
+//}
+//
+
+//.navbar-inverse {
+//  color:  #8b0000;
+//}
+//
+//.navbar-brand {
+//  color: white;
+//}

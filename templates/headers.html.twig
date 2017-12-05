@@ -2,7 +2,7 @@
 
     <header>
 
-        <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse" style="background-color: #8b0000">
             <div class="container-fluid">
 
                 <div class="navbar-header">
@@ -12,10 +12,6 @@
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
                     <ul class="nav navbar-nav">
-                        <li {% if home is defined %}class="active"{% endif %}>
-                            <a href="{{ path('app_home_home') }}">Home</a>
-                        </li>
-
                         <li><a href="#">Futur Cron manager</a></li>
 
                         <li><a href="{{ path('easyadmin') }}">SouSoundManager</a></li>
@@ -28,7 +24,8 @@
                                 {{ app.user.username }}
                             </a>
                         </li>
-                        <a type="button" class="btn btn-danger navbar-btn"
+
+                        <a type="button" class="btn navbar-btn navbar-btn--logout btn-danger"
                            href="{{ path('fos_user_security_logout') }}">
                             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                         </a>
