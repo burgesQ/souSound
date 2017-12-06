@@ -15,7 +15,7 @@ class LoadDownloadUtils extends AbstractFixture
      */
     private $utilsArray = [
         1 => [
-            "name"     => "youtube_like",
+            "name"     => "youtube_like_1",
             "type"     => DownloadUtil::YOUTUBE,
             "url"      => "https://www.youtube.com/playlist?list=LL8BoiGKpm1cpDd_nvkMzdxw",
             "username" => "",
@@ -23,7 +23,7 @@ class LoadDownloadUtils extends AbstractFixture
             "mode"     => DownloadUtil::YOUTUBE_URL
         ],
         2 => [
-            "name"     => "soundcloud_like",
+            "name"     => "soundcloud_like_1",
             "type"     => DownloadUtil::SOUNDCLOUD,
             "url"      => "https://www.soundcloud.com/letstayhigh",
             "username" => "",
@@ -31,13 +31,38 @@ class LoadDownloadUtils extends AbstractFixture
             "mode"     => DownloadUtil::SOUNDCLOUD_LIKE
         ],
         3 => [
-            "name"     => "soundcloud_playlist",
+            "name"     => "soundcloud_playlist_1",
             "type"     => DownloadUtil::SOUNDCLOUD,
             "url"      => "https://www.soundcloud.com/letstayhigh",
             "username" => "",
             "password" => "",
             "mode"     => DownloadUtil::SOUNDCLOUD_PLAYLIST
+        ],
+        4 => [
+            "name"     => "youtube_like_2",
+            "type"     => DownloadUtil::YOUTUBE,
+            "url"      => "https://www.youtube.com/channel/UC744F6lEVXqb1_-FeqCIdfg/videos?view=15&sort=dd&shelf_id=0",
+            "username" => "",
+            "password" => "",
+            "mode"     => DownloadUtil::YOUTUBE_URL
+        ],
+        5 => [
+            "name"     => "soundcloud_like_2",
+            "type"     => DownloadUtil::SOUNDCLOUD,
+            "url"      => "https://www.soundcloud.com/nicolasbtn",
+            "username" => "",
+            "password" => "",
+            "mode"     => DownloadUtil::SOUNDCLOUD_LIKE
+        ],
+        6 => [
+            "name"     => "soundcloud_playlist_2",
+            "type"     => DownloadUtil::SOUNDCLOUD,
+            "url"      => "https://www.soundcloud.com/nicolasbtn",
+            "username" => "",
+            "password" => "",
+            "mode"     => DownloadUtil::SOUNDCLOUD_PLAYLIST
         ]
+
     ];
 
     /**
