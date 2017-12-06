@@ -15,3 +15,15 @@
 #content.active {
   width: calc(100% - 80px);
 }
+
+
+/* ----------------------------
+    MEDIAQUERIES
+------------------------------*/
+@media (max-width: 768px) {
+
+  #content {
+    width: calc(100% - 80px);
+  }
+
+}

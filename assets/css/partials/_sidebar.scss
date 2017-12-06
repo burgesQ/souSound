@@ -188,8 +188,9 @@ a[aria-expanded="true"]::before {
     min-width: 80px;
     max-width: 80px;
     text-align: center;
-    margin-left: -80px !important ;
+    margin-left: 0px !important ;
   }
+
   a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
     top: auto;
     bottom: 5px;
@@ -198,9 +199,13 @@ a[aria-expanded="true"]::before {
     -ms-transform: translateX(50%);
     transform: translateX(50%);
   }
-  #sidebar.active {
-    margin-left: 0 !important;
-  }
+  //
+  //#sidebar.active {
+  //  min-width: 80px;
+  //  max-width: 80px;
+  //  text-align: center;
+  //  margin-left: 0px !important;
+  //}
 
   #sidebar .sidebar-header h3, #sidebar .CTAs {
     display: none;
@@ -212,6 +217,7 @@ a[aria-expanded="true"]::before {
 
   #sidebar ul li a {
     padding: 20px 10px;
+    text-align: center;
   }
 
   #sidebar ul li a span {
@@ -232,7 +238,36 @@ a[aria-expanded="true"]::before {
   #sidebar {
     margin-left: 0;
   }
-  #sidebarCollapse span {
+
+  #sidebarCollapse {
     display: none;
   }
+
+  //
+  ///* Reversing the behavior of the bars:
+  //    Removing the rotation from the first,
+  //    last bars and reappear the second bar on default state,
+  //    and giving them a vertical margin */
+  //#sidebarCollapse span:first-of-type,
+  //#sidebarCollapse span:nth-of-type(2),
+  //#sidebarCollapse span:last-of-type {
+  //  transform: none;
+  //  opacity: 1;
+  //  margin: 5px auto;
+  //}
+  //
+  ///* Removing the vertical margin and make the first and last bars rotate again when the sidebar is open, hiding the second bar */
+  //#sidebarCollapse.active span {
+  //  margin: 0 auto;
+  //}
+  //#sidebarCollapse.active span:first-of-type {
+  //  transform: rotate(45deg) translate(2px, 2px);
+  //}
+  //#sidebarCollapse.active span:nth-of-type(2) {
+  //  opacity: 0;
+  //}
+  //#sidebarCollapse.active span:last-of-type {
+  //  transform: rotate(-45deg) translate(1px, -1px);
+  //}
+
 }
