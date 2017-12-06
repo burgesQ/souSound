@@ -5,6 +5,7 @@ $(document).ready(function () {
     if (isAuthenticated) {
         $('#sidebarCollapse').on('click', function () {
             $('#sidebar, #content').toggleClass('active');
+            $(this).toggleClass('active');
         });
     } else {
         $('#sidebar, #content').toggleClass('active');
