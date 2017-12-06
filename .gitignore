@@ -10,8 +10,14 @@
 
 ###> sou/sound ###
 /sounds
+/public/build/images/mCSB_buttons.*
+
 ###< sou/sound ###
 
 ###> symfony/webpack-encore-pack ###
 /node_modules/
 ###< symfony/webpack-encore-pack ###
+
+###> phpStorm ###
+/.idea/workspace.xml
+###< ###

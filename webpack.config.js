@@ -4,6 +4,9 @@ var Encore = require('@symfony/webpack-encore');
 
 Encore
 
+    // allow legacy applications to use $/jQuery as a global variable
+    .autoProvidejQuery()
+
     // fix delay caused by boostrap
     .enableSassLoader(function(sassOptions) {}, {
         resolveUrlLoader: false
@@ -21,9 +24,6 @@ Encore
     // allow sass/scss files to be processed
     .enableSassLoader()
 
-    // allow legacy applications to use $/jQuery as a global variable
-    .autoProvidejQuery()
-
     .enableSourceMaps(!Encore.isProduction())
 
     // empty the outputPath dir before each build
@@ -34,9 +34,6 @@ Encore
 
     // create hashed filenames (e.g. app.abc123.css)
     // .enableVersioning()
-
-    // add jquery
-    .autoProvidejQuery()
 ;
 
 // export the final configuration

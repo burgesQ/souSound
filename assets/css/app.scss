@@ -1,33 +1,22 @@
 // asset/scss/app.scss
 
+
 // boostrap icon
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-
-//$brand-primary: #8b0000;
 
 // set if you're also including font-awesome
 $fa-font-path: "~font-awesome/fonts";
 
+// customize some Bootstrap variables
+// $brand-primary: darken(#8f0000, 20%);
+
 // import bootstrap
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-.navbar {
-  border-radius: 0;
-}
+// import personal components
+@import "partials/sidebar";
+@import "partials/content";
+@import "partials/navbar";
 
-.navbar-btn--logout {
-  margin-right: 8px;
-}
-
-//.navbar-inverse .navbar-nav > li > a {
-//  color: #ffffff;
-//}
-//
-
-//.navbar-inverse {
-//  color:  #8b0000;
-//}
-//
-//.navbar-brand {
-//  color: white;
-//}
+// import external libs
+@import "libs/jquery.mCustomScrollbar.min.css";

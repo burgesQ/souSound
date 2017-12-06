@@ -13,23 +13,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>
+        {% block title %}Welcome!{% endblock %}
+    </title>
+
     {% block stylesheets %}
-
-        {% if form is defined %}
-            {% form_theme form 'bootstrap_4_horizontal_layout.html.twig' %}
-        {% endif %}
-
         <link rel="stylesheet" href="{{ asset('build/app.css') }}">
     {% endblock %}
+
 </head>
+
 <body>
-{% block header %}
-    {% include "headers.html.twig" %}
-{% endblock %}
-{% block body %}{% endblock %}
-{% block javascripts %}
-    <script src="{{ asset('build/app.js') }}"></script>
-{% endblock %}
+
+    <div class="js-user-logged" data-is-authenticated="{{ app.user == null ? 'false' : 'true' }}">
+    </div>
+
+    <!-- Global Body -->
+    <div class="wrapper">
+    <!-- Sidebar -->
+    {% block sidebar %}{% include "sidebar.html.twig" %}{% endblock %}
+        <!-- Page Content -->
+        <div id="content">
+            <!-- NavBar Content -->
+            {% block navbar %}{% include "navbar.html.twig" %}{% endblock %}
+            <!-- Page Content -->
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+
+    {% block javascripts %}
+        <script src="{{ asset('build/app.js') }}"></script>
+    {% endblock %}
+
 </body>
+
 </html>
