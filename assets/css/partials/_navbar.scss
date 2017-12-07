@@ -4,7 +4,7 @@
   border: none;
   border-radius: 0;
   margin-bottom: 40px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow_x_axies $shadow_y_axies $shadow_navbar_height $shadow_scale $shadow_color;
 }
 
 .navbar-btn {

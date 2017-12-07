@@ -41,6 +41,7 @@ i, span {
   left: 0;
   height: 100vh;
   z-index: 999;
+  box-shadow: $shadow_sidebar_x_axies $shadow_sidebar_y_axies $shadow_sidebar_height $shadow_scale $shadow_color;
 
 }
 
@@ -100,7 +101,7 @@ i, span {
 
 #sidebar ul.components {
   padding: 20px 0;
-  border-bottom: 1px solid #47748b;
+  // border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul li a {
@@ -145,7 +146,8 @@ a[aria-expanded="true"]::before {
 #sidebarCollapse {
   width: 40px;
   height: 40px;
-  background: #f5f5f5;
+  background: #ffffff;
+//  box-shadow: -1px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 #sidebarCollapse span {
@@ -188,7 +190,7 @@ a[aria-expanded="true"]::before {
     min-width: 80px;
     max-width: 80px;
     text-align: center;
-    margin-left: 0px !important ;
+    margin-left: 0px !important;
   }
 
   a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
@@ -199,13 +201,13 @@ a[aria-expanded="true"]::before {
     -ms-transform: translateX(50%);
     transform: translateX(50%);
   }
-  //
-  //#sidebar.active {
-  //  min-width: 80px;
-  //  max-width: 80px;
-  //  text-align: center;
-  //  margin-left: 0px !important;
-  //}
+
+  #sidebar.active {
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+    margin-left: -80px !important ;
+  }
 
   #sidebar .sidebar-header h3, #sidebar .CTAs {
     display: none;
@@ -238,36 +240,5 @@ a[aria-expanded="true"]::before {
   #sidebar {
     margin-left: 0;
   }
-
-  #sidebarCollapse {
-    display: none;
-  }
-
-  //
-  ///* Reversing the behavior of the bars:
-  //    Removing the rotation from the first,
-  //    last bars and reappear the second bar on default state,
-  //    and giving them a vertical margin */
-  //#sidebarCollapse span:first-of-type,
-  //#sidebarCollapse span:nth-of-type(2),
-  //#sidebarCollapse span:last-of-type {
-  //  transform: none;
-  //  opacity: 1;
-  //  margin: 5px auto;
-  //}
-  //
-  ///* Removing the vertical margin and make the first and last bars rotate again when the sidebar is open, hiding the second bar */
-  //#sidebarCollapse.active span {
-  //  margin: 0 auto;
-  //}
-  //#sidebarCollapse.active span:first-of-type {
-  //  transform: rotate(45deg) translate(2px, 2px);
-  //}
-  //#sidebarCollapse.active span:nth-of-type(2) {
-  //  opacity: 0;
-  //}
-  //#sidebarCollapse.active span:last-of-type {
-  //  transform: rotate(-45deg) translate(1px, -1px);
-  //}
 
 }

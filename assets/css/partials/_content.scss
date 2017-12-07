@@ -26,4 +26,8 @@
     width: calc(100% - 80px);
   }
 
+  #content.active {
+    width: 100%;
+  }
+
 }

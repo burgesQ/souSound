@@ -1,6 +1,5 @@
 // asset/scss/app.scss
 
-
 // boostrap icon
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 
@@ -12,6 +11,10 @@ $fa-font-path: "~font-awesome/fonts";
 
 // import bootstrap
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+// import personal vars
+// shadow value
+@import "partials/variables";
 
 // import personal components
 @import "partials/sidebar";
