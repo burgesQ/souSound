@@ -1,23 +1,30 @@
 
     Entities :
      - [x] User Entity
+       - [] auto playlist
+       - [] history
+
      - [X] Tracks
+       - [] info
        - [] Mix Meta
-       - [] info
-     - [] Mix Meta
-       - [] track
-       - [] tracks
-       - [] event
-       - [] info
+         - [] track
+         - [] tracks
+         - [] event
+         - [] info
+
      - [X] Artiste
        - [] info
+
      - [x] Playlist
        - [x] bool Albume/EP
+       - [] Meta Album
+
      - [x] Label
        - [] info
+
      - [] Kind
      - [] Event
-     - [] Orga
+
      - [x] DownloadUtils
        - [x] add youtube-dl config
        - [x] add scdl config
@@ -25,27 +32,27 @@
     BackOffice :
      - [] User Entity
      - [] Tracks
-     - [] Artiste
      - [] Mix
+     - [] Artiste
      - [] Albume/EP
      - [] Event
-     - [] Orga
      - [] Label
      - [] Kind
 
     Sf command :
      - [] Options
      - [] ScrapCmd
-     - [x] DownlaodCmd
+     - [] DownlaodCmd
+       - [] check dir
+       - [] create dir
 
     CRONTab manager :
      - [] Manager
 
     Utils :
-     - [] installer/checker for debian
-     - [] gitSubmodule
+     - [] installer/checker for debianBase / relBase
+     - [] gitSubmodule ?
      - [] fbLogin
-     - [] historiK
 
     Search :
      - [] Artist
@@ -55,7 +62,18 @@
      - [] Ponderation ?
 
     UI/UX :
-     - [] Add boostrap 4
+     - [x] Add boostrap 4
      - [] SearchBar
-     - [] LatBar
+     - [x] sideBar
+     - [x] navBar
      - [] Player
+     - [] theme manager
+     - [] shadoooow
+
+   API :
+    - [] wele kwe
+
+   CS :
+     - [] return value
+     - [] phpDoc
+     - [] swaggerDoc

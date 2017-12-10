@@ -4,8 +4,11 @@
 
         <!-- Sidebar Header -->
         <div class="sidebar-header">
-            <h3>SouSound</h3>
-            <strong>SS</strong>
+            <h3>
+                {#<img src="{{ asset('./favicons/favicon.ico') }}" style="max-height: 15%;max-width: 15%;"/>#}
+                SouSound
+            </h3>
+            <strong><img src="{{ asset('./favicons/favicon.ico') }}" style="max-height: 100%;max-width: 100%;"/></strong>
         </div>
 
         <ul class="list-unstyled components">
@@ -13,54 +16,48 @@
 
             {% if app.user != null %}
 
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
-                    <i class="glyphicon glyphicon-home"></i>
-                    Home
-                </a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li><a href="#">Home 1</a></li>
-                    <li><a href="#">Home 2</a></li>
-                    <li><a href="#">Home 3</a></li>
-                </ul>
-            </li>
+                <li class="active">
+                    <a href="#musicSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-home"></i>
+                        My Sounds
+                    </a>
+                    <ul class="collapse list-unstyled" id="musicSubmenu">
+                        <li><a href="#">By Artist</a></li>
+                        <li><a href="#">By Tracks</a></li>
+                        <li><a href="#">By Album</a></li>
 
-            <li>
-                <a href="#">
-                    <i class="glyphicon glyphicon-briefcase"></i>
-                    About
-                </a>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                    <i class="glyphicon glyphicon-duplicate"></i>
-                    Pages
-                </a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li><a href="#">Page 1</a></li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="#">Page 3</a></li>
-                </ul>
-            </li>
+                        <li><a href="#">By Kind</a></li>
+                        <li><a href="#">By Label</a></li>
+                        <li><a href="#">By Years</a></li>
 
-            <li>
-                <a href="#">
-                    <i class="glyphicon glyphicon-link"></i>
-                    Portfolio
-                </a>
-            </li>
+                        <li><a href="#">By Playlist</a></li>
+                    </ul>
+                </li>
 
-            <li>
-                <a href="#">
-                    <i class="glyphicon glyphicon-paperclip"></i>
-                    FAQ
-                </a>
-            </li>
+                <li>
+                    <a href="#uploadSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-link"></i>
+                        Uploads Manager
+                    </a>
+                    <ul class="collapse list-unstyled" id="uploadSubmenu">
+                        <li><a href="#">New Youtube dl</a></li>
+                        <li><a href="#">New Soundcloud dl</a></li>
+                        <li><a href="#">Manually upload</a></li>
+                    </ul>
+                </li>
 
-            <li>
-                <a href="#">
-                    <i class="glyphicon glyphicon-send"></i>
-                    Contact
-                </a>
-            </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-user"></i>
+                        User Profile
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">Edit info</a></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}">LogOut</a></li>
+                        <li><a href="{{ path('easyadmin') }}">Backlog</a></li>
+                    </ul>
+                </li>
 
             {% endif %}
 

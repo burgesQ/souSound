@@ -80,7 +80,8 @@ i, span {
   padding: 10px !important;
 }
 
-#sidebar.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before {
+#sidebar.active a[aria-expanded="false"]::before,
+#sidebar.active a[aria-expanded="true"]::before {
   top: auto;
   bottom: 5px;
   right: 50%;
@@ -131,7 +132,7 @@ a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
   display: block;
   position: absolute;
   right: 20px;
-  font-family: 'Glyphicons Halflings';
+//  font-family: 'Glyphicons Halflings';
   font-size: 0.6em;
 }
 

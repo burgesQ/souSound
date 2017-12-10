@@ -16,16 +16,12 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">CRON Tab manager</a></li>
-                    <li><a href="{{ path('easyadmin') }}">Backlog</a></li>
 
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         <li>
-                            <a href="{{ path('fos_user_security_logout') }}">
-                                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                            <a href="#">
+                                Something, For Sure
                             </a>
                         </li>
-                    {% endif %}
 
                 </ul>
             </div>
