@@ -1,79 +1,80 @@
 
-    Entities :
-     - [x] User Entity
-       - [] auto playlist
-       - [] history
+Entities :
+ - [x] User Entity
+   - [] auto playlist
+   - [] history
 
-     - [X] Tracks
-       - [] info
-       - [] Mix Meta
-         - [] track
-         - [] tracks
-         - [] event
-         - [] info
+ - [X] Tracks
+   - [] info
+   - [] Mix Meta
+     - [] track
+     - [] tracks
+     - [] event
+     - [] info
 
-     - [X] Artiste
-       - [] info
+ - [X] Artiste
+   - [] info
 
-     - [x] Playlist
-       - [x] bool Albume/EP
-       - [] Meta Album
+ - [x] Playlist
+   - [x] bool Albume/EP
+   - [] Meta Album
 
-     - [x] Label
-       - [] info
+ - [x] Label
+   - [] info
 
-     - [] Kind
-     - [] Event
+ - [] Kind
+ - [] Event
 
-     - [x] DownloadUtils
-       - [x] add youtube-dl config
-       - [x] add scdl config
+ - [x] DownloadUtils
+   - [x] add youtube-dl config
+   - [x] add scdl config
 
-    BackOffice :
-     - [] User Entity
-     - [] Tracks
-     - [] Mix
-     - [] Artiste
-     - [] Albume/EP
-     - [] Event
-     - [] Label
-     - [] Kind
+BackOffice :
+ - [x] User Entity
+ - [] Tracks
+ - [] Mix
+ - [] Artiste
+ - [] Albume/EP
+ - [] Event
+ - [] Label
+ - [] Kind
 
-    Sf command :
-     - [] Options
-     - [] ScrapCmd
-     - [] DownlaodCmd
-       - [] check dir
-       - [] create dir
+Sf command :
+ - [] Options
+ - [x] ScrapCmd
+   - [] Better Artist guess
+ - [x] DownloadCmd
+   - [] check dir
+   - [] create dir
 
-    CRONTab manager :
-     - [] Manager
+CRONTab manager :
+ - [] Manager
 
-    Utils :
-     - [] installer/checker for debianBase / relBase
-     - [] gitSubmodule ?
-     - [] fbLogin
+Utils :
+ - [] installer/checker for debianBase / relBase
+ - [] gitSubmodule ?
+ - [] fbLogin
 
-    Search :
-     - [] Artist
-     - [] Name
-     - [] Genre
-     - [] Years
-     - [] Ponderation ?
+Search :
+ - [] Artist
+ - [] Name
+ - [] Genre
+ - [] Years
+ - [] Ponderation ?
 
-    UI/UX :
-     - [x] Add boostrap 4
-     - [] SearchBar
-     - [x] sideBar
-     - [x] navBar
-     - [] Player
-     - [] theme manager
-     - [] shadoooow
+UI/UX :
+ - [x] Add boostrap 4
+ - [] SearchBar
+ - [x] sideBar
+ - [x] navBar
+ - [] Player
+ - [] theme manager
+ - [] shadoooow
 
-   API :
-    - [] wele kwe
+API :
+- [] wele kwe
 
-   CS :
-     - [] return value
-     - [] phpDoc
-     - [] swaggerDoc
+CS :
+ - [] return value
+ - [] phpDoc
+ - [] swaggerDoc

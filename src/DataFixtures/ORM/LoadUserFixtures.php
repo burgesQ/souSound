@@ -47,18 +47,18 @@ class LoadUserFixtures extends AbstractFixture
      */
     public function load(ObjectManager $em)
     {
-        foreach ($this->userArray as $oneUser) {
+        foreach ($this->userArray as $userData) {
 
             /** @var User $user */
-            $user = new User($oneUser['fName'], $oneUser['lName']);
+            $user = new User($userData['fName'], $userData['lName']);
             $user
-                ->setPlainPassword($oneUser['password'])
-                ->setEmail($oneUser['email'])
+                ->setPlainPassword($userData['password'])
+                ->setEmail($userData['email'])
                 ->setEnabled(true)
-                ->setRoles($oneUser['roles']);
+                ->setRoles($userData['roles']);
 
             /** @var string $oneDlTools */
-            foreach ($oneUser['dl_utils'] as $oneDlTools) {
+            foreach ($userData['dl_utils'] as $oneDlTools) {
                 $user->addDownloadUtil($this->getReference($oneDlTools));
             }
 

@@ -2,8 +2,13 @@
 
 namespace App\Command;
 
+use App\Entity\Artist;
+use App\Entity\DownloadUtil;
 use App\Entity\Playlist;
+use App\Entity\Track;
+use App\Entity\TrackMetadata;
 use App\Entity\User;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -20,6 +25,14 @@ class AppSouSoundScrapCommand extends Command
     private $arrayDir = [
         1 => "/YouTube/",
         2 => "/SoundCloud/"
+    ];
+
+    /**
+     * @var array
+     */
+    private $arrayType = [
+        1 => "YouTube",
+        2 => "SoundCloud"
     ];
 
     /**
@@ -65,37 +78,119 @@ class AppSouSoundScrapCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
+        $em = $this->em;
 
         /** @var \App\Entity\User $user */
-        foreach ($this->em->getRepository("App:User")->findAll() as $user) {
+        foreach ($em->getRepository(User::class)->findAll() as $user) {
             /** @var \App\Entity\DownloadUtil $util */
             foreach ($user->getDownloadUtils() as $util) {
 
-                if ($util->getPlaylist() === null) {
-                    $io->comment('Creation playlist for util ' . $util->getName());
-                    $playlist = new Playlist($util->getName() . '_user_' . $user->getId());
-                    $this->em->persist($playlist);
-                    $this->em->flush($playlist);
+                dump($util->getName());
 
-                    $user->addPlaylist($playlist);
-                    $util->setPlaylist($playlist);
+                if ($util->getPlaylist() === null) {
+                    $this->createPlaylist($io, $util, $user);
                 }
 
                 $path = $this->rootDir . '/../' . $this->basePath . $util->getUser()->getId() .
                     $this->arrayDir[$util->getType()];
 
-                $io->comment('Indexing file for ' . $user->getFirstName() . ' ' . $user->getLastName());
-                $io->comment('Download path is : ' . $path);
+                $io->comment('Indexing file for ' .
+                    $user->getFirstName() .
+                    ' ' .
+                    $user->getLastName() .
+                    '\nDownload path is : ' .
+                    $path);
 
                 $files = scandir($path);
-                dump($files);
-                // her pattern to index file
-                // check if file allready indexed
-                // if not created in db
-                // if file already exist symlink to og
+
+                foreach ($files as $file) {
+                    if ($file != '.' && $file != '..') {
+
+
+                        /** @var TrackMetadata $trackMeta */
+                        if (!($trackMeta = $em->getRepository(TrackMetadata::class)->findOneBy(['fileName' => $file])
+                        )) {
+                            $this->createTrack($io, $file, $path, $util);
+                        } else {
+                            // rm file
+                            // ln -s OG .
+                            if (!$util->getPlaylist()->getTracks()->contains($trackMeta->getTrack())) {
+                                $util->getPlaylist()->addTrack($trackMeta->getTrack());
+                            }
+                        }
+                        // else if same name diff loc
+                    }
+                }
 
             }
         }
-        $this->em->flush();
+        $em->flush();
+    }
+
+    /**
+     * @param SymfonyStyle     $io
+     * @param DownloadUtil     $util
+     * @param \App\Entity\User $user
+     */
+    private function createPlaylist(SymfonyStyle $io, DownloadUtil $util, User $user)
+    {
+        $playlist = new Playlist($this->arrayType[$util->getType()] . '_user_' . $user->getId());
+        $this->em->persist($playlist);
+        $this->em->flush($playlist);
+
+        $user->addPlaylist($playlist);
+        $util->setPlaylist($playlist);
+
+        $io->success('Creation playlist for util ' . $util->getName());
+    }
+
+    /**
+     * @param \Symfony\Component\Console\Style\SymfonyStyle $io
+     * @param string                                        $file
+     * @param string                                        $path
+     * @param \App\Entity\DownloadUtil                      $util
+     */
+    private function createTrack(SymfonyStyle $io, string $file, string $path, DownloadUtil $util)
+    {
+        /** @var array $trackInfo */
+        $trackInfo = explode(" - ", $file, 2);
+        $track     = new Track(explode(".mp3", $trackInfo[1], 1)[0]);
+        $this->em->persist($track);
+        $this->em->flush($track);
+
+        $meta = new TrackMetadata($file, $path);
+        $this->em->persist($meta);
+        $this->em->flush($meta);
+
+
+        // TODO : define method to match b2b
+        /** @var Artist $artist */
+        if (!($artist = $this->em->getRepository(Artist::class)->findOneBy(['artist' => $trackInfo[0]]))) {
+            $track->addArtist($this->createArtist($io, $trackInfo[0]));
+        } else {
+            $track->addArtist($artist);
+        }
+
+        $track->setMetadata($meta);
+        $util->getPlaylist()->addTrack($track);
+
+        $io->success('Create track ' . $file);
+    }
+
+    /**
+     * @param \Symfony\Component\Console\Style\SymfonyStyle $io
+     * @param string                                        $artistName
+     *
+     * @return \App\Entity\Artist
+     */
+    private function createArtist(SymfonyStyle $io, string $artistName): Artist
+    {
+        $artist = new Artist($artistName);
+        $this->em->persist($artist);
+        $this->em->flush($artist);
+
+        $io->success('Creation artist ' . $artistName);
+
+        return $artist;
     }
 }

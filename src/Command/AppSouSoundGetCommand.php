@@ -2,6 +2,7 @@
 
 namespace App\Command;
 
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -68,23 +69,23 @@ class AppSouSoundGetCommand extends Command
         $io = new SymfonyStyle($input, $output);
 
         /** @var \App\Entity\User $user */
-        foreach ($this->em->getRepository("App:User")->findAll() as $user) {
+        foreach ($this->em->getRepository(User::class)->findAll() as $user) {
             /** @var \App\Entity\DownloadUtil $util */
             foreach ($user->getDownloadUtils() as $util) {
                 $path = $this->rootDir . '/../' . $this->basePath . $util->getUser()->getId() .
                     $this->arrayDir[$util->getType()];
 
-                $mkdir  = 'mkdir -p ' . $path;
-                $cd     = 'cd ' . $path;
+                $mkdir = 'mkdir -p ' . $path;
+                $cd    = 'cd ' . $path;
 
-                $cmd = $mkdir . ' ; ' . $cd . ' ; ' . $util->getCmd();
+                $cmd = $mkdir . ' && ' . $cd . ' && ' . $util->getCmd();
 
                 $io->comment('Downloading file for ' . $user->getFirstName() . ' ' . $user->getLastName());
                 $io->comment('Download path is : ' . $path);
 
                 dump($cmd);
 
-                $process = new Process($mkdir . ' ; ' . $cd . ' ; ls -lna');
+                $process = new Process($mkdir . ' && ' . $cd . ' && ls -lna');
                 $process->run();
 
                 if (!$process->isSuccessful()) {

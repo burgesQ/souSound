@@ -251,6 +251,7 @@ class Playlist
      */
     public function addTrack(\App\Entity\Track $track)
     {
+        // TODO : track.playlist
         $this->tracks[] = $track;
 
         return $this;

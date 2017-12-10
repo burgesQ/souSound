@@ -92,6 +92,15 @@ class Track
      */
     private $releaseDate;
 
+    /**
+     * @var \App\Entity\TrackMetadata
+     * @ORM\OneToOne(
+     *     targetEntity="App\Entity\TrackMetadata",
+     *     cascade={"persist"}
+     * )
+     */
+    private $metadata;
+
 //    private $isMix;
 //    private $tracksInMix;
 //    private $event;
@@ -245,6 +254,7 @@ class Track
      */
     public function addArtist(\App\Entity\Artist $artist)
     {
+        $artist->addTrack($this);
         $this->artists[] = $artist;
 
         return $this;
@@ -330,5 +340,28 @@ class Track
     public function getLabel()
     {
         return $this->label;
+    }
+
+    /**
+     * @return \App\Entity\TrackMetadata
+     */
+    public function getMetadata(): \App\Entity\TrackMetadata
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * Set Metadata
+     *
+     * @param \App\Entity\TrackMetadata $metadata
+     *
+     * @return Track
+     */
+    public function setMetadata(\App\Entity\TrackMetadata $metadata): Track
+    {
+        $metadata->setTrack($this);
+        $this->metadata = $metadata;
+
+        return $this;
     }
 }

@@ -15,7 +15,7 @@ class LoadDownloadUtils extends AbstractFixture
      */
     private $utilsArray = [
         1 => [
-            "name"     => "youtube_like_1",
+            "name" => "youtube_like_1",
             "type"     => DownloadUtil::YOUTUBE,
             "url"      => "https://www.youtube.com/playlist?list=LL8BoiGKpm1cpDd_nvkMzdxw",
             "username" => "",
@@ -72,15 +72,15 @@ class LoadDownloadUtils extends AbstractFixture
      */
     public function load(ObjectManager $em)
     {
-        foreach ($this->utilsArray as $oneDlTools) {
+        foreach ($this->utilsArray as $utilData) {
 
             /** @var DownloadUtil $util */
-            $util = new DownloadUtil($oneDlTools['name']);
+            $util = new DownloadUtil($utilData['name']);
             $util
-                ->setType($oneDlTools['type'])
-                ->setUrl($oneDlTools['url'])
-                ->setMode($oneDlTools['mode']);
-            $this->addReference($oneDlTools['name'], $util);
+                ->setType($utilData['type'])
+                ->setUrl($utilData['url'])
+                ->setMode($utilData['mode']);
+            $this->addReference($utilData['name'], $util);
             $em->persist($util);
 
         }

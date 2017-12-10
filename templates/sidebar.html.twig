@@ -5,14 +5,12 @@
         <!-- Sidebar Header -->
         <div class="sidebar-header">
             <h3>
-                {#<img src="{{ asset('./favicons/favicon.ico') }}" style="max-height: 15%;max-width: 15%;"/>#}
                 SouSound
             </h3>
             <strong><img src="{{ asset('./favicons/favicon.ico') }}" style="max-height: 100%;max-width: 100%;"/></strong>
         </div>
 
         <ul class="list-unstyled components">
-
 
             {% if app.user != null %}
 
@@ -22,7 +20,7 @@
                         My Sounds
                     </a>
                     <ul class="collapse list-unstyled" id="musicSubmenu">
-                        <li><a href="#">By Artist</a></li>
+                        <li><a onclick="pageLoader('cqcq', ['pipi'])">By Artist</a></li>
                         <li><a href="#">By Tracks</a></li>
                         <li><a href="#">By Album</a></li>
 
@@ -61,9 +59,20 @@
 
             {% endif %}
 
-
         </ul>
 
     </nav>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script type="text/javascript">
+
+        function pageLoader(route, arrayOptions) {
+            alert('cliker for ' + route);
+        }
+
+    </script>
 
 {% endblock %}

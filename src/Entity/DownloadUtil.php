@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @package App\Entity
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\DownloadUtilRepository")
  * @ORM\Table(name="download_util")
  * @ORM\HasLifecycleCallbacks()
  */

@@ -16,7 +16,7 @@
             {% for playlist in user.playlists %}
                 <a href="#" class="list-group-item">
                     {{ playlist.playlist }}
-                    <span class="badge">nb Tracks</span>
+                    <span class="badge">{{ playlist.tracks|length }}</span>
                 </a>
             {% endfor %}
         </div>
