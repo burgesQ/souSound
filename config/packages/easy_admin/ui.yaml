@@ -15,6 +15,7 @@ easy_admin:
             - 'User'
             - { label: 'Sounds' }
             - 'Track'
+            - 'TrackMetadata'
             - 'Artist'
             - 'Album'
             - 'Label'

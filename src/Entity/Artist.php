@@ -101,6 +101,11 @@ class Artist
         $this->signedLabel  = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->getArtist();
+    }
+
     /**
      * @ORM\PreUpdate
      */
