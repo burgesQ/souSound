@@ -54,16 +54,16 @@ class Album
      * )
      */
     private $updateDate;
-//
-//    /**
-//     * @var \App\Entity\Playlist
-//     * @ORM\OneToOne(
-//     *     targetEntity="App\Entity\Playlist",
-//     *     cascade={"persist"}
-//     * )
-//     */
-//    private $tracks;
-//
+
+    /**
+     * @var \App\Entity\Playlist
+     * @ORM\OneToOne(
+     *     targetEntity="App\Entity\Playlist",
+     *     cascade={"persist"}
+     * )
+     */
+    private $tracks;
+
     /**
      * @var Label
      * @ORM\ManyToOne(
@@ -103,7 +103,6 @@ class Album
 //        $this->releaseDate;
 //        $this->genres;
 //        $this->artists;
-//        $this->guest;
 
     }
 

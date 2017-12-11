@@ -2,9 +2,9 @@
 
 namespace App\Repository;
 
-use App\Entity\TrackMetadata;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use App\Entity\TrackMetadata;
 
 class TrackMetadataRepository extends ServiceEntityRepository
 {

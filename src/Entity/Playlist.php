@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @package App\Entity
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\PlaylistRepository")
  * @ORM\Table(name="playlist")
  * @ORM\HasLifecycleCallbacks()
  */
@@ -63,14 +63,6 @@ class Playlist
     private $tracks;
 
     /**
-     * @var ArrayCollection
-     * @ORM\ManyToMany(
-     *     targetEntity="App\Entity\Artist"
-     * )
-     */
-    private $artistes;
-
-    /**
      * @var bool
      * @ORM\Column(
      *     name="is_album",
@@ -79,15 +71,15 @@ class Playlist
      * )
      */
     private $isAlbum;
-//
-//    /**
-//     * @var \App\Entity\Album
-//     * @ORM\OneToOne(
-//     *     targetEntity="Album",
-//     *     cascade={"persist"}
-//     * )
-//     */
-//    private $album;
+
+    /**
+     * @var \App\Entity\Album
+     * @ORM\OneToOne(
+     *     targetEntity="Album",
+     *     cascade={"persist"}
+     * )
+     */
+    private $album;
 
     /**
      * @var \App\Entity\User
@@ -118,7 +110,6 @@ class Playlist
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
         $this->tracks       = new ArrayCollection();
-        $this->artistes     = new ArrayCollection();
         $this->isAlbum      = false;
 
         // $this->isAlbum
@@ -281,64 +272,28 @@ class Playlist
     }
 
     /**
-     * Add artiste.
+     * Get album.
      *
-     * @param \App\Entity\Artist $artiste
+     * @return \App\Entity\Album|null
+     */
+    public function getAlbum()
+    {
+        return $this->album;
+    }
+
+    /**
+     * Set album.
+     *
+     * @param \App\Entity\Album|null $album
      *
      * @return Playlist
      */
-    public function addArtiste(\App\Entity\Artist $artiste)
+    public function setAlbum(Album $album = null)
     {
-        $this->artistes[] = $artiste;
+        $this->album = $album;
 
         return $this;
     }
-
-    /**
-     * Remove artiste.
-     *
-     * @param \App\Entity\Artist $artiste
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeArtiste(\App\Entity\Artist $artiste)
-    {
-        return $this->artistes->removeElement($artiste);
-    }
-
-    /**
-     * Get artistes.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getArtistes()
-    {
-        return $this->artistes;
-    }
-//
-//    /**
-//     * Get album.
-//     *
-//     * @return \App\Entity\Album|null
-//     */
-//    public function getAlbum()
-//    {
-//        return $this->album;
-//    }
-//
-//    /**
-//     * Set album.
-//     *
-//     * @param \App\Entity\Album|null $album
-//     *
-//     * @return Playlist
-//     */
-//    public function setAlbum(\App\Entity\Album $album = null)
-//    {
-//        $this->album = $album;
-//
-//        return $this;
-//    }
 
     /**
      * Get owner.

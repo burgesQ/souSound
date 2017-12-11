@@ -3,7 +3,7 @@
     <nav id="sidebar">
 
         <!-- Sidebar Header -->
-        <div class="sidebar-header">
+        <div class="sidebar-header" onclick="pageLoader('{{ path('app_view_random') }}', {})">
             <h3>
                 SouSound
             </h3>
@@ -21,15 +21,20 @@
                         My Sounds
                     </a>
                     <ul class="collapse list-unstyled" id="musicSubmenu">
-                        <li><a onclick="pageLoader('{{ path('app_view_byartist') }}', {})">By Artist</a></li>
-                        <li><a href="#">By Tracks</a></li>
-                        <li><a href="#">By Album</a></li>
+                        <li><a onclick="pageLoader('{{ path('app_view_byclass', {'class': 'artist' }) }}', {})">
+                                By Artist
+                            </a></li>
+                        <li><a onclick="pageLoader('{{ path('app_view_byclass', {'class': 'track' }) }}', {})">
+                                By Track
+                            </a></li>
+                        <li><a onclick="pageLoader('{{ path('app_view_byclass', {'class': 'playlist' }) }}', {})">
+                                By Playlist
+                            </a></li>
 
-                        <li><a href="#">By Kind</a></li>
-                        <li><a href="#">By Label</a></li>
-                        <li><a href="#">By Years</a></li>
+                        {#<li><a onclick="pageLoader('{{ path('app_view_byclass', {'class': 'track' }) }}', {})" href="#">By Album</a></li>#}
+                        {#<li><a onclick="pageLoader('{{ path('app_view_byclass', {'class': 'track' }) }}', {})" href="#">By Kind</a></li>#}
+                        {#<li><a onclick="pageLoader('{{ path('app_view_byclass', {'class': 'track' }) }}', {})" href="#">By Label</a></li>#}
 
-                        <li><a href="#">By Playlist</a></li>
                     </ul>
                 </li>
 

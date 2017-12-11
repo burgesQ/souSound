@@ -2,9 +2,9 @@
 
 namespace App\Repository;
 
-use App\Entity\DownloadUtil;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use App\Entity\DownloadUtil;
 
 class DownloadUtilRepository extends ServiceEntityRepository
 {
@@ -17,7 +17,7 @@ class DownloadUtilRepository extends ServiceEntityRepository
      * @param $userId
      * @return DownloadUtil[]
      */
-    public function findDownloadToScrapByUser($userId) : array
+    public function findDownloadToScrapByUser($userId): array
     {
         $qb = $this->_em->createQuery('
             SELECT d FROM App\Entity\DownloadUtil d

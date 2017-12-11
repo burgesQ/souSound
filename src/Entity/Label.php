@@ -67,7 +67,7 @@ class Label
     private $startDate;
 
     /**
-     * @var \App\Entity\Playlist
+     * @var ArrayCollection
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\Track",
      *     mappedBy="label",
@@ -271,7 +271,7 @@ class Label
     /**
      * Get tracks.
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\ArrayCollection
      */
     public function getTracks()
     {
