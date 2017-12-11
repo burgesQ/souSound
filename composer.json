@@ -16,6 +16,7 @@
         "symfony/framework-bundle": "^3.3",
         "symfony/maker-bundle": "^1.0@dev",
         "symfony/profiler-pack": "^1.0",
+        "symfony/security-bundle": "^3.3",
         "symfony/var-dumper": "^4.0",
         "symfony/webpack-encore-pack": "^1.0",
         "symfony/yaml": "^3.3"

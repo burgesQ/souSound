@@ -2,7 +2,10 @@
 
 require('../css/app.scss');
 
-var $ = require('jquery');
+const $ = require('jquery');
+
+global.$ = global.jQuery = $;
+
 require('bootstrap-sass');
 
 // import external libs

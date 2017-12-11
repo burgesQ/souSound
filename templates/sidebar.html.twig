@@ -7,7 +7,8 @@
             <h3>
                 SouSound
             </h3>
-            <strong><img src="{{ asset('./favicons/favicon.ico') }}" style="max-height: 100%;max-width: 100%;"/></strong>
+            <strong><img src="{{ asset('./favicons/favicon.ico') }}"
+                         style="max-height: 100%;max-width: 100%;"/></strong>
         </div>
 
         <ul class="list-unstyled components">
@@ -20,7 +21,7 @@
                         My Sounds
                     </a>
                     <ul class="collapse list-unstyled" id="musicSubmenu">
-                        <li><a onclick="pageLoader('cqcq', ['pipi'])">By Artist</a></li>
+                        <li><a onclick="pageLoader('{{ path('app_view_byartist') }}', {})">By Artist</a></li>
                         <li><a href="#">By Tracks</a></li>
                         <li><a href="#">By Album</a></li>
 
@@ -62,17 +63,5 @@
         </ul>
 
     </nav>
-
-{% endblock %}
-
-{% block javascripts %}
-
-    <script type="text/javascript">
-
-        function pageLoader(route, arrayOptions) {
-            alert('cliker for ' + route);
-        }
-
-    </script>
 
 {% endblock %}

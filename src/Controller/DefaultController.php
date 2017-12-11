@@ -17,5 +17,4 @@ class DefaultController extends Controller
     {
         return $this->redirectToRoute('app_home_home');
     }
-
 }

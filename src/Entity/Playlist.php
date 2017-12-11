@@ -79,15 +79,15 @@ class Playlist
      * )
      */
     private $isAlbum;
-
-    /**
-     * @var \App\Entity\Album
-     * @ORM\OneToOne(
-     *     targetEntity="Album",
-     *     cascade={"persist"}
-     * )
-     */
-    private $album;
+//
+//    /**
+//     * @var \App\Entity\Album
+//     * @ORM\OneToOne(
+//     *     targetEntity="Album",
+//     *     cascade={"persist"}
+//     * )
+//     */
+//    private $album;
 
     /**
      * @var \App\Entity\User
@@ -251,7 +251,7 @@ class Playlist
      */
     public function addTrack(\App\Entity\Track $track)
     {
-        // TODO : track.playlist
+        $track->addPlaylist($this);
         $this->tracks[] = $track;
 
         return $this;
@@ -266,6 +266,7 @@ class Playlist
      */
     public function removeTrack(\App\Entity\Track $track)
     {
+        $track->removePlaylist($this);
         return $this->tracks->removeElement($track);
     }
 
@@ -314,30 +315,30 @@ class Playlist
     {
         return $this->artistes;
     }
-
-    /**
-     * Get album.
-     *
-     * @return \App\Entity\Album|null
-     */
-    public function getAlbum()
-    {
-        return $this->album;
-    }
-
-    /**
-     * Set album.
-     *
-     * @param \App\Entity\Album|null $album
-     *
-     * @return Playlist
-     */
-    public function setAlbum(\App\Entity\Album $album = null)
-    {
-        $this->album = $album;
-
-        return $this;
-    }
+//
+//    /**
+//     * Get album.
+//     *
+//     * @return \App\Entity\Album|null
+//     */
+//    public function getAlbum()
+//    {
+//        return $this->album;
+//    }
+//
+//    /**
+//     * Set album.
+//     *
+//     * @param \App\Entity\Album|null $album
+//     *
+//     * @return Playlist
+//     */
+//    public function setAlbum(\App\Entity\Album $album = null)
+//    {
+//        $this->album = $album;
+//
+//        return $this;
+//    }
 
     /**
      * Get owner.

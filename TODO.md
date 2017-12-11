@@ -54,6 +54,9 @@ Utils :
  - [] installer/checker for debianBase / relBase
  - [] gitSubmodule ?
  - [] fbLogin
+ - [] script scdl
+ - [] script youtube-dl
+ - [] cleqn up src lib js
 
 Search :
  - [] Artist

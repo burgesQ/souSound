@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
  *
  * @package App\Entity
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\ArtistRepository")
  * @ORM\Table(name="artist")
  * @ORM\HasLifecycleCallbacks()
  */

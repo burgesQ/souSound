@@ -70,7 +70,7 @@ class Track
      *     targetEntity="App\Entity\Playlist"
      * )
      */
-    private $albums;
+    private $playlists;
 
     /**
      * @var Label
@@ -118,7 +118,7 @@ class Track
         $this->creationDate = new \Datetime();
         $this->updateDate   = new \Datetime();
         $this->artists      = new ArrayCollection();
-        $this->albums       = new ArrayCollection();
+        $this->playlists       = new ArrayCollection();
         $this->label        = null;
         $this->releaseDate  = null;
     }
@@ -252,7 +252,7 @@ class Track
      *
      * @return Track
      */
-    public function addArtist(\App\Entity\Artist $artist)
+    public function addArtist(Artist $artist)
     {
         $artist->addTrack($this);
         $this->artists[] = $artist;
@@ -267,7 +267,7 @@ class Track
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeArtist(\App\Entity\Artist $artist)
+    public function removeArtist(Artist $artist)
     {
         return $this->artists->removeElement($artist);
     }
@@ -283,39 +283,39 @@ class Track
     }
 
     /**
-     * Add album.
+     * Add playlist.
      *
-     * @param \App\Entity\Playlist $album
+     * @param \App\Entity\Playlist $playlist
      *
      * @return Track
      */
-    public function addAlbum(\App\Entity\Playlist $album)
+    public function addPlaylist(Playlist $playlist)
     {
-        $this->albums[] = $album;
+        $this->playlists[] = $playlist;
 
         return $this;
     }
 
     /**
-     * Remove album.
+     * Remove playlist.
      *
-     * @param \App\Entity\Playlist $album
+     * @param \App\Entity\Playlist $playlist
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeAlbum(\App\Entity\Playlist $album)
+    public function removePlaylist(Playlist $playlist)
     {
-        return $this->albums->removeElement($album);
+        return $this->playlists->removeElement($playlist);
     }
 
     /**
-     * Get albums.
+     * Get playlistes.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getAlbums()
+    public function getPlaylists()
     {
-        return $this->albums;
+        return $this->playlists;
     }
 
     /**
