@@ -9,21 +9,18 @@ Entities :
    - [] Mix Meta
      - [] track
      - [] tracks
-     - [] event
      - [] info
 
  - [X] Artiste
-   - [] info
 
  - [x] Playlist
    - [x] bool Albume/EP
-   - [] Meta Album
+   - [x] Meta Album
 
  - [x] Label
    - [] info
 
  - [] Kind
- - [] Event
 
  - [x] DownloadUtils
    - [x] add youtube-dl config
@@ -35,7 +32,6 @@ BackOffice :
  - [] Mix
  - [] Artiste
  - [] Albume/EP
- - [] Event
  - [] Label
  - [] Kind
 
@@ -44,26 +40,25 @@ Sf command :
  - [x] ScrapCmd
    - [] Better Artist guess
  - [x] DownloadCmd
-   - [] check dir
-   - [] create dir
+   - [] run script
 
 CRONTab manager :
  - [] Manager
 
 Utils :
- - [] installer/checker for debianBase / relBase
+ - [] installer/checker debian
  - [] gitSubmodule ?
- - [] fbLogin
+ - [] fbLogin ?
  - [] script scdl
  - [] script youtube-dl
- - [] cleqn up src lib js
+ - [] clean up asset lib
 
 Search :
  - [] Artist
  - [] Name
  - [] Genre
  - [] Years
- - [] Ponderation ?
+ - [] Ponderation ..
 
 UI/UX :
  - [x] Add boostrap 4
@@ -73,11 +68,13 @@ UI/UX :
  - [] Player
  - [] theme manager
  - [] shadoooow
+ - [] quickLoad
 
 API :
 - [] wele kwe
 
 CS :
- - [] return value
+ - [] return type
  - [] phpDoc
  - [] swaggerDoc
+ - [] parameters type
