@@ -6,7 +6,6 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use FOS\UserBundle\Model\User as BaseUser;
-use JMS\Serializer\Annotation as JMS;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -17,7 +16,6 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="user")
  * @ORM\HasLifecycleCallbacks()
- * @JMS\ExclusionPolicy("none")
  */
 class User extends BaseUser
 {
@@ -26,7 +24,6 @@ class User extends BaseUser
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @JMS\Expose()
      */
     protected $id;
 
