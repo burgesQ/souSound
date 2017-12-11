@@ -50,6 +50,18 @@
     "doctrine/orm": {
         "version": "v2.5.12"
     },
+    "exsyst/swagger": {
+        "version": "v0.3.1"
+    },
+    "friendsofsymfony/rest-bundle": {
+        "version": "2.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.2",
+            "ref": "258300d52be6ad59b32a888d5ddafbf9638540ff"
+        }
+    },
     "friendsofsymfony/user-bundle": {
         "version": "v2.0.1"
     },
@@ -65,11 +77,44 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "jms/metadata": {
+        "version": "1.6.0"
+    },
+    "jms/parser-lib": {
+        "version": "1.0.0"
+    },
+    "jms/serializer": {
+        "version": "1.10.0"
+    },
+    "jms/serializer-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "fe60ce509ef04a3f40da96e3979bc8d9b13b2372"
+        }
+    },
+    "nelmio/api-doc-bundle": {
+        "version": "2.13",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.13",
+            "ref": "d13bb99357ebcd2ffb6fe808a64961f5bc1c7546"
+        }
+    },
     "pagerfanta/pagerfanta": {
         "version": "v1.0.5"
     },
     "paragonie/random_compat": {
         "version": "v2.0.11"
+    },
+    "phpcollection/phpcollection": {
+        "version": "0.5.0"
+    },
+    "phpoption/phpoption": {
+        "version": "1.5.0"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -191,14 +236,14 @@
     "symfony/polyfill-php72": {
         "version": "v1.6.0"
     },
-    "symfony/process": {
-        "version": "v3.3.11"
-    },
     "symfony/profiler-pack": {
         "version": "v1.0.2"
     },
     "symfony/property-access": {
         "version": "v3.3.11"
+    },
+    "symfony/property-info": {
+        "version": "v4.0.1"
     },
     "symfony/routing": {
         "version": "3.3",
@@ -263,15 +308,6 @@
             "ref": "6bdfa1a95f6b2e677ab985cd1af2eae35d62e0f6"
         }
     },
-    "symfony/web-server-bundle": {
-        "version": "3.3",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "3.3",
-            "ref": "c72d107d077f1654428edaed69415d0228c1aefe"
-        }
-    },
     "symfony/webpack-encore-pack": {
         "version": "1.0",
         "recipe": {
@@ -295,5 +331,14 @@
     },
     "twig/twig": {
         "version": "v2.4.4"
+    },
+    "willdurand/jsonp-callback-validator": {
+        "version": "v1.1.0"
+    },
+    "willdurand/negotiation": {
+        "version": "v2.3.1"
+    },
+    "zircote/swagger-php": {
+        "version": "2.0.13"
     }
 }
