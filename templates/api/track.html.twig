@@ -14,7 +14,7 @@
                     {{ artist.artist }}
                 </span>
                 {% endfor %}
-                <div id="meta-{{ loop.index0 }}" class="collapse">
+                <div id="meta-{{ loop.index0 }}" class="collapse" style="word-break: break-word;">
                     {% set meta = track.metadata %}
                     Track location : {{ meta.trackPath }}
                 </div>
