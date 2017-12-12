@@ -23,6 +23,7 @@ class TrackRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('t')
             ->where("t.id IN(:tracksId)")
+            ->orderBy('t.trackName', 'ASC')
             ->setParameter('tracksId', (function ($user) {
                 $retIds = [];
                 foreach ($user->getPlaylists() as $playlist) {
@@ -32,7 +33,6 @@ class TrackRepository extends ServiceEntityRepository
                         }
                     }
                 }
-
                 return $retIds;
             })($user))
             ->getQuery()

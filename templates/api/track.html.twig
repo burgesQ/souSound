@@ -1,4 +1,24 @@
-{% for track in content %}
-    {{ track.trackName }}
-    <br />
-{% endfor %}
+<h3>
+    Tracks
+</h3>
+
+<div class="panel-group">
+    {% for track in content %}
+        <div class="panel panel-default" data-toggle="collapse" data-target="#meta-{{ loop.index0 }}">
+            <div class="panel-heading">
+                {{ track.trackName }}
+            </div>
+            <div class="panel-body">
+                Artist : {% for artist in track.artists %}
+                    <span class="badge">
+                    {{ artist.artist }}
+                </span>
+                {% endfor %}
+                <div id="meta-{{ loop.index0 }}" class="collapse">
+                    {% set meta = track.metadata %}
+                    Track location : {{ meta.trackPath }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

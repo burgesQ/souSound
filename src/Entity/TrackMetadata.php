@@ -58,6 +58,11 @@ class TrackMetadata
         $this->fileName     = $fileName;
     }
 
+    public function getTrackPath() : string
+    {
+        return $this->fileLocation . $this->fileName;
+    }
+
     /**
      * @return int
      */

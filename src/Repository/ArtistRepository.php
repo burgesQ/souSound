@@ -22,20 +22,18 @@ class ArtistRepository extends ServiceEntityRepository
     public function findByUser(User $user): array
     {
         return $this->createQueryBuilder('a')
-            ->join("a.tracks", "t")
-            ->where("t.id IN(:tracksId)")
-            ->setParameter('tracksId', (function ($user) {
+            ->where("a.id IN(:artistId)")
+            ->setParameter('artistId', (function ($user) {
                 $retIds = [];
                 foreach ($user->getPlaylists() as $playlist) {
                     foreach ($playlist->getTracks() as $track) {
                         foreach ($track->getArtists() as $artist) {
                             if (!in_array($artist->getId(), $retIds)) {
-                                $retIds[] = $artist->getId();
+                                $retIds[] += $artist->getId();
                             }
                         }
                     }
                 }
-
                 return $retIds;
             })($user))
             ->getQuery()

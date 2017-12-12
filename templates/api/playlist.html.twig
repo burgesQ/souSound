@@ -1,4 +1,16 @@
-{% for playlist in content %}
-    {{ playlist.playlist }}
-    <br />
-{% endfor %}
+<h3>
+    Playlist
+</h3>
+
+<div class="panel-group">
+    {% for playlist in content %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{ playlist.playlist }}
+            </div>
+            <div class="panel-body">
+                {{ playlist.tracks | length }} tracks.
+            </div>
+        </div>
+    {% endfor %}
+</div>

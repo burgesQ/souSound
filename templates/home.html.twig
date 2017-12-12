@@ -4,10 +4,6 @@
 
     {% set user = app.user %}
 
-    <h3>
-        Hello {{ user.firstName }} {{ user.lastName }}
-    </h3>
-
     <div id="dynamic_content">
     </div>
 
@@ -33,7 +29,7 @@
         }
 
         $(document).ready(function() {
-            pageLoader('{{ path('app_view_random') }}', {});
+            pageLoader('{{ path('app_view_byclass', { 'class' : 'track'}) }}', {});
         })
 
     </script>
