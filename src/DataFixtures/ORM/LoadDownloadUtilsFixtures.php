@@ -2,12 +2,18 @@
 
 namespace App\DataFixtures\ORM;
 
-use App\Entity\DownloadUtil;
+use App\Entity\Playlist;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use App\Entity\DownloadUtil;
 
-class LoadDownloadUtils extends AbstractFixture
+class LoadDownloadUtilsFixtures extends AbstractFixture
 {
+    private $arrayType = [
+        1 => 'youtube',
+        2 => 'soundcloud'
+    ];
+
     /**
      * Array of the different utils.
      *
@@ -69,6 +75,7 @@ class LoadDownloadUtils extends AbstractFixture
      * Load user according to the userArray.
      *
      * @param \Doctrine\Common\Persistence\ObjectManager $em
+     * @throws \Doctrine\Common\DataFixtures\BadMethodCallException
      */
     public function load(ObjectManager $em)
     {
@@ -82,6 +89,10 @@ class LoadDownloadUtils extends AbstractFixture
                 ->setMode($utilData['mode']);
             $this->addReference($utilData['name'], $util);
             $em->persist($util);
+
+            $playlist = new Playlist($this->arrayType[$utilData['type']] . '_user_');
+            $em->persist($playlist);
+            $util->setPlaylist($playlist);
 
         }
         $em->flush();

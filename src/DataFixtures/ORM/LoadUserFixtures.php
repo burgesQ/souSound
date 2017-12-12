@@ -2,9 +2,10 @@
 
 namespace App\DataFixtures\ORM;
 
-use App\Entity\User;
+use App\Helper\TrackGeneratorHelper;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use App\Entity\User;
 
 class LoadUserFixtures extends AbstractFixture
 {
@@ -19,7 +20,7 @@ class LoadUserFixtures extends AbstractFixture
             "lName"    => "Tutu",
             "email"    => "turlu@tutu.com",
             "password" => "password",
-            "roles"    => [ "ROLE_ADMIN", "ROLE_USER" ],
+            "roles"    => ["ROLE_ADMIN", "ROLE_USER"],
             "dl_utils" => [
                 1 => "youtube_like_1",
                 2 => "soundcloud_like_1",
@@ -31,7 +32,7 @@ class LoadUserFixtures extends AbstractFixture
             "lName"    => "Tonton",
             "email"    => "ton@tonton.com",
             "password" => "password",
-            "roles"    => [ "ROLE_USER" ],
+            "roles"    => ["ROLE_USER"],
             "dl_utils" => [
                 1 => "youtube_like_2",
                 2 => "soundcloud_like_2",
@@ -56,15 +57,19 @@ class LoadUserFixtures extends AbstractFixture
                 ->setEmail($userData['email'])
                 ->setEnabled(true)
                 ->setRoles($userData['roles']);
+            $em->persist($user);
+            $em->flush($user);
 
             /** @var string $oneDlTools */
             foreach ($userData['dl_utils'] as $oneDlTools) {
-                $user->addDownloadUtil($this->getReference($oneDlTools));
+                /** @var \App\Entity\DownloadUtil $util */
+                $util = $this->getReference($oneDlTools);
+                $user->addDownloadUtil($util);
+                $user->addPlaylist($util->getPlaylist());
+                /** add user id to playlist name */
+                $util->getPlaylist()->setPlaylist($util->getPlaylist()->getPlaylist() . $user->getId());
             }
-
-            $em->persist($user);
         }
-
         $em->flush();
     }
 

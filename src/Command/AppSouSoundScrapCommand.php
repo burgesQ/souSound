@@ -2,21 +2,19 @@
 
 namespace App\Command;
 
-use App\Entity\Artist;
-use App\Entity\DownloadUtil;
-use App\Entity\Playlist;
-use App\Entity\Track;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Console\Command\Command;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Helper\TrackGeneratorHelper;
 use App\Entity\TrackMetadata;
 use App\Entity\User;
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 
 class AppSouSoundScrapCommand extends Command
 {
+    use TrackGeneratorHelper;
+
     protected static $defaultName = 'app:sousound:scrap';
 
     /**
@@ -85,10 +83,8 @@ class AppSouSoundScrapCommand extends Command
             /** @var \App\Entity\DownloadUtil $util */
             foreach ($user->getDownloadUtils() as $util) {
 
-                dump($util->getName());
-
                 if ($util->getPlaylist() === null) {
-                    $this->createPlaylist($io, $util, $user);
+                    $this->createPlaylist($util, $user, $em);
                 }
 
                 $path = $this->rootDir . '/../' . $this->basePath . $util->getUser()->getId() .
@@ -105,92 +101,25 @@ class AppSouSoundScrapCommand extends Command
 
                 foreach ($files as $file) {
                     if ($file != '.' && $file != '..') {
-
-
                         /** @var TrackMetadata $trackMeta */
-                        if (!($trackMeta = $em->getRepository(TrackMetadata::class)->findOneBy(['fileName' => $file])
-                        )) {
-                            $this->createTrack($io, $file, $path, $util);
+                        if (!($trackMeta = $em->getRepository(TrackMetadata::class)->findOneBy(['fileName' => $file]))) {
+                            $io->comment('Need to create track : ' . $file);
+                            $this->createTrack($file, $path, $util, $em);
+                            $io->comment('Creqted track : ' . $file);
                         } else {
+                            $io->comment($trackMeta->getFileName() . ' existe');
                             // rm file
                             // ln -s OG .
                             if (!$util->getPlaylist()->getTracks()->contains($trackMeta->getTrack())) {
+                                $io->comment($trackMeta->getFileName() . ' need to be linked');
                                 $util->getPlaylist()->addTrack($trackMeta->getTrack());
+                                $io->comment($trackMeta->getFileName() . ' is linked');
                             }
                         }
-                        // else if same name diff loc
                     }
                 }
-
             }
         }
         $em->flush();
-    }
-
-    /**
-     * @param SymfonyStyle     $io
-     * @param DownloadUtil     $util
-     * @param \App\Entity\User $user
-     */
-    private function createPlaylist(SymfonyStyle $io, DownloadUtil $util, User $user)
-    {
-        $playlist = new Playlist($this->arrayType[$util->getType()] . '_user_' . $user->getId());
-        $this->em->persist($playlist);
-        $this->em->flush($playlist);
-
-        $user->addPlaylist($playlist);
-        $util->setPlaylist($playlist);
-
-        $io->success('Creation playlist for util ' . $util->getName());
-    }
-
-    /**
-     * @param \Symfony\Component\Console\Style\SymfonyStyle $io
-     * @param string                                        $file
-     * @param string                                        $path
-     * @param \App\Entity\DownloadUtil                      $util
-     */
-    private function createTrack(SymfonyStyle $io, string $file, string $path, DownloadUtil $util)
-    {
-        /** @var array $trackInfo */
-        $trackInfo = explode(" - ", $file, 2);
-        $track     = new Track(explode(".mp3", $trackInfo[1], 1)[0]);
-        $this->em->persist($track);
-        $this->em->flush($track);
-
-        $meta = new TrackMetadata($file, $path);
-        $this->em->persist($meta);
-        $this->em->flush($meta);
-
-
-        // TODO : define method to match b2b
-        /** @var Artist $artist */
-        if (!($artist = $this->em->getRepository(Artist::class)->findOneBy(['artist' => $trackInfo[0]]))) {
-            $track->addArtist($this->createArtist($io, $trackInfo[0]));
-        } else {
-            $track->addArtist($artist);
-        }
-
-        $track->setMetadata($meta);
-        $util->getPlaylist()->addTrack($track);
-
-        $io->success('Create track ' . $file);
-    }
-
-    /**
-     * @param \Symfony\Component\Console\Style\SymfonyStyle $io
-     * @param string                                        $artistName
-     *
-     * @return \App\Entity\Artist
-     */
-    private function createArtist(SymfonyStyle $io, string $artistName): Artist
-    {
-        $artist = new Artist($artistName);
-        $this->em->persist($artist);
-        $this->em->flush($artist);
-
-        $io->success('Creation artist ' . $artistName);
-
-        return $artist;
     }
 }
