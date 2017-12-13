@@ -8,6 +8,8 @@ global.$ = global.jQuery = $;
 
 require('bootstrap-sass');
 
+require('howler');
+
 // import external libs
 require('./libs/jquery.mCustomScrollbar.concat.min');
 
