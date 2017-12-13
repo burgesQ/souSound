@@ -4,8 +4,10 @@
 
 <div class="panel-group">
     {% for track in content %}
+        {% set meta = track.metadata %}
         <div class="panel panel-default" data-toggle="collapse" data-target="#meta-{{ loop.index0 }}">
             <div class="panel-heading">
+                <button type="button" class="btn btn-secondary float-right" onclick="playSound('{{ meta.trackPath }}')">Play</button>
                 {{ track.trackName }}
             </div>
             <div class="panel-body">
@@ -15,8 +17,7 @@
                 </span>
                 {% endfor %}
                 <div id="meta-{{ loop.index0 }}" class="collapse" style="word-break: break-word;">
-                    {% set meta = track.metadata %}
-                    Track location : {{ meta.trackPath }}
+                    Track location : {{ meta.trackFullPath }} || {{ meta.trackPath }}
                 </div>
             </div>
         </div>

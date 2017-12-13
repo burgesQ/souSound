@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f8c61e0d9ebf5f3c1fa5fd0f99aa563c",
+    "content-hash": "553a1b4dca36d40eecd880b3b7282d86",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1499,88 +1499,6 @@
                 "xml"
             ],
             "time": "2017-12-08T19:49:08+00:00"
-        },
-        {
-            "name": "nelmio/api-doc-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nelmio/NelmioApiDocBundle.git",
-                "reference": "29ec20bda12c4f0f65dd806ab00f25a9d5b20b9c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nelmio/NelmioApiDocBundle/zipball/29ec20bda12c4f0f65dd806ab00f25a9d5b20b9c",
-                "reference": "29ec20bda12c4f0f65dd806ab00f25a9d5b20b9c",
-                "shasum": ""
-            },
-            "require": {
-                "exsyst/swagger": "~0.3",
-                "php": "^7.0",
-                "symfony/framework-bundle": "^3.2.5|^4.0",
-                "symfony/property-info": "^3.1|^4.0",
-                "zircote/swagger-php": "^2.0.9"
-            },
-            "require-dev": {
-                "api-platform/core": "^2.0.3",
-                "doctrine/annotations": "^1.2",
-                "friendsofsymfony/rest-bundle": "^2.0",
-                "jms/serializer-bundle": "^2.0",
-                "phpdocumentor/reflection-docblock": "^3.1",
-                "sensio/framework-extra-bundle": "^3.0",
-                "symfony/asset": "^2.8|^3.0|^4.0",
-                "symfony/browser-kit": "^2.8|^3.0|^4.0",
-                "symfony/cache": "^3.1|^4.0",
-                "symfony/config": "^2.8|^3.0|^4.0",
-                "symfony/console": "^2.8|^3.0|^4.0",
-                "symfony/dom-crawler": "^2.8|^3.0|^4.0",
-                "symfony/form": "^3.0.8|^4.0",
-                "symfony/phpunit-bridge": "^3.3",
-                "symfony/property-access": "^2.8|^3.0|^4.0",
-                "symfony/stopwatch": "^2.8|^3.0|^4.0",
-                "symfony/templating": "^2.8|^3.0|^4.0",
-                "symfony/twig-bundle": "^3.0|^4.0",
-                "symfony/validator": "^2.8|^3.0|^4.0",
-                "symfony/yaml": "^2.8|^3.0|^4.0"
-            },
-            "suggest": {
-                "api-platform/core": "For using an API oriented framework.",
-                "friendsofsymfony/rest-bundle": "For using the parameters annotations.",
-                "phpdocumentor/reflection-docblock": "For parsing php docs."
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Nelmio\\ApiDocBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nelmio",
-                    "homepage": "http://nelm.io"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://github.com/nelmio/NelmioApiDocBundle/contributors"
-                }
-            ],
-            "description": "Generates documentation for your REST API from annotations",
-            "keywords": [
-                "api",
-                "doc",
-                "documentation",
-                "rest"
-            ],
-            "time": "2017-12-09T13:31:56+00:00"
         },
         {
             "name": "pagerfanta/pagerfanta",
@@ -3645,6 +3563,55 @@
             "time": "2017-10-11T12:05:26+00:00"
         },
         {
+            "name": "symfony/process",
+            "version": "v3.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "db25e810fd5e124085e3777257d0cf4ae533d0ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/db25e810fd5e124085e3777257d0cf4ae533d0ea",
+                "reference": "db25e810fd5e124085e3777257d0cf4ae533d0ea",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-11-22T12:18:49+00:00"
+        },
+        {
             "name": "symfony/profiler-pack",
             "version": "v1.0.2",
             "source": {
@@ -4970,7 +4937,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "nelmio/api-doc-bundle": 20,
         "symfony/maker-bundle": 20
     },
     "prefer-stable": false,

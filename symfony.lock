@@ -95,15 +95,6 @@
             "ref": "fe60ce509ef04a3f40da96e3979bc8d9b13b2372"
         }
     },
-    "nelmio/api-doc-bundle": {
-        "version": "2.13",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "2.13",
-            "ref": "d13bb99357ebcd2ffb6fe808a64961f5bc1c7546"
-        }
-    },
     "pagerfanta/pagerfanta": {
         "version": "v1.0.5"
     },
@@ -235,6 +226,9 @@
     },
     "symfony/polyfill-php72": {
         "version": "v1.6.0"
+    },
+    "symfony/process": {
+        "version": "v3.4.1"
     },
     "symfony/profiler-pack": {
         "version": "v1.0.2"

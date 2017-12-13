@@ -15,6 +15,21 @@
 
     <script type="text/javascript">
 
+        function playSound(soundLoc) {
+
+            console.log(soundLoc);
+
+            soundLoc = '../' + soundLoc;
+
+            console.log(soundLoc);
+
+            var sound = new Howl({
+                src: [ soundLoc ]
+            });
+
+            sound.play();
+        }
+
         function pageLoader(route, arrayOptions) {
 
             $.ajax({
@@ -22,7 +37,7 @@
                 method: "get",
                 data: arrayOptions
             }).done(function (msg) {
-                console.log(msg);
+                // console.log(msg);
                 $('#dynamic_content').val('');
                 $('#dynamic_content').html(msg);
             });
