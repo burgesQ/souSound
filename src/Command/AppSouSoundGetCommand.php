@@ -2,14 +2,14 @@
 
 namespace App\Command;
 
-use App\Entity\User;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Console\Command\Command;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Process\Process;
+use App\Entity\User;
 
 class AppSouSoundGetCommand extends Command
 {
@@ -64,34 +64,36 @@ class AppSouSoundGetCommand extends Command
         ;
     }
 
+    /**
+     * Execute need cmd by each downloadUtil.
+     *
+     * TODO : need to replace cmd by script
+     * TODO : need to use another function to create needed directory
+     *
+     * @param \Symfony\Component\Console\Input\InputInterface   $input
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @return int|null|void
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
-
         /** @var \App\Entity\User $user */
         foreach ($this->em->getRepository(User::class)->findAll() as $user) {
             /** @var \App\Entity\DownloadUtil $util */
             foreach ($user->getDownloadUtils() as $util) {
                 $path = $this->rootDir . '/../' . $this->basePath . $util->getUser()->getId() .
                     $this->arrayDir[$util->getType()];
-
                 $mkdir = 'mkdir -p ' . $path;
                 $cd    = 'cd ' . $path;
-
                 $cmd = $mkdir . ' && ' . $cd . ' && ' . $util->getCmd();
-
                 $io->comment('Downloading file for ' . $user->getFirstName() . ' ' . $user->getLastName());
                 $io->comment('Download path is : ' . $path);
-
                 dump($cmd);
-
                 $process = new Process($mkdir . ' && ' . $cd . ' && ls -lna');
                 $process->run();
-
                 if (!$process->isSuccessful()) {
                     throw new ProcessFailedException($process);
                 }
-
                 $util->setOutput($process->getOutput());
             }
             $this->em->flush();
