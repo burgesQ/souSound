@@ -2,11 +2,13 @@
 
 namespace App\Command;
 
+use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Console\Command\Command;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Process\Process;
 use App\Helper\TrackGeneratorHelper;
 use App\Entity\TrackMetadata;
 use App\Entity\User;
@@ -23,14 +25,6 @@ class AppSouSoundScrapCommand extends Command
     private $arrayDir = [
         1 => "/YouTube/",
         2 => "/SoundCloud/"
-    ];
-
-    /**
-     * @var array
-     */
-    private $arrayType = [
-        1 => "YouTube",
-        2 => "SoundCloud"
     ];
 
     /**
@@ -73,10 +67,25 @@ class AppSouSoundScrapCommand extends Command
         ;
     }
 
+    /**
+     * Function that gonna index each download path and
+     * reference the needed new file in database.
+     *
+     * TODO : better way to define new file to ref.
+     * TODO : ln for file that already exist.
+     *
+     * @param \Symfony\Component\Console\Input\InputInterface   $input
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @return int|null|void
+     * @throws \Doctrine\ORM\OptimisticLockException
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
+        /** @var \Doctrine\ORM\EntityManager $em */
         $em = $this->em;
+
+        $this->linkSourceDirectory();
 
         /** @var \App\Entity\User $user */
         foreach ($em->getRepository(User::class)->findAll() as $user) {
@@ -87,34 +96,27 @@ class AppSouSoundScrapCommand extends Command
                     $this->createPlaylist($util, $user, $em);
                 }
 
-                $path = $this->rootDir . '/../' . $this->basePath . $util->getUser()->getId() .
-                    $this->arrayDir[$util->getType()];
-
-                $io->comment('Indexing file for ' .
-                    $user->getFirstName() .
-                    ' ' .
-                    $user->getLastName() .
-                    '\nDownload path is : ' .
-                    $path);
-
+                $path  = $this->rootDir . '/../' . $this->basePath .
+                    $util->getUser()->getId() . $this->arrayDir[$util->getType()];
                 $files = scandir($path);
 
                 foreach ($files as $file) {
                     if ($file != '.' && $file != '..') {
                         /** @var TrackMetadata $trackMeta */
-                        if (!($trackMeta = $em->getRepository(TrackMetadata::class)->findOneBy(['fileName' => $file]))) {
+                        if (!($trackMeta =
+                            $em->getRepository(TrackMetadata::class)->findOneBy(['fileName' => $file]))) {
                             $io->comment('Need to create track : ' . $file);
-                            $this->createTrack($file, $this->rootDir, $util, $em, $this->basePath . $util->getUser()->getId
-                            () . $this->arrayDir[$util->getType()]);
-                            $io->comment('Creqted track : ' . $file);
+                            $this->createTrack($file, $this->rootDir, $util, $em, $this->basePath .
+                                $util->getUser()->getId
+                                () .
+                                $this->arrayDir[$util->getType()]);
+                            $io->comment('Created track : ' . $file);
                         } else {
-                            $io->comment($trackMeta->getFileName() . ' existe');
+                            $io->comment($trackMeta->getFileName() . ' already exist.');
                             // rm file
                             // ln -s OG .
                             if (!$util->getPlaylist()->getTracks()->contains($trackMeta->getTrack())) {
-                                $io->comment($trackMeta->getFileName() . ' need to be linked');
                                 $util->getPlaylist()->addTrack($trackMeta->getTrack());
-                                $io->comment($trackMeta->getFileName() . ' is linked');
                             }
                         }
                     }
@@ -122,5 +124,25 @@ class AppSouSoundScrapCommand extends Command
             }
         }
         $em->flush();
+    }
+
+    /**
+     * Simple func that create a symbolic link between
+     * the download path and
+     * the public directory.
+     */
+    protected function linkSourceDirectory()
+    {
+        $path    = $this->rootDir . '/../' . $this->basePath;
+        $webPath = $this->rootDir . '/../public/';
+
+        if (file_exists($path) && !file_exists($webPath . $this->basePath)) {
+            $process = new Process('ln -s ' . $path . ' ' . $webPath);
+            $process->run();
+            if (!$process->isSuccessful()) {
+                throw new ProcessFailedException($process);
+            }
+            // dump($process->getOutput());
+        }
     }
 }
