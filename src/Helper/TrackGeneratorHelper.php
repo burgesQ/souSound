@@ -21,6 +21,8 @@ Trait TrackGeneratorHelper
     ];
 
     /**
+     * Create a playlist for a given downloadUtil.
+     *
      * @param DownloadUtil                $util
      * @param \App\Entity\User            $user
      * @param \Doctrine\ORM\EntityManager $em
@@ -38,6 +40,8 @@ Trait TrackGeneratorHelper
     }
 
     /**
+     * Create a track in db from a fileName.
+     *
      * @param string                      $file
      * @param string                      $path
      * @param \App\Entity\DownloadUtil    $util
@@ -61,29 +65,40 @@ Trait TrackGeneratorHelper
 
         $track->setMetadata($meta);
 
-        // TODO : define method to match b2b
-        /** @var Artist $artist */
-        if (!($artist = $em->getRepository(Artist::class)->findOneBy(['artist' => $trackInfo[0]]))) {
-            $track->addArtist($this->createArtist($trackInfo[0], $em));
-        } else {
-            $track->addArtist($artist);
-        }
+        $this->createArtist($track, $file, $em);
 
         $util->getPlaylist()->addTrack($track);
         $em->flush();
     }
 
     /**
-     * @param string                                        $artistName
-     * @param \Doctrine\ORM\EntityManager                   $em
+     * Define, create and link track to artist.
+     *
+     * TODO : b2b
+     * TODO : XX and YY
+     * TODO : XX & YY
+     * TODO : TrackName - ArtistName.
+     *
+     * @param \App\Entity\Track           $track
+     * @param string                      $file
+     * @param \Doctrine\ORM\EntityManager $em
      * @return \App\Entity\Artist
      * @throws \Doctrine\ORM\OptimisticLockException
      */
-    private function createArtist(string $artistName, EntityManager $em): Artist
+    private function createArtist(Track $track, string $file, EntityManager $em): Artist
     {
-        $artist = new Artist($artistName);
-        $em->persist($artist);
-        $em->flush($artist);
+        /** @var array $trackInfo */
+        $trackInfo = explode(" - ", $file, 2);
+
+        /** @var Artist $artist */
+        if (!($artist = $em->getRepository(Artist::class)->findOneBy(['artist' => $trackInfo[0]]))) {
+            $artist = new Artist($trackInfo[0]);
+            $em->persist($artist);
+            $em->flush($artist);
+        }
+
+        $track->addArtist($artist);
+        $em->flush();
 
         return $artist;
     }
