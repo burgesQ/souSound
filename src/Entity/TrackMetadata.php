@@ -47,20 +47,47 @@ class TrackMetadata
     private $fileLocation;
 
     /**
+     * @var string
+     * @ORM\Column(
+     *     name="base_path",
+     *     type="string",
+     *     nullable=false,
+     * )
+     */
+    private $basePath;
+
+    /**
      * Track constructor.
      *
      * @param string $fileName
      * @param string $path
+     * @param string $basePath
      */
-    public function __construct(string $fileName = "", string $path)
+    public function __construct(string $fileName = "", string $path, string $basePath)
     {
         $this->fileLocation = $path;
         $this->fileName     = $fileName;
+        $this->basePath     = $basePath;
     }
 
+    /**
+     * Return absolute path of a track on the server.
+     *
+     * @return string
+     */
+    public function getTrackFullPath() : string
+    {
+        return $this->fileLocation . '/../' . $this->basePath . $this->fileName;
+    }
+
+    /**
+     * Return url path of a track.
+     *
+     * @return string
+     */
     public function getTrackPath() : string
     {
-        return $this->fileLocation . $this->fileName;
+        return  $this->basePath . $this->fileName;
     }
 
     /**
@@ -127,6 +154,26 @@ class TrackMetadata
     public function setFileLocation(string $fileLocation): TrackMetadata
     {
         $this->fileLocation = $fileLocation;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBasePath(): string
+    {
+        return $this->basePath;
+    }
+
+    /**
+     * @param string $basePath
+     *
+     * @return \App\Entity\TrackMetadata
+     */
+    public function setBasePath(string $basePath): TrackMetadata
+    {
+        $this->basePath = $basePath;
 
         return $this;
     }

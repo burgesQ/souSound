@@ -38,13 +38,14 @@ Trait TrackGeneratorHelper
     }
 
     /**
-     * @param string                                        $file
-     * @param string                                        $path
-     * @param \App\Entity\DownloadUtil                      $util
-     * @param \Doctrine\ORM\EntityManager                   $em
+     * @param string                      $file
+     * @param string                      $path
+     * @param \App\Entity\DownloadUtil    $util
+     * @param \Doctrine\ORM\EntityManager $em
+     * @param string                      $basePath
      * @throws \Doctrine\ORM\OptimisticLockException
      */
-    private function createTrack(string $file, string $path, DownloadUtil $util, EntityManager $em)
+    private function createTrack(string $file, string $path, DownloadUtil $util, EntityManager $em, string $basePath)
     {
         /** @var array $trackInfo */
         $trackInfo = explode(" - ", $file, 2);
@@ -54,7 +55,7 @@ Trait TrackGeneratorHelper
         $em->flush($track);
 
         /** @var TrackMetadata $meta */
-        $meta = new TrackMetadata($file, $path);
+        $meta = new TrackMetadata($file, $path, $basePath);
         $em->persist($meta);
         $em->flush($meta);
 

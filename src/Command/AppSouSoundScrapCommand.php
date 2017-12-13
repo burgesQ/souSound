@@ -104,7 +104,8 @@ class AppSouSoundScrapCommand extends Command
                         /** @var TrackMetadata $trackMeta */
                         if (!($trackMeta = $em->getRepository(TrackMetadata::class)->findOneBy(['fileName' => $file]))) {
                             $io->comment('Need to create track : ' . $file);
-                            $this->createTrack($file, $path, $util, $em);
+                            $this->createTrack($file, $this->rootDir, $util, $em, $this->basePath . $util->getUser()->getId
+                            () . $this->arrayDir[$util->getType()]);
                             $io->comment('Creqted track : ' . $file);
                         } else {
                             $io->comment($trackMeta->getFileName() . ' existe');
