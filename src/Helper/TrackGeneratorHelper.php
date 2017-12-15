@@ -9,6 +9,7 @@ use App\Entity\Playlist;
 use App\Entity\Artist;
 use App\Entity\Track;
 use App\Entity\User;
+use Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface;
 
 Trait TrackGeneratorHelper
 {
@@ -52,9 +53,11 @@ Trait TrackGeneratorHelper
     private function createTrack(string $file, string $path, DownloadUtil $util, EntityManager $em, string $basePath)
     {
         /** @var array $trackInfo */
-        $trackInfo = explode(" - ", $file, 2);
+        $trackInfo = explode(" - ",
+            explode(".mp3", $file, 2)[0]);
+
         /** @var Track $track */
-        $track     = new Track(explode(".mp3", $trackInfo[1], 1)[0]);
+        $track     = new Track(end($trackInfo));
         $em->persist($track);
         $em->flush($track);
 
@@ -74,10 +77,10 @@ Trait TrackGeneratorHelper
     /**
      * Define, create and link track to artist.
      *
-     * TODO : b2b
-     * TODO : XX and YY
-     * TODO : XX & YY
-     * TODO : TrackName - ArtistName.
+     * TODO : OK Artist - Track
+     * TODO : OK Channel - Artist - Track
+     * TODO : Artist pattern in file name
+     * TODO : b2b and stuffs
      *
      * @param \App\Entity\Track           $track
      * @param string                      $file
@@ -88,10 +91,15 @@ Trait TrackGeneratorHelper
     private function createArtist(Track $track, string $file, EntityManager $em): Artist
     {
         /** @var array $trackInfo */
-        $trackInfo = explode(" - ", $file, 2);
+        $trackInfo = explode(" - ",
+            explode(".mp3", $file, 2)[0]);
+
+        $possibility = sizeof($trackInfo);
+
+        $artist = ($possibility == 1) ? "Unknown" : $trackInfo[$possibility - 2];
 
         /** @var Artist $artist */
-        if (!($artist = $em->getRepository(Artist::class)->findOneBy(['artist' => $trackInfo[0]]))) {
+        if (!($artist = $em->getRepository(Artist::class)->findOneBy(['artist' => $artist]))) {
             $artist = new Artist($trackInfo[0]);
             $em->persist($artist);
             $em->flush($artist);
