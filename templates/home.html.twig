@@ -15,19 +15,17 @@
 
     <script type="text/javascript">
 
-        function playSound(soundLoc) {
-
-            console.log(soundLoc);
+        function addSound(soundLoc, trackName) {
 
             soundLoc = '../' + soundLoc;
 
-            console.log(soundLoc);
+            player.stop;
 
-            var sound = new Howl({
-                src: [ soundLoc ]
-            });
-
-            sound.play();
+            // player.changeSrc({
+            //     title: trackName,
+            //     file: soundLoc,
+            //     howl: null
+            // })
         }
 
         function pageLoader(route, arrayOptions) {

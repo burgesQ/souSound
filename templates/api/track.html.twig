@@ -7,7 +7,7 @@
         {% set meta = track.metadata %}
         <div class="panel panel-default" data-toggle="collapse" data-target="#meta-{{ loop.index0 }}">
             <div class="panel-heading">
-                <button type="button" class="btn btn-secondary float-right" onclick="playSound('{{ meta.trackPath }}')">Play</button>
+                <button type="button" class="btn btn-secondary float-right" onclick="addSound('{{ meta.trackPath }}', '{{ track.trackName }}')">Play</button>
                 {{ track.trackName }}
             </div>
             <div class="panel-body">

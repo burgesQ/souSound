@@ -95,12 +95,11 @@ Trait TrackGeneratorHelper
             explode(".mp3", $file, 2)[0]);
 
         $possibility = sizeof($trackInfo);
-
-        $artist = ($possibility == 1) ? "Unknown" : $trackInfo[$possibility - 2];
+        $artistName = ($possibility == 1) ? "Unknown" : $trackInfo[$possibility - 2];
 
         /** @var Artist $artist */
-        if (!($artist = $em->getRepository(Artist::class)->findOneBy(['artist' => $artist]))) {
-            $artist = new Artist($trackInfo[0]);
+        if (!($artist = $em->getRepository(Artist::class)->findOneBy(['artist' => $artistName]))) {
+            $artist = new Artist($artistName);
             $em->persist($artist);
             $em->flush($artist);
         }

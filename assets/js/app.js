@@ -15,3 +15,4 @@ require('./libs/jquery.mCustomScrollbar.concat.min');
 
 // import personal script
 require('./partials/sidebar');
+require('./partials/player');
