@@ -90,6 +90,7 @@ Player.prototype = {
                     // bar.style.display = 'none';
                     // pauseBtn.style.display = 'block';
                 }
+                // ,
                 // onload: function () {
                 //     // Start the wave animation.
                 //     // wave.container.style.display = 'block';
@@ -353,7 +354,7 @@ var move = function (event) {
 volume.addEventListener('mousemove', move);
 volume.addEventListener('touchmove', move);
 
-// // Setup the "waveform" animation.
+// Setup the "waveform" animation.
 // var wave = new SiriWave({
 //     container: waveform,
 //     width: window.innerWidth,
@@ -364,9 +365,9 @@ volume.addEventListener('touchmove', move);
 //     frequency: 2
 // });
 // wave.start();
-//
-// // Update the height of the wave animation.
-// // These are basically some hacks to get SiriWave.js to do what we want.
+
+// Update the height of the wave animation.
+// These are basically some hacks to get SiriWave.js to do what we want.
 // var resize = function () {
 //     var height = window.innerHeight * 0.3;
 //     var width = window.innerWidth;
