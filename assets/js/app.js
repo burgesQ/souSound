@@ -6,7 +6,7 @@ const $ = require('jquery');
 
 global.$ = global.jQuery = $;
 
-require('bootstrap-sass');
+require('bootstrap/dist/js/bootstrap');
 
 // import external libs
 require('./libs/jquery.mCustomScrollbar.concat.min');

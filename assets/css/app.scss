@@ -1,19 +1,20 @@
 // asset/scss/app.scss
 
 // boostrap icon
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+//$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 
 // set if you're also including font-awesome
-$fa-font-path: "~font-awesome/fonts";
+//$fa-font-path: "~font-awesome/fonts";
 
 // customize some Bootstrap variables
 // $brand-primary: darken(#8f0000, 20%);
 
 // import bootstrap
-@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~bootstrap/dist/css/bootstrap-grid.css';
+@import '~bootstrap/dist/css/bootstrap-reboot.css';
 
 // import personal vars
-// shadow value
 @import "partials/variables";
 
 // import personal components

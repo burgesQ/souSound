@@ -855,9 +855,12 @@ boom@5.x.x:
   dependencies:
     hoek "4.x.x"
 
-bootstrap-sass@^3.3.7:
-  version "3.3.7"
-  resolved "https://registry.yarnpkg.com/bootstrap-sass/-/bootstrap-sass-3.3.7.tgz#6596c7ab40f6637393323ab0bc80d064fc630498"
+bootstrap@4.0.0-alpha.6:
+  version "4.0.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-alpha.6.tgz#4f54dd33ac0deac3b28407bc2df7ec608869c9c8"
+  dependencies:
+    jquery ">=1.9.1"
+    tether "^1.4.0"
 
 brace-expansion@^1.1.7:
   version "1.1.8"
@@ -2693,7 +2696,7 @@ jquery-mousewheel@^3.1.13:
   version "3.1.13"
   resolved "https://registry.yarnpkg.com/jquery-mousewheel/-/jquery-mousewheel-3.1.13.tgz#06f0335f16e353a695e7206bf50503cb523a6ee5"
 
-jquery@^3.2.1:
+jquery@>=1.9.1, jquery@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
@@ -4784,6 +4787,10 @@ tar@^2.0.0, tar@^2.2.1:
     block-stream "*"
     fstream "^1.0.2"
     inherits "2"
+
+tether@^1.4.0:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/tether/-/tether-1.4.3.tgz#fd547024c47b6e5c9b87e1880f997991a9a6ad54"
 
 thunky@^0.1.0:
   version "0.1.0"
