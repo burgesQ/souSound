@@ -4,10 +4,11 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
 ###> sou/sound ###
 /sounds
+/public/sounds
 /public/build/images/mCSB_buttons.*
-
 ###< sou/sound ###
 
 ###> symfony/webpack-encore-pack ###
