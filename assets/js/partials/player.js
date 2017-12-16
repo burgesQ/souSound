@@ -354,6 +354,15 @@ var move = function (event) {
 volume.addEventListener('mousemove', move);
 volume.addEventListener('touchmove', move);
 
+/**
+ * @returns {Player}
+ */
+function getPlayer() {
+    return player;
+}
+
+
+
 // Setup the "waveform" animation.
 // var wave = new SiriWave({
 //     container: waveform,

@@ -20,5 +20,5 @@ require('./libs/howler.min');
 require('./libs/howler.spatial.min');
 
 // import personal script
-require('./partials/sidebar');
 require('./partials/player');
+require('./partials/sidebar');
