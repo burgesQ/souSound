@@ -2,24 +2,38 @@
     Tracks
 </h3>
 
-<div class="panel-group">
+<div class="row">
+
+{#<div class="card-deck">#}
     {% for track in content %}
         {% set meta = track.metadata %}
-        <div class="panel panel-default" data-toggle="collapse" data-target="#meta-{{ loop.index0 }}">
-            <div class="panel-heading">
-                <button type="button" class="btn btn-secondary float-right" onclick="addSound('{{ meta.trackPath }}', '{{ track.trackName }}')">Play</button>
-                {{ track.trackName }}
+
+    <div class="col-sm-6">
+
+    <div class="card text-center border-secondary mb-3">
+            <div class="card-header">
+                {{ track.trackName|truncate(20) }}
             </div>
-            <div class="panel-body">
-                Artist : {% for artist in track.artists %}
-                    <span class="badge">
-                    {{ artist.artist }}
-                </span>
-                {% endfor %}
-                <div id="meta-{{ loop.index0 }}" class="collapse" style="word-break: break-word;">
-                    Track location : {{ meta.trackFullPath }} || {{ meta.trackPath }}
-                </div>
+            <div class="card-body text-secondary">
+                {#<h4 class="card-title">Special title treatment</h4>#}
+                <p class="card-text">
+
+                    {% for artist in track.artists %}
+                        {{ artist.artist }}
+                    {% endfor %}
+
+                </p>
+                <a href="#" class="btn btn-primary"
+                   onclick="addSound('{{ meta.trackPath }}', '{{ track.trackName }}')">
+                    Play
+                </a>
+            </div>
+            <div class="card-footer text-muted">
+                {{ meta.trackPath }}
             </div>
         </div>
+
+    </div>
+
     {% endfor %}
 </div>
