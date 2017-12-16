@@ -4,8 +4,14 @@ var Encore = require('@symfony/webpack-encore');
 
 Encore
 
-    // allow legacy applications to use $/jQuery as a global variable
-    .autoProvidejQuery()
+    // allow legacy applications to use $/jQuery/tether
+    // as a global variable
+    .autoProvideVariables({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        "window.Tether": 'tether'
+    })
 
     // fix delay caused by boostrap
     .enableSassLoader(function(sassOptions) {}, {
